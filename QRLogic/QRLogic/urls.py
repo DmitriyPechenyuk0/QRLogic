@@ -17,8 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home_app.views import render_home_app
+from contact_app.views import render_contact_app
+from managesub_app.views import render_managesub_app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', render_home_app, name='home_app')
+    path('', render_home_app, name='home_app'),
+    path('contact/', render_contact_app, name='contact_app'),
+    path('managesub/', render_managesub_app, name='managesub_app')
 ]
