@@ -14,13 +14,13 @@ Home page
 {% block body %}
 <header>
 
-    <img class="logo" src="Logo.png" alt="Logo">
+    <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
 
     <div class="account">
         <div class="account-login"><a href="/login">Login</a></div>
         <div class="account-signup"><a href="/signup">Sign Up</a></div>
     </div>
-    <div class="contact"><a class="contact-url" href="/contact">Contacts</a></div>
+    <div class="contact"><a class="contact-url" href="/contacts">Contacts</a></div>
 </header>
 <main>
     <div class="h1-title">
