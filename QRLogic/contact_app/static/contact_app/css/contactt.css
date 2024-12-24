@@ -142,7 +142,7 @@ a{
 .input-input-name{
     width: 380px;
     height: 40px;
-    padding: 10px 0px;
+    padding: 10px 10px;
     border-radius: 10px;
 }
 .reminder-name{
@@ -167,7 +167,7 @@ a{
 .input-input-email{
     width: 380px;
     height: 40px;
-    padding: 10px 0px;
+    padding: 10px 10px;
     border-radius: 10px;
 }
 .reminder-email{
@@ -178,12 +178,13 @@ a{
     width: 420px;
     height: 265px;
     gap: 2px;
-    padding: 20px 0px;
+    padding: 20px;
 }
 .textarea-description{
     width: 380px;
     height: fit-content;
     font-size: 14px;
+    padding: 10px 10px;
 }
 .textarea-textarea-description{
     width: 380px;

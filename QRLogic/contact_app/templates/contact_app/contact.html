@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="{% static 'contact_app/css/contactt.css' %}">
 {% endblock %}
 
+{% block title %}
+
+Contact page
+
+{% endblock %}
+
 {% block body %}
 
 <header>
@@ -24,7 +30,8 @@
 <main>
 
     <div class="all-ways">
-        <div class="post">
+        <form class="post" method="post">
+            {% csrf_token %}
             <div class="title" >
                 <span class="titles">
                     <p class="drop-a-review">
@@ -35,33 +42,37 @@
                     </p>
                 </span>
             </div>
-            <div class="name" >
-                <p class="input-name">Name</p>
-                <input class="input-input-name" type="text">
-                <p class="reminder-name">The name must have at least 1 letters</p>
-            </div>
-            <div class="email" >
-                <p class="input-email">Email</p>
-                <input class="input-input-email" type="text">
-                <p class="reminder-email">email must contain @</p>
-            </div>
-            <div class="description" >
-                <p class="textarea-description">Description</p>
-                <textarea class="textarea-textarea-description" name="" id=""></textarea>
-            </div>
-            <button class="submit-button">Submit</button>
-        </div>
+                <div class="name" >
+                    <p class="input-name">Name</p>
+                    <input class="input-input-name" type="text" name="name">
+                    <p class="reminder-name">The name must have at least 1 letters</p>
+                </div>
+                <div class="email" >
+                    <p class="input-email">Email</p>
+                    <input class="input-input-email" type="text" name="email">
+                    <p class="reminder-email">email must contain @</p>
+                </div>
+                <div class="description" >
+                    <p class="textarea-description">Description</p>
+                    <textarea class="textarea-textarea-description" name="description"></textarea>
+                </div>
+                <button class="submit-button" name="submit-button">Submit</button>
+        </form>
         <div class="other">
             <p class="Alternatives">Alternatives</p>
 
-            <div class="telegram alternative">
-                <img class="telegram-icon icon" src="{% static 'home_app/images/telegram_icon.png' %}" alt="">
-                <p class="telegram-title">QRLogic</p>
-            </div>
-            <div class="discord alternative">
-                <img class="discord-icon icon" src="{% static 'home_app/images/discord_icon.png' %}" alt="">
-                <p class="discord-title">QRLogic</p>
-            </div>
+            <a href="https://t.me/QRLogic">
+                <div class="telegram alternative" >
+                    <img class="telegram-icon icon" src="{% static 'home_app/images/telegram_icon.png' %}" alt="">
+                    <p class="telegram-title">QRLogic</p>
+                </div>
+            </a>
+            <a href="https://discord.gg/WdA95uNNt6">
+                <div class="discord alternative">
+                    <img class="discord-icon icon" src="{% static 'home_app/images/discord_icon.png' %}" alt="">
+                    <p class="discord-title">QRLogic</p>
+                </div>
+            </a>
         </div>
     </div>
 

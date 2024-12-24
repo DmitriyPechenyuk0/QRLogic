@@ -61,7 +61,7 @@
         display: flex;
         justify-content: center;
         align-items: start;
-        height: 440px;
+        height: 400px;
         width: 380px;
     }
     .info-about-plan{
@@ -69,8 +69,8 @@
         flex-direction: column;
         justify-content: start;
         align-items: center;
-        height: 440px;
-        width: 380px;
+        height: 600px;
+        width: 400px;
         gap: 10px;
     }
     .h1-title{
@@ -100,6 +100,7 @@
         width: max-content;
         text-align: center;
         font-size: 32px;
+        
     }
     .plans{
         display: flex;
