@@ -19,10 +19,21 @@ from django.urls import path, include
 from home_app.views import render_home_app
 from contact_app.views import render_contact_app
 from managesub_app.views import render_managesub_app
+from yourqr_app.views import render_yourqr_app
+from createqr_app.views import render_ceateqr_app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('', render_home_app, name='home_app'),
+    
     path('contacts/', render_contact_app, name='contact_app'),
-    path('managesub/', render_managesub_app, name='managesub_app')
+    
+    path('managesub/', render_managesub_app, name='managesub_app'),
+    
+    path('user/', include('user_app.urls')),
+
+    path('your_qr/', render_yourqr_app, name= 'yourqr_app'),
+
+    path("create_qr/", render_ceateqr_app, name="createqr_app")
 ]

@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'managesub_app',
     'contact_app',
-    'home_app'
+    'home_app',
+    'createqr_app',
+    'user_app',
+    'yourqr_app'
 ]
 
 MIDDLEWARE = [
