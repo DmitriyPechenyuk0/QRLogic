@@ -178,7 +178,6 @@ a{
     width: 420px;
     height: 265px;
     gap: 2px;
-    padding: 20px;
 }
 .textarea-description{
     width: 380px;
@@ -194,6 +193,7 @@ a{
     max-height: 209px;
     min-height: 100px;
     border-radius: 10px;
+    padding: 10px;
 }
 .submit-button{
     display: flex;
@@ -205,4 +205,9 @@ a{
     border-radius: 10px;
     padding: 10px;
     font-size: 22px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.submit-button:hover{
+    background-color: #69ca60;
+    border: none;
 }

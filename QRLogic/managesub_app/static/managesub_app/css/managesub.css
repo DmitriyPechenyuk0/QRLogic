@@ -111,8 +111,22 @@ li{
     height: 40px;
     font-size: 20px;
     border-radius: 10px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.button:hover{
+    border: none;
 
 }
+
+.cancel-button:hover{
+    background-color: #ea3d3d;
+}
+
+.change-button:hover{
+    background-color: #69ca60;
+}
+
+
 .log-out{
     display: flex;
     width: 90px;
