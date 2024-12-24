@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/yourqrr.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+<header>
+    <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
+    
+    <div>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <a href="/contacts">Contacts</a>
+        <a href="/yourqr">Your QR-codes</a>
+    </div>
+</header>
+
+
+<h1 class="your">YOUR QR-codes</h1>
+
+<main>
+    <p class="no-codes-message">You don't have QR-codes yet</p>
+</main>
+
+{% endblock %}

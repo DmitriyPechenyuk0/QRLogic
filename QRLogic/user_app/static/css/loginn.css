@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pridi:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt';
+}
+
+
+header {
+    width: 100%;
+    height: 120px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    
+}
+
+header .logo {
+    position: absolute;
+    height: 120px;
+    width: 280px;
+    top: 0px;
+    left: 0px;
+}
+
+header div {
+    flex-grow: 1;
+    text-align: center;
+}
+
+header div a {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    margin-left: 30px;
+}
+
+
+main {
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-color: #F1F1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-block {
+    text-align: center;
+}
+
+.registration-block h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold;
+   
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registration-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.registration-form input {
+    width: 500px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.registration-form button {
+    width: 120px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: lowercase;
+    transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+    background-color: #DADADA;
+}

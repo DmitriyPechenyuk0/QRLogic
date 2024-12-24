@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/regg.css' %}">
+{% endblock %}
+
+
+{% block body %}
+
+<header>
+    <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
+    
+    <div>
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+        <a href="/contacts">Contacts</a>
+    </div>
+</header>
+<main>
+    <section class="registration-block">
+        <h1>REGISTRATION</h1>
+        <form class="registration-form">
+            <label for="email">GMAIL</label>
+            <input type="email" id="email" required>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main>
+    
+    
+
+{% endblock %}

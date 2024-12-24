@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/createqr.css' %}">
+{% endblock %}
+
+{% block body %}
+<header>
+    <div class="header-container">
+        <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
+        <nav class="navigation">
+            <a href="/login">Login</a>
+            <a href="/generateqr">Generate QR-code</a>
+            <a href="/yourqr">Your QR-codes</a>
+            <a href="/signup">Sign Up</a>
+            <a href="/contacts">Contacts</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="settings">
+    </div>
+    <div class="qr-container">
+        <div class="settings">
+            <p class="setting-item"> color</p>
+            <p class="setting-item"> background color</p>
+        </div>
+        <div class="qr-placeholder"></div>
+        <button class="generate-btn">Generate QR-code</button>
+    </div>
+</main>
+{% endblock %}

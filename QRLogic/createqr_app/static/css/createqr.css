@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pridi:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Prompt';
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    height: 100vh;          
+    margin: 0;
+    background-color: white;
+    color: #333333;   
+    padding-top: 100px;    
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.logo {
+    position: absolute;
+    height: 120px;
+    width: 280px;
+    top: 0px;
+    left: 0px;
+}
+
+
+header {
+    position: fixed;        
+    top: 0;
+    left: 0;
+    width: 100%;           
+    height: 120px;       
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.navigation a {
+    font-size: 16px;
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.settings {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.setting-item {
+    font-size: 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.qr-container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 10px;
+   
+    width: 1320px;
+    height: 800px;
+}
+
+.qr-placeholder {
+    width: 470px;
+    height: 430px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.generate-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.generate-btn:hover {
+    background-color: #e0e0e0;
+}
