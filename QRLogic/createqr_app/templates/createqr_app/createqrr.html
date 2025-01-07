@@ -23,12 +23,12 @@
     <div class="settings">
     </div>
     <div class="qr-container">
-        <div class="settings">
-            <p class="setting-item"> color</p>
-            <p class="setting-item"> background color</p>
-        </div>
-        <div class="qr-placeholder"></div>
-        <button class="generate-btn">Generate QR-code</button>
+        <form method="post">
+            {% csrf_token %}
+            <div class="qr-placeholder"></div>
+            <input placeholder="URL" type="text" name="url">
+            <button type="submit" class="generate-btn" name="button">Generate QR-code</button>
+        </form>
     </div>
 </main>
 {% endblock %}
