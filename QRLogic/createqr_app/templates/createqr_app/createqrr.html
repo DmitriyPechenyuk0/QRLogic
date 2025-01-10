@@ -20,14 +20,22 @@
 </header>
 
 <main>
-    <div class="settings">
+    <div class="qr-srttings">
+    <p class="colour">colour</p>
+    <p class="background">background colour</p>
+    <p class="logott">logo</p>
+    <p class="border">border settings</p>
     </div>
+    <div class="settings"></div>
     <div class="qr-container">
         <form method="post">
             {% csrf_token %}
-            <div class="qr-placeholder"></div>
-            <input placeholder="URL" type="text" name="url">
+            <img class="qr-icon" src="{% static 'home_app/images/qr-code.png' %}" alt="">
+            <input class="url" placeholder="URL" type="text" name="url">
             <button type="submit" class="generate-btn" name="button">Generate QR-code</button>
+            <button type="submit" class="download-btn" name="button">Download</button>
+           
+            </div>
         </form>
     </div>
 </main>
