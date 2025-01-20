@@ -1,11 +1,46 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.db.utils import IntegrityError
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
-def render_reg(request):
-    return render(request, 'user_app/signupp.html')
+def render_signup(request):
+    context = {'page': 'signup'}
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')   
+        password = request.POST.get('password')  
+        try:
+            User.objects.create_user(username=username,  password=password, email=email)
+            return redirect('/user/signin/')
 
-def render_auth(request):
-    return render(request, 'user_app/login.html')
+        except IntegrityError:
+            context = {'integrity_error': True}
+    return render(request, 'user_app/signup.html', context=context)
+
+def render_signin(request):
+    context = {'page': 'signin'}
+    if request.method == 'POST':
+        username = request.POST.get('username')   
+        password = request.POST.get('password')  
+        password_confirmation = request.POST.get('password_confirmation')
+
+        if password == password_confirmation:
+            
+            user = authenticate(request=request, username=username, password=password)
+
+            if user:
+                login(request=request, user=user)
+            else:
+                context = {'user_error': True}
+
+    return render(request, 'user_app/signin.html', context=context)
+
+def logout(request):
+
+    logout(request)
+    return redirect('/user/signin')
+
 
 

@@ -14,21 +14,7 @@ Contact page
 {% endblock %}
 
 {% block body %}
-
-<header>
-
-    <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
-
-    <div class="center-div">
-        <div class="login url"><a href="/login">Login</a></div>
-        <div class="signup url"><a href="/signup">Sign Up</a></div>
-    
-        <div class="home url"><a class="home" href="/">Home</a></div>
-    </div>
-
-</header>
 <main>
-
     <div class="all-ways">
         <form class="post" method="post">
             {% csrf_token %}
@@ -73,6 +59,7 @@ Contact page
                     <p class="discord-title">QRLogic</p>
                 </div>
             </a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d661.4777326331397!2d35.06823607608083!3d48.45823848295226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2d21b262e8b%3A0x2a3d3cb4f052381a!2z0YPQuy4g0JjQstCw0L3QsCDQkNC60LjQvdGE0LjQtdCy0LAsIDE4LCDQlNC90LXQv9GALCDQlNC90LXQv9GA0L7Qv9C10YLRgNC-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNDkwMDA!5e0!3m2!1sru!2sua!4v1736791062899!5m2!1sru!2sua" width="560" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 

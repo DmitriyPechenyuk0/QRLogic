@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 # Create your views here.
 
 def render_contact_app(request):
+    context = {'page': 'contacts'}
     if request.method == 'POST':
         name = request.POST.get('name')
         email = request.POST.get('email')
@@ -21,6 +22,6 @@ def render_contact_app(request):
 
 
 
-
-    return render(request, 'contact_app/contact.html')
+    
+    return render(request, 'contact_app/contact.html', context=context)
 

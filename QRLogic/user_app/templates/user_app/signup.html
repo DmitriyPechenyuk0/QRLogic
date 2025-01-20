@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/signinn.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Sign up to QRLogic
+{% endblock %}
+
+{% block body %}
+<main>
+    <div class="form-div">
+        <form class="form" method="post">
+            {% csrf_token %}
+            <div class="login-div">
+                <input type="text" placeholder="login">
+            </div>
+            <div class="email-div">
+                <input type="text" placeholder="email">
+            </div>
+            <div class="password-div">
+                <input type="password" placeholder="password">
+            </div>
+            <button type="submit">Button</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

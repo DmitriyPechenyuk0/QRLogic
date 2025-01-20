@@ -8,9 +8,63 @@
         {% block head %} {% endblock %}
     </head>
     <body>
-            {% block body %}
+        <header>
+            <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
+            
+            <!-- {% if page == 'home' %}
+                <div class="account">
+                    <div class="account-login"><a href="/user/signin">Sing In</a></div>
+                    <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
+                </div>
+                <div class="contact"><a class="contact-url" href="/contacts">Contacts</a></div>
+            {% endif %} -->
 
-            {% endblock %}
+            {% if page == 'home' %}
 
+            <div class="account-login"><a href="createqr">Create QR Codes</a></div>
+            <div class="account-login"><a href="myqr">Sing In</a></div>
+
+            <div class="account">
+                <div class="account-username">
+                    <a>Dmitriy Pechenyuk</a>
+                    <a class="log-out-button" href="{% url 'logout' %}"><img class="log-out-icon" src="{% static 'home_app/images/log-out.png' %}" alt="log-out.png"> Log out</a>
+                </div>
+            </div>
+
+            
+            {% endif %}
+
+            {% if page == 'signup'%}
+                <div class="account">
+                    <div class="account-login"><a href="/user/signin">Sing In</a></div>
+                    <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
+                </div>
+                <div class="home-url"><a class="home" href="/">Home</a></div>
+            
+            {% endif %}
+            
+            {% if page == 'signin'%}
+
+                <div class="account">
+                    <div class="account-login"><a href="/user/signin">Sing In</a></div>
+                    <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
+                </div>
+                <div class="home-url"><a class="home" href="/">Home</a></div>
+            
+            {% endif %}
+            
+            {% if page == 'contacts' %}
+                <div class="account">
+                    <div class="account-login"><a href="/user/signin">Sing In</a></div>
+                    <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
+                </div>
+                <div class="home-url"><a class="home" href="/">Home</a></div>
+            
+            {% endif %}
+
+        </header>
+        {% block body %}
+
+        {% endblock %}
     </body>
 </html>
