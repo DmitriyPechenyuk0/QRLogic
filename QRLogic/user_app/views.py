@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 def render_signup(request):
     context = {'page': 'signup'}
     if request.method == 'POST':
-        username = request.POST.get('username')
+        username = request.POST.get('login')
         email = request.POST.get('email')   
         password = request.POST.get('password')  
         try:
@@ -22,9 +22,9 @@ def render_signup(request):
 def render_signin(request):
     context = {'page': 'signin'}
     if request.method == 'POST':
-        username = request.POST.get('username')   
+        username = request.POST.get('login')   
         password = request.POST.get('password')  
-        password_confirmation = request.POST.get('password_confirmation')
+        password_confirmation = request.POST.get('confirmpassword')
 
         if password == password_confirmation:
             
@@ -32,15 +32,17 @@ def render_signin(request):
 
             if user:
                 login(request=request, user=user)
+                print("loginning")
+                return redirect('/')
             else:
                 context = {'user_error': True}
 
     return render(request, 'user_app/signin.html', context=context)
 
-def logout(request):
+def logout_render(request):
 
     logout(request)
-    return redirect('/user/signin')
+    return redirect('/')
 
 
 

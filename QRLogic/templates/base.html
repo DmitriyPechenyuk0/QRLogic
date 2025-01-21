@@ -11,27 +11,26 @@
         <header>
             <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
             
-            <!-- {% if page == 'home' %}
+            {% if page == 'home' and user.is_authenticated != True %}
                 <div class="account">
                     <div class="account-login"><a href="/user/signin">Sing In</a></div>
                     <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
                 </div>
                 <div class="contact"><a class="contact-url" href="/contacts">Contacts</a></div>
-            {% endif %} -->
+            {% endif %}
 
-            {% if page == 'home' %}
-
-            <div class="account-login"><a href="createqr">Create QR Codes</a></div>
-            <div class="account-login"><a href="myqr">Sing In</a></div>
+            {% if page == 'home' and user.is_authenticated %}
+            <div class="account-login"><a href="/">Create QR Codes</a></div>
+            <div class="account-login"><a href="/">My QR Codes</a></div>
+            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="contact"><a class="contact-url" href="/contacts">Contacts</a></div>
 
             <div class="account">
                 <div class="account-username">
-                    <a>Dmitriy Pechenyuk</a>
+                    <a>{{ user.username }}</a>
                     <a class="log-out-button" href="{% url 'logout' %}"><img class="log-out-icon" src="{% static 'home_app/images/log-out.png' %}" alt="log-out.png"> Log out</a>
                 </div>
             </div>
-
-            
             {% endif %}
 
             {% if page == 'signup'%}
@@ -53,13 +52,28 @@
             
             {% endif %}
             
-            {% if page == 'contacts' %}
+            {% if page == 'contacts' and user.is_authenticated != True  %}
                 <div class="account">
                     <div class="account-login"><a href="/user/signin">Sing In</a></div>
                     <div class="account-signup"><a href="/user/signup">Sign Up</a></div>
                 </div>
                 <div class="home-url"><a class="home" href="/">Home</a></div>
             
+            {% endif %}
+
+            {% if page == 'contacts' and user.is_authenticated  %}
+            <div class="home-url"><a class="home" href="/">Home</a></div>
+            <div class="account-login"><a href="/">Create QR Codes</a></div>
+            <div class="account-login"><a href="/">My QR Codes</a></div>
+            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+
+            <div class="account">
+                <div class="account-username">
+                    <a>{{ user.username }}</a>
+                    <a class="log-out-button" href="{% url 'logout' %}"><img class="log-out-icon" src="{% static 'home_app/images/log-out.png' %}" alt="log-out.png"> Log out</a>
+                </div>
+            </div>
+        
             {% endif %}
 
         </header>
