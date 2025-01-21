@@ -8,28 +8,9 @@
     font-family: 'Prompt';
 }
 
-body {
-    background-color: #FFFFFF; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-}
 
-header {
-    width: 100%;
-    max-width: 1920px;
-    height: 120px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FFFFFF;
-   
-    position: relative;
-}
 
-header .logo {
+.logo {
     position: absolute;
     height: 120px;
     width: 280px;
@@ -37,40 +18,77 @@ header .logo {
     left: 0px;
 }
 
-header div {
+header{
     display: flex;
-    gap: 30px; 
+    flex-direction: row;
+    height: 120px;
+    width: 100vw;
+    background-color: #ffffff;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
+    top: 0px;
+    left: 0px;
 }
 
-header a {
-    text-decoration: none;
-    color: #000; 
-    font-size: 16px; 
-    font-weight: normal;
-}
-
-main {
-    text-align: center;
-    margin-top: 10px; 
-    width: 1320px;
-    height: 700px;
-    background-color: #eeeeee;
-    border-radius: 10px; 
+.my{
+    display: flex;
+    font-size: 36px;
+    margin-left: 820px;
 }
 
 
-.your {
-    font-size: 24px;
-    color: black;
-    text-align: center;
-    margin-top: 20px; 
-    margin-bottom: 20px; 
+.qr-qr{
+    display: flex;
+    padding-left: 300px;
 }
 
-.no-codes-message {
-    border-radius: 4px; 
+
+.qr-container{
+    display: flex;
+    width: 1300px;
+    height: 750px;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+}
+
+  
+.qr-icon {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+  }
+  
+
+  .details {
+    display: flex;
+    width: 538px;
+    height: 200px;
+    background-color: #ffffff;
+    gap: 10;
+  }
+  
+  .color, .back {
     font-size: 16px;
-    color: black;
-    margin-top: 20px;
-}
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  
+  .black, .white {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+  }
+  
+  .black {
+    background-color: #000000;
+  }
+  
+  .white {
+    background-color: #ffffff;
+  }
+

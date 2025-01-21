@@ -7,36 +7,79 @@
 
 {% block body %}
 <header>
-    <div class="header-container">
+    <div>
         <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
-        <nav class="navigation">
+        <div class="navigation">
             <a href="/login">Login</a>
             <a href="/generateqr">Generate QR-code</a>
-            <a href="/yourqr">Your QR-codes</a>
+            <a href="/yourqr">My QR-codes</a>
             <a href="/signup">Sign Up</a>
             <a href="/contacts">Contacts</a>
-        </nav>
+        </div>
     </div>
 </header>
 
 <main>
-    <div class="qr-srttings">
-    <p class="colour">colour</p>
-    <p class="background">background colour</p>
-    <p class="logott">logo</p>
-    <p class="border">border settings</p>
-    </div>
-    <div class="settings"></div>
+
     <div class="qr-container">
+        <div class="main-main">
         <form method="post">
             {% csrf_token %}
+            <p class="p">settings</p>
             <img class="qr-icon" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-            <input class="url" placeholder="URL" type="text" name="url">
             <button type="submit" class="generate-btn" name="button">Generate QR-code</button>
             <button type="submit" class="download-btn" name="button">Download</button>
-           
-            </div>
-        </form>
-    </div>
+                <div class="url">
+                    <img class="url-logo" src="{% static 'home_app/images/url_settings.png' %}" alt="">
+                    <div class="url-settings">URL:</div>
+                    <input class="url-input" placeholder="URL" type="text" name="url">
+                </div>
+                <div class="container">
+                    <div class="color">
+                        <div class="color-settings">color:</div>
+                        <div class="black"></div>
+                        <p class="pp">#000000</p>
+                    </div>
+                    <div class="color-a-settings"></div>
+                        <div class="color-a">
+                            <div class="color-settings-a">background color:</div>
+                            <div class="white"></div>
+                            <p class="ppp">#FFFFFF</p>
+                        </div>
+                </div>
+                <div class="logo-settings">
+                    <div class="no-no">
+                        <img class="logo-logo" src="{% static 'home_app/images/logo_icon.png' %}" alt="">
+                        <p class="pppp">Add logo:</p>
+                        <div class="no-logo">no logo</div>
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="up-image" name="button">upload image</button>
+                        <button type="submit" class="del-image" name="button">delete image</button>
+                    </div>
+                </div>
+                <div class="container-p">
+                    <img class="settings-icon" src="{% static 'home_app/images/logo_logo.png' %}" alt="">
+                    <div class="control">
+                      <label for="indentation">indentation:</label>
+                      <div class="slider-container">
+                        <input type="range" id="indentation" min="1" max="10" value="1">
+                        <span class="slider-value">1</span>
+                      </div>
+                    </div>
+                    <div class="control">
+                      <label for="rounding-corners">rounding corners:</label>
+                      <div class="slider-container">
+                        <input type="range" id="rounding-corners" min="1" max="10" value="4">
+                        <span class="slider-value">4</span>
+                      </div>
+                    </div>
+                  </div>
+                   
+                    
+                    
+                
+            
+        
 </main>
 {% endblock %}
