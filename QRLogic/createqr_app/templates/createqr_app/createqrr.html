@@ -26,26 +26,24 @@
         <form method="post">
             {% csrf_token %}
             <p class="p">settings</p>
-            <img class="qr-icon" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-            <button type="submit" class="generate-btn" name="button">Generate QR-code</button>
-            <button type="submit" class="download-btn" name="button">Download</button>
-                <div class="url">
-                    <img class="url-logo" src="{% static 'home_app/images/url_settings.png' %}" alt="">
-                    <div class="url-settings">URL:</div>
-                    <input class="url-input" placeholder="URL" type="text" name="url">
-                </div>
+            
+
+            <div>
+                
                 <div class="container">
                     <div class="color">
                         <div class="color-settings">color:</div>
                         <div class="black"></div>
                         <p class="pp">#000000</p>
-                    </div>
+                </div>
                     <div class="color-a-settings"></div>
+
                         <div class="color-a">
                             <div class="color-settings-a">background color:</div>
                             <div class="white"></div>
                             <p class="ppp">#FFFFFF</p>
                         </div>
+
                 </div>
                 <div class="logo-settings">
                     <div class="no-no">
@@ -61,20 +59,30 @@
                 <div class="container-p">
                     <img class="settings-icon" src="{% static 'home_app/images/logo_logo.png' %}" alt="">
                     <div class="control">
-                      <label for="indentation">indentation:</label>
-                      <div class="slider-container">
-                        <input type="range" id="indentation" min="1" max="10" value="1">
+                        <label for="indentation">indentation:</label>
+                    <div class="slider-container">
+                        <input type="range" id="indentation" min="1" max="100" value="1">
                         <span class="slider-value">1</span>
-                      </div>
+                    </div>
                     </div>
                     <div class="control">
-                      <label for="rounding-corners">rounding corners:</label>
-                      <div class="slider-container">
-                        <input type="range" id="rounding-corners" min="1" max="10" value="4">
-                        <span class="slider-value">4</span>
-                      </div>
+                        <label for="rounding-corners">rounding corners:</label>
+                        <div class="slider-container">
+                            <input type="range" id="rounding-corners" min="1" max="100" value="1">
+                            <span class="slider-value">4</span>
+
+                        </div>
                     </div>
-                  </div>
+            </div>
+
+            <div class="url">
+                <img class="url-logo" src="{% static 'home_app/images/url_settings.png' %}" alt="">
+                <div class="url-settings">URL:</div>
+                <input class="url-input" placeholder="URL" type="text" name="url">
+            </div>
+        </form>
+    </div>
+                    
                    
                     
                     

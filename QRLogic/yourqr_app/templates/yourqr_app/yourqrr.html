@@ -8,28 +8,50 @@
 
 {% block body %}
 
-<header>
-    <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
-    
-    <div>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign Up</a>
-        <a href="/contacts">Contacts</a>
-        <a href="/yourqr">My QR-codes</a>
-    </div>
-</header>
+
 
 <main>
-    <h1 class="my">YOUR QR-codes</h1>
-    <div class="qr-qr">
-        <div class="qr-container">
-            <div class="details">
-                <img class="qr-icon" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-                <p class="color">color: <span class="black">#000000</span></p>
-                <p class="back">background color: <span class="white">#FFFFFF</span></p>
+    <div class="qwe">
+        <div class="qwer">
+            <h1>YOUR QR-codes</h1>
+            <div class="container">
+                <div class="container-settings">
+                    <div class="qr-code">
+                        <img class="logo-logo" src="{% static 'home_app/images/qr-code.png' %}" alt="">
+                        <p>Name: qrlogic.com</p>
+                        <p class="pp">Date: 24.01.2025</p>
+                    </div>
+                    <div class="settings">
+                        <div class="color-box-p">
+                            <p>color:</p>
+                            <input class="input-a" type="color">
+                        </div>
+                        <div class="color-box">
+                            <p>background color:</p>
+                            <input class="input-b" type="color">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="filter">
+            <p class="popop">Filters</p>
+            <div class="filter-settings">
+                <div class="filter-p">
+                    <img src="" alt=""> 
+                    <div class="name">
+                        <input class="date" type="date">
+                        <button type="submit" class="fnd" name="button">find</button>
+                    </div>
+                    <div class="name">
+                        <div class="pop"><p class="pppp">Name</p>
+                        <input class="text" type="text"></div>
+                        <button type="submit" class="fndd" name="button">find</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>           
 </main>
 
 {% endblock %}
