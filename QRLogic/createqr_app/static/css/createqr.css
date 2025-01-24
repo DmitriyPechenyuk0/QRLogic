@@ -111,6 +111,7 @@ header .navigation a {
     justify-content: center;
     flex-direction: column;
     padding-left: 10;
+    padding: 10px;
 }
 
 
@@ -142,6 +143,7 @@ header .navigation a {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 10px;
 }
 
 .color {
@@ -162,6 +164,7 @@ header .navigation a {
 .color-settings {
     color: #7A7979;
     font-size: 20px;
+    padding: 10px;
 }
 
 .black {
@@ -218,6 +221,7 @@ header .navigation a {
     background-color: #FFFFFF;
     margin-top: 10px;
     justify-content: space-between;
+    padding: 10px;
     
 }
 
@@ -301,6 +305,7 @@ header .navigation a {
     background-color: #ffffff;
     padding: 20px;
     margin-top: 10px;
+    padding: 10px;
   }
   
   .settings-icon {
@@ -313,6 +318,7 @@ header .navigation a {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
   }
   
   label {
