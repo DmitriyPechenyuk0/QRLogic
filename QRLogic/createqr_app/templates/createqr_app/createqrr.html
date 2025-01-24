@@ -6,37 +6,72 @@
 {% endblock %}
 
 {% block body %}
-<header>
-    <div class="header-container">
-        <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
-        <nav class="navigation">
-            <a href="/login">Login</a>
-            <a href="/generateqr">Generate QR-code</a>
-            <a href="/yourqr">Your QR-codes</a>
-            <a href="/signup">Sign Up</a>
-            <a href="/contacts">Contacts</a>
-        </nav>
-    </div>
-</header>
-
 <main>
-    <div class="qr-srttings">
-    <p class="colour">colour</p>
-    <p class="background">background colour</p>
-    <p class="logott">logo</p>
-    <p class="border">border settings</p>
-    </div>
-    <div class="settings"></div>
-    <div class="qr-container">
-        <form method="post">
-            {% csrf_token %}
-            <img class="qr-icon" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-            <input class="url" placeholder="URL" type="text" name="url">
-            <button type="submit" class="generate-btn" name="button">Generate QR-code</button>
-            <button type="submit" class="download-btn" name="button">Download</button>
-           
+    <form method="post">
+        {% csrf_token %}
+        <div class="all-in-one" >
+            <div class="settings">
+                <p class="title">Settings</p>
+                <div class="url">
+                    <div class="unknown-div">
+                        <img class="icon-url" src="{% static 'home_app/images/url-icon.png' %}" alt="url-icon.png">
+                        <p class="url-title" >URL</p>
+                    </div>
+                    <input class="input-url" type="text" placeholder="example.com">
+                </div>
+                <div class="color">
+                    <div  class="main-color">
+                        <p class="color-title" >color</p>
+                        <input class="input-color" name="color" type="color">
+                    </div>
+                    <div class="background-color">
+                        <p class="color-title">background-color</p>
+                        <input class="input-color" name="background-color" type="color">
+                    </div>
+                </div>
+                <div class="entry-logo">
+                    <div class="left-logo">
+                        <!-- <img src="" alt="logo-icon.png"> -->
+                        <p>Add logo</p>
+                        <div class="logo-div">
+                            <img src="" alt="logo">
+                        </div>
+                    </div>
+                    <div class="right-logo">
+                        <input class="upload-logo" name="logo" type="file">
+                        <button class="delete-logo">Delete logo</button>
+                    </div>
+                </div>
+                <div class="border-parameters">
+                    <img class="icon-parameter" src="{% static 'home_app/images/parameter-icon.png' %}" alt="parameter-icon.png">
+                    <div class="indentation">
+                        <p>indentation</p>
+                        <input type="range" name="indentation" class="input-indentation" min="1" max="100">
+                        <p>38</p>
+                    </div>
+                    <div class="rounding-corners">
+                        <p class="rounding-corners-title" >rounding&nbspcorners</p>
+                        <input type="range" name="rounding-corners" class="input-rounding-corners" min="1" max="100">
+                        <p>32</p>
+                    </div>
+
+                </div>
             </div>
-        </form>
-    </div>
+
+
+
+            <div class="qr-code">
+                <div class="qr">
+                    <img src="" alt="qrcode.png">
+                </div>
+                <button>
+                    Create QR-code
+                </button>
+                <button>
+                    Download
+                </button>
+            </div>
+        </div>
+    </form>
 </main>
 {% endblock %}
