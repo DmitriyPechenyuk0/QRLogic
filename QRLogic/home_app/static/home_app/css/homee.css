@@ -45,12 +45,14 @@
         vertical-align: middle;   
     }
     ul{
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
     }
     li{
         text-align: start;
-        font-size: 22px;
+        font-size: 20px;
+        
     }
     a{
         font-size: 24px;
@@ -59,10 +61,12 @@
     }
     .info{
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: start;
         height: 400px;
         width: 380px;
+        padding-top: 20px;
+        padding-left: 40px;
     }
     .info-about-plan{
         display: flex;

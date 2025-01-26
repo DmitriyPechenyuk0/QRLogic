@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="{% static 'css/createqr.css' %}">
 {% endblock %}
 
+{% block title %}
+
+Create QR Code
+{% endblock %}
 {% block body %}
 <main>
     <form method="post">
@@ -31,14 +35,17 @@
                 </div>
                 <div class="entry-logo">
                     <div class="left-logo">
-                        <!-- <img src="" alt="logo-icon.png"> -->
-                        <p>Add logo</p>
+                        <div class="logo-icon-div">
+                            <img class="logo-icon" src="{% static 'home_app/images/logo-icon.png' %}" alt="logo-icon.png">
+                        </div>
+                        <!-- <p class="add-logo-title" >Add logo</p> -->
                         <div class="logo-div">
-                            <img src="" alt="logo">
+                            <img class="logo-class" src="{% static 'home_app/images/logo-div-icon-standart.png' %}" alt="">
                         </div>
                     </div>
                     <div class="right-logo">
-                        <input class="upload-logo" name="logo" type="file">
+                        <input class="upload-logo" id="upload-logo" name="logo" type="file">
+                        <label class="label-upload-logo" for="upload-logo">Upload logo</label>
                         <button class="delete-logo">Delete logo</button>
                     </div>
                 </div>
@@ -54,7 +61,6 @@
                         <input type="range" name="rounding-corners" class="input-rounding-corners" min="1" max="100">
                         <p>32</p>
                     </div>
-
                 </div>
             </div>
 
@@ -62,12 +68,12 @@
 
             <div class="qr-code">
                 <div class="qr">
-                    <img src="" alt="qrcode.png">
+                    <img class="qr-c" src="{% static 'home_app/images/qr-code.png' %}" alt="qrcode.png">
                 </div>
-                <button>
+                <button class="create-qr-code button-qr" type="submit">
                     Create QR-code
                 </button>
-                <button>
+                <button class="download button-qr" type="submit">
                     Download
                 </button>
             </div>

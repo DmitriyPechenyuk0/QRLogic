@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 def render_ceateqr_app(request):
+    context = {'page': 'createqr'}
     if request.method == 'POST':
         url = request.POST.get('url')
         qr = segno.make_qr(
@@ -16,5 +17,5 @@ def render_ceateqr_app(request):
             kind='png'
         )
 
-        return render(request, 'createqr_app/createqrr.html')
-    return render(request, 'createqr_app/createqrr.html')
+        return render(request, 'createqr_app/createqrr.html', context=context)
+    return render(request, 'createqr_app/createqrr.html', context=context)

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pridi:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
 main{
     display: flex;
     flex-direction: column;
@@ -60,12 +62,21 @@ main{
     display: flex;
     flex-direction: row;
     height: 60px;
-    width: 560px;
+    width: fit-content;
     justify-content: start;
     align-items: center;
     padding: 5px;
     gap: 10px;
     border-radius: 10px;
+}
+.social{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
 }
 .titles{
     display: flex;
@@ -169,9 +180,28 @@ main{
     border: none;
 }
 
-.map{
-    display: block;
+.mapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 560px;
-    height: 300px;
+    height: 340px;
+    gap: 5px;
+    margin-top: 220px;
 
+}
+.map-title{
+    font-size: 20px;
+}
+.map-url{
+    color: blue;
+    text-decoration: underline;
+}
+iframe{
+    border-radius: 10px;
+}
+.map{
+    border: 1px solid black;
+    border-radius: 10px;
 }

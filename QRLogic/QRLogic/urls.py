@@ -33,7 +33,7 @@ urlpatterns = [
     
     path('user/', include('user_app.urls')),
 
-    path('my_qr/', render_yourqr_app, name= 'myqr_app'),
+    path('myqr/', render_yourqr_app, name= 'myqr_app'),
 
-    path("create_qr/", render_ceateqr_app, name="createqr_app")
+    path("createqr/", render_ceateqr_app, name="createqr_app")
 ]
