@@ -90,6 +90,20 @@
             </div>
             {% endif %}
 
+            {% if page == 'myqr' and user.is_authenticated %}
+            <div class="home-url"><a class="home" href="/">Home</a></div>
+            <div class="account-login"><a href="/">Create QR Codes</a></div>
+            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="contact"><a class="contact-url" href="/contacts">Contacts</a></div>
+
+            <div class="account">
+                <div class="account-username">
+                    <a>{{ user.username }}</a>
+                    <a class="log-out-button" href="{% url 'logout' %}"><img class="log-out-icon" src="{% static 'home_app/images/log-out.png' %}" alt="log-out.png"> Log out</a>
+                </div>
+            </div>
+            {% endif %}
+
             {% if page == 'managesub' and user.is_authenticated %}
             <div class="home-url"><a class="home" href="/">Home</a></div>
             <div class="account-login"><a href="/">Create QR Codes</a></div>
