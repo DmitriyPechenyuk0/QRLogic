@@ -12,7 +12,7 @@ Create QR Code
 {% block body %}
 
 <main>
-    <div class="main-div">
+    <form class="main-div">
         <div class="settings">
             <p class="settings-title">Settings</p>
             <div class="colors">
@@ -45,7 +45,9 @@ Create QR Code
                 <div class="logo-buttons">
                     <img class="logo-icon" src="{% static '/images/No-Logo.png' %}">
                     <div class="buttons">
-                        <button class="button-upload-logo button-logo" type="submit">Upload Logo</button>
+                        <!-- <button class="button-upload-logo button-logo" type="submit">Upload Logo</button> -->
+                        <input class="input-file-upload" type="file" name="upload" id="upload">
+                        <label for="upload" class="upload-label">upload</label>
                         <button class="button-delete-logo button-logo" type="submit">Delete Logo</button>
                     </div>
                 </div>
@@ -98,7 +100,7 @@ Create QR Code
                     <img class="qr" src="{% static '/images/qr-code.png' %}">
                 </div>
                 <div>
-                    <input placeholder="example.com" class="input-url-qr" type="text">
+                    <input placeholder="example.com" name="input-url" class="input-url-qr" type="text">
                 </div>
                 <div>
                     <button class="create-qr-button" type="submit">Create QR</button>
@@ -108,7 +110,7 @@ Create QR Code
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 </main>
 
 {% endblock %}
