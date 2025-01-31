@@ -10,74 +10,105 @@
 Create QR Code
 {% endblock %}
 {% block body %}
+
 <main>
-    <form method="post">
-        {% csrf_token %}
-        <div class="all-in-one" >
-            <div class="settings">
-                <p class="title">Settings</p>
-                <div class="url">
-                    <div class="unknown-div">
-                        <img class="icon-url" src="{% static 'home_app/images/url-icon.png' %}" alt="url-icon.png">
-                        <p class="url-title" >URL</p>
-                    </div>
-                    <input class="input-url" type="text" placeholder="example.com">
+    <div class="main-div">
+        <div class="settings">
+            <p class="settings-title">Settings</p>
+            <div class="colors">
+                <div class="title-colors">
+                    <img class="title-color-icon" src="{% static '/images/color-settings.png' %}">
+                    <p class="title-color">Color Settings</p>
                 </div>
-                <div class="color">
-                    <div  class="main-color">
-                        <p class="color-title" >color</p>
-                        <input class="input-color" name="color" type="color">
-                    </div>
-                    <div class="background-color">
-                        <p class="color-title">background-color</p>
-                        <input class="input-color" name="background-color" type="color">
-                    </div>
-                </div>
-                <div class="entry-logo">
-                    <div class="left-logo">
-                        <div class="logo-icon-div">
-                            <img class="logo-icon" src="{% static 'home_app/images/logo-icon.png' %}" alt="logo-icon.png">
-                        </div>
-                        <!-- <p class="add-logo-title" >Add logo</p> -->
-                        <div class="logo-div">
-                            <img class="logo-class" src="{% static 'home_app/images/logo-div-icon-standart.png' %}" alt="">
+                <div class="divs-colors">
+                    <div class="substrate-color">
+                        <p class="substrate-color-p">Substrate color</p>
+                        <div class="input-color">
+                            <input class="input-colored input-substrate" value="#FFFFFF" type="color">
+                            <p class="input-hex">#FFFFFF</p>
                         </div>
                     </div>
-                    <div class="right-logo">
-                        <input class="upload-logo" id="upload-logo" name="logo" type="file">
-                        <label class="label-upload-logo" for="upload-logo">Upload logo</label>
-                        <button class="delete-logo">Delete logo</button>
-                    </div>
-                </div>
-                <div class="border-parameters">
-                    <img class="icon-parameter" src="{% static 'home_app/images/parameter-icon.png' %}" alt="parameter-icon.png">
-                    <div class="indentation">
-                        <p>indentation</p>
-                        <input type="range" name="indentation" class="input-indentation" min="1" max="100">
-                        <p>38</p>
-                    </div>
-                    <div class="rounding-corners">
-                        <p class="rounding-corners-title" >rounding&nbspcorners</p>
-                        <input type="range" name="rounding-corners" class="input-rounding-corners" min="1" max="100">
-                        <p>32</p>
+                    <div class="primary-color">
+                        <p class="primary-color-p" >Primary color</p>
+                        <div class="input-color">
+                            <input class="input-colored input-primary" value="#000000" type="color">
+                            <p class="input-hex">#000000</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-            <div class="qr-code">
-                <div class="qr">
-                    <img class="qr-c" src="{% static 'home_app/images/qr-code.png' %}" alt="qrcode.png">
+            <div class="logo-setting">
+                <div class="title-logo" >
+                    <img class="title-logo-icon" src="{% static '/images/add-logo-icon.png' %}">
+                    <p class="title-logo-p" >Add Logo Image</p>
                 </div>
-                <button class="create-qr-code button-qr" type="submit">
-                    Create QR-code
-                </button>
-                <button class="download button-qr" type="submit">
-                    Download
-                </button>
+                <div class="logo-buttons">
+                    <img class="logo-icon" src="{% static '/images/No-Logo.png' %}">
+                    <div class="buttons">
+                        <button class="button-upload-logo button-logo" type="submit">Upload Logo</button>
+                        <button class="button-delete-logo button-logo" type="submit">Delete Logo</button>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-style">
+                <div class="title-custom">
+                    <img class="title-custom-icon" src="{% static '/images/custom-style.png' %}">
+                    <p class="title-custom-p">Custom Style</p>
+                </div>
+                <div class="shapes">
+                    <div class="any-shape">
+                        <p class="shape-title">Frame Shape</p>
+                        <div class="div-shapes">
+                           <div class="shape"></div>
+                           <div class="shape"></div>
+                           <div class="shape"></div>
+                           <div class="shape"></div>
+                           <div class="shape"></div>
+                           <div class="shape"></div>
+                        </div>
+                    </div>
+                    <div class="any-shape">
+                        <p class="shape-title">Square Shape</p>
+                        <div class="div-shapes">
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                        </div>
+                    </div>
+                    <div class="any-shape">
+                        <p class="shape-title">Body Shape</p>
+                        <div class="div-shapes">
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                            <div class="shape"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </form>
+        <div class="secondary-div">
+            <div class="qr-field">
+                <div class="qr-code">
+                    <img class="qr" src="{% static '/images/qr-code.png' %}">
+                </div>
+                <div>
+                    <input placeholder="example.com" class="input-url-qr" type="text">
+                </div>
+                <div>
+                    <button class="create-qr-button" type="submit">Create QR</button>
+                </div>
+                <div>
+                    <button class="download-button" type="submit">Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
+
 {% endblock %}

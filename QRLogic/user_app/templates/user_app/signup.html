@@ -34,6 +34,12 @@ Sign up to QRLogic
                     <input type="password" name="confirmpassword">
                 </div>
             </div>
+            {% if integrity_error %}
+                <p class="alert">User with this login already exists</p>
+            {% endif %}
+            {% if password_error %}
+            <p class="alert" >Passwords don't match</p>
+            {% endif %}
         </div>
         <button class="submit-button" name="submit-button">Submit</button>
     </form>

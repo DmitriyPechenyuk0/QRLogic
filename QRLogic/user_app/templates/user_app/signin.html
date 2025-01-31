@@ -25,10 +25,11 @@ Sign in to QRLogic
                     <p>Password</p>
                     <input type="password" name="password">
                 </div>
-                <div class="password-confirm-div">
-                    <p>Confirm password</p>
-                    <input type="password" name="confirmpassword">
-                </div>
+
+                {% if user_error %}
+                    <p class="alert">User with this login not found</p>
+                {% endif %}
+
             </div>
         </div>
         <button class="submit-button" name="submit-button">Submit</button>

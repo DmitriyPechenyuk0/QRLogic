@@ -11,12 +11,16 @@ def render_signup(request):
         username = request.POST.get('login')
         email = request.POST.get('email')   
         password = request.POST.get('password')  
-        try:
-            User.objects.create_user(username=username,  password=password, email=email)
-            return redirect('/user/signin/')
+        password_confirmation = request.POST.get('confirmpassword')
+        if password == password_confirmation:
+            try:
+                User.objects.create_user(username=username,  password=password, email=email)
+                return redirect('/user/signin/')
 
-        except IntegrityError:
-            context = {'integrity_error': True}
+            except IntegrityError:
+                context = {'integrity_error': True}
+        else:
+            context = {'password_error': True}
     return render(request, 'user_app/signup.html', context=context)
 
 def render_signin(request):
@@ -24,18 +28,15 @@ def render_signin(request):
     if request.method == 'POST':
         username = request.POST.get('login')   
         password = request.POST.get('password')  
-        password_confirmation = request.POST.get('confirmpassword')
 
-        if password == password_confirmation:
-            
-            user = authenticate(request=request, username=username, password=password)
+        user = authenticate(request=request, username=username, password=password)
 
-            if user:
-                login(request=request, user=user)
-                print("loginning")
-                return redirect('/')
-            else:
-                context = {'user_error': True}
+        if user:
+            login(request=request, user=user)
+            print("loginning")
+            return redirect('/')
+        else:
+            context = {'user_error': True}
 
     return render(request, 'user_app/signin.html', context=context)
 

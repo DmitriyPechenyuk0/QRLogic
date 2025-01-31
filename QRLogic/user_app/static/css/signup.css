@@ -9,6 +9,10 @@ input{
     padding: 10px 10px;
 
 }
+input:focus{
+    border: none;
+    border-radius: 6px;
+}
 
 .title-reg{
     font-size: 28px;
@@ -22,9 +26,9 @@ input{
     align-items: center;
     gap: 50px;
     padding: 20px 20px;
-    border: 1px solid;
+    border: none;
     border-radius: 40px;
-    background-color: #fcfcfc;
+    background-color: #f8f8f8;
 }
 .form{
     display: flex;

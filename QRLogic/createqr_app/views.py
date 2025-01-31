@@ -1,10 +1,11 @@
 from django.shortcuts import render
 import segno, os
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
+@login_required
 def render_ceateqr_app(request):
     context = {'page': 'createqr'}
     if request.method == 'POST':
