@@ -12,7 +12,8 @@ Create QR Code
 {% block body %}
 
 <main>
-    <form class="main-div">
+    <form class="main-div" method="post">
+        {% csrf_token %}
         <div class="settings">
             <p class="settings-title">Settings</p>
             <div class="colors">
@@ -100,7 +101,7 @@ Create QR Code
                     <img class="qr" src="{% static '/images/qr-code.png' %}">
                 </div>
                 <div>
-                    <input placeholder="example.com" name="input-url" class="input-url-qr" type="text">
+                    <input placeholder="example.com" name="url" class="input-url-qr" type="text">
                 </div>
                 <div>
                     <button class="create-qr-button" type="submit">Create QR</button>

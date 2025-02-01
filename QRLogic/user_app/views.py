@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from .models import Profile
 from django.db.utils import IntegrityError
 from django.contrib.auth import authenticate, login, logout
+import os, datetime
+from QRLogic import settings
 
 # Create your views here.
 
@@ -14,7 +17,20 @@ def render_signup(request):
         password_confirmation = request.POST.get('confirmpassword')
         if password == password_confirmation:
             try:
-                User.objects.create_user(username=username,  password=password, email=email)
+                user = User.objects.create_user(
+                    username=username,
+                    password=password,
+                    email=email)
+                
+                user_qrs = os.path.join(settings.MEDIA_ROOT, f"{user.username}_{str(user.id)}")
+                os.makedirs(user_qrs, exist_ok=True)
+
+                Profile.objects.create(
+                    user=user,
+                    subscription = 1,
+                    subscription_expires=datetime.date.today() + datetime.timedelta(weeks=261)
+                )
+
                 return redirect('/user/signin/')
 
             except IntegrityError:
@@ -33,7 +49,6 @@ def render_signin(request):
 
         if user:
             login(request=request, user=user)
-            print("loginning")
             return redirect('/')
         else:
             context = {'user_error': True}
