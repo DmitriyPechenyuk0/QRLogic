@@ -21,6 +21,8 @@ from contact_app.views import render_contact_app
 from managesub_app.views import render_managesub_app
 from yourqr_app.views import render_yourqr_app
 from createqr_app.views import render_ceateqr_app
+from . import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,3 +39,6 @@ urlpatterns = [
 
     path("createqr/", render_ceateqr_app, name="createqr_app")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
