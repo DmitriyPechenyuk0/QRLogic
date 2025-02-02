@@ -35,8 +35,6 @@ def render_ceateqr_app(request):
             owner = profile,
             url=url,
             name=qr_name,
-            # create_date = int(datetime.date.today()),
-            # expire_date = int(datetime.date(day=30))
         )
 
         return render(request, 'createqr_app/createqrr.html', context=context)
