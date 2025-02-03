@@ -25,15 +25,15 @@ Create QR Code
                     <div class="substrate-color">
                         <p class="substrate-color-p">Substrate color</p>
                         <div class="input-color">
-                            <input class="input-colored input-substrate" value="#FFFFFF" type="color">
-                            <p class="input-hex">#FFFFFF</p>
+                            <input class="input-colored input-substrate" name="light-color" value="#FFFFFF" type="color">
+                            <p class="input-hex p-substrate">#FFFFFF</p>
                         </div>
                     </div>
                     <div class="primary-color">
                         <p class="primary-color-p" >Primary color</p>
                         <div class="input-color">
-                            <input class="input-colored input-primary" value="#000000" type="color">
-                            <p class="input-hex">#000000</p>
+                            <input class="input-colored input-primary" name="dark-color"  value="#000000" type="color">
+                            <p class="input-hex p-primary">#000000</p>
                         </div>
                     </div>
                 </div>
@@ -113,5 +113,8 @@ Create QR Code
         </div>
     </form>
 </main>
+
+
+<script src="{% static 'js/createqr.js' %}"></script>
 
 {% endblock %}
