@@ -24,3 +24,34 @@ inputPrimary.addEventListener('input', () => {
     pPrimary.textContent = inputPrimary.value;
     labelPrimary.style.backgroundColor = inputPrimary.value;
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.querySelector(".input-file-upload");
+    const logoImage = document.querySelector(".logo-icon");
+
+    fileInput.addEventListener("change", function () {
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                logoImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.querySelector(".input-file-upload");
+    const deleteButton = document.querySelector(".button-delete-logo");
+    const logoImage = document.querySelector(".logo-icon");
+
+    deleteButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        fileInput.value = "";
+        logoImage.src = "{% static '/images/No-Logo.png' %}";
+    });
+});

@@ -22,8 +22,11 @@ def render_signup(request):
                     password=password,
                     email=email)
                 
-                user_qrs = os.path.join(settings.MEDIA_ROOT, f"{user.username}_{str(user.id)}")
+                user_qrs = os.path.join(settings.MEDIA_ROOT, f"{user.username}_{str(user.id)}", "QRCodes")
+                user_logos = os.path.join(settings.MEDIA_ROOT, f"{user.username}_{str(user.id)}", "Logos")
+                
                 os.makedirs(user_qrs, exist_ok=True)
+                os.makedirs(user_logos, exist_ok=True)
 
                 Profile.objects.create(
                     user=user,

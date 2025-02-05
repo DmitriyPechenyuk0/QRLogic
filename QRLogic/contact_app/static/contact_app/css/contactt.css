@@ -177,6 +177,8 @@ main{
 }
 .submit-button:hover{
     background-color: #69ca60;
+    scale: 102%;
+    cursor: pointer;
     border: none;
 }
 

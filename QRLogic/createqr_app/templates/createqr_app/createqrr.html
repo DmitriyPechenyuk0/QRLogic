@@ -12,7 +12,7 @@ Create QR Code
 {% block body %}
 
 <main>
-    <form class="main-div" method="post">
+    <form class="main-div" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
         <div class="settings">
             <p class="settings-title">Settings</p>
@@ -46,9 +46,12 @@ Create QR Code
                     <p class="title-logo-p" >Add Logo Image</p>
                 </div>
                 <div class="logo-buttons">
-                    <img class="logo-icon" src="{% static '/images/No-Logo.png' %}">
+                    {% if logo == None %}
+                        <img class="logo-icon " src="{% static '/images/No-Logo.png' %}">
+                    {% else %}
+                        <img class="logo-icon" src="{{ logo }}">
+                    {% endif %}
                     <div class="buttons">
-                        <!-- <button class="button-upload-logo button-logo" type="submit">Upload Logo</button> -->
                         <input class="input-file-upload" type="file" name="upload" id="upload">
                         <label for="upload" class="upload-label">Upload Logo</label>
                         <button class="button-delete-logo button-logo" type="submit">Delete Logo</button>
