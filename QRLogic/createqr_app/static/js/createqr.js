@@ -4,13 +4,15 @@ const pSubstrate = document.querySelector('.p-substrate');
 const pPrimary = document.querySelector('.p-primary');
 let labelPrimary = document.querySelector('.label-primary')
 let labelSubstrate = document.querySelector('.label-substrate')
-
-
+const fileInput = document.querySelector(".input-file-upload");
+const logoImage = document.querySelector(".logo-icon");
+const deleteButton = document.querySelector(".button-delete-logo");
 const defaultColor = InputSubstrate.value;
+const defaultColor2 = inputPrimary.value;
+
 labelSubstrate.style.backgroundColor = defaultColor;
 pSubstrate.textContent = defaultColor;
 
-const defaultColor2 = inputPrimary.value;
 labelPrimary.style.backgroundColor = defaultColor2;
 pPrimary.textContent = defaultColor2;
 
@@ -25,33 +27,23 @@ inputPrimary.addEventListener('input', () => {
     labelPrimary.style.backgroundColor = inputPrimary.value;
 });
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const fileInput = document.querySelector(".input-file-upload");
-    const logoImage = document.querySelector(".logo-icon");
-
-    fileInput.addEventListener("change", function () {
-        const file = fileInput.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                logoImage.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            logoImage.style.border = "1px solid black"
+            logoImage.style.borderRadius = "6px"
+            logoImage.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    const fileInput = document.querySelector(".input-file-upload");
-    const deleteButton = document.querySelector(".button-delete-logo");
-    const logoImage = document.querySelector(".logo-icon");
-
-    deleteButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        fileInput.value = "";
-        logoImage.src = "{% static '/images/No-Logo.png' %}";
-    });
+deleteButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    fileInput.value = "";
+    logoImage.style.border = "none"
+    logoImage.style.borderRadius = "0px"
+    logoImage.src = logoImage.dataset.noLogo;
 });
