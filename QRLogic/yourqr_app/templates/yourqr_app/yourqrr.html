@@ -5,36 +5,37 @@
     <link rel="stylesheet" href="{% static 'css/yourqrr.css' %}">
 {% endblock %}
 
-
 {% block body %}
-
-
-
 <main>
     <div class="qwe">
         <div class="qwer">
-            <h1>YOUR QR-codes</h1>
+            <h1>Your QR codes</h1>
             <div class="container">
+                {% for qr in qrcodes %}
                 <div class="container-settings">
                     <div class="qr-code">
-                        <img class="logo-logo" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-                        <p>Name: qrlogic.com</p>
-                        <p class="pp">Date: 24.01.2025</p>
+                        {% if qr.image_url %}
+                            <img class="logo-logo" src="{% static 'home_app/images/qr-code.png' %}" alt="">
+                        {% endif %}
+                        <p>Url: {{ qr.url }}</p>
+                        <p class="pp">Date: {{ qr.create_date|date:"d.m.Y" }}</p>
                     </div>
                     <div class="settings">
                         <div class="color-box-p">
-                            <p>color:</p>
-                            <input class="input-a" type="color">
+                            <p>Primary color:</p>
+                            <input class="input-a" type="color" value="{{ qr.color }}" disabled>
                         </div>
                         <div class="color-box">
-                            <p>background color:</p>
-                            <input class="input-b" type="color">
+                            <p>Substrate color:</p>
+                            <input class="input-b" type="color" value="{{ qr.background_color }}" disabled>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        <div class="filter">
+        <form method="post" class="filter">
+            {% csrf_token %}
             <p class="popop">Filters</p>
             <div class="filter-settings">
                 <div class="filter-p">
@@ -42,10 +43,17 @@
                     <div class="name">
                         <input class="date" type="date">
                         <button type="submit" class="fnd" name="button">find</button>
+                    </div>
+                    <div class="name">
+                        <div class="pop"><p class="pppp">Url</p>
+                        <input class="text" type="text"></div>
+                        <button type="submit" class="fndd" name="button">find</button>
+                    </div>  
                 </div>
             </div>
-        </div>
+        </form>
     </div>           
 </main>
+
 
 {% endblock %}
