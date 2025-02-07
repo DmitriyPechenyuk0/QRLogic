@@ -5,89 +5,117 @@
     <link rel="stylesheet" href="{% static 'css/createqr.css' %}">
 {% endblock %}
 
+{% block title %}
+
+Create QR Code
+{% endblock %}
 {% block body %}
-<header>
-    <div>
-        <img class="logo" src="{% static 'home_app/images/Logo.png' %}" alt="Logo">
-        <div class="navigation">
-            <a href="/login">Login</a>
-            <a href="/generateqr">Generate QR-code</a>
-            <a href="/yourqr">My QR-codes</a>
-            <a href="/signup">Sign Up</a>
-            <a href="/contacts">Contacts</a>
-        </div>
-    </div>
-</header>
 
 <main>
-
-    <div class="qr-container">
-        <div class="main-main">
-        <form method="post">
-            {% csrf_token %}
-            <p class="p">settings</p>
-            
-
-            <div>
-                
-                <div class="container">
-                    <div class="color">
-                        <div class="color-settings">color:</div>
-                        <div class="black"></div>
-                        <p class="pp">#000000</p>
+    <form class="main-div" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <div class="settings">
+            <p class="settings-title">Settings</p>
+            <div class="colors">
+                <div class="title-colors">
+                    <img class="title-color-icon" src="{% static '/images/color-settings.png' %}">
+                    <p class="title-color">Color Settings</p>
                 </div>
-                    <div class="color-a-settings"></div>
-
-                        <div class="color-a">
-                            <div class="color-settings-a">background color:</div>
-                            <div class="white"></div>
-                            <p class="ppp">#FFFFFF</p>
-                        </div>
-
-                </div>
-                <div class="logo-settings">
-                    <div class="no-no">
-                        <img class="logo-logo" src="{% static 'home_app/images/logo_icon.png' %}" alt="">
-                        <p class="pppp">Add logo:</p>
-                        <div class="no-logo">no logo</div>
-                    </div>
-                    <div class="button">
-                        <button type="submit" class="up-image" name="button">upload image</button>
-                        <button type="submit" class="del-image" name="button">delete image</button>
-                    </div>
-                </div>
-                <div class="container-p">
-                    <img class="settings-icon" src="{% static 'home_app/images/logo_logo.png' %}" alt="">
-                    <div class="control">
-                        <label for="indentation">indentation:</label>
-                    <div class="slider-container">
-                        <input type="range" id="indentation" min="1" max="100" value="1">
-                        <span class="slider-value">1</span>
-                    </div>
-                    </div>
-                    <div class="control">
-                        <label for="rounding-corners">rounding corners:</label>
-                        <div class="slider-container">
-                            <input type="range" id="rounding-corners" min="1" max="100" value="1">
-                            <span class="slider-value">4</span>
-
+                <div class="divs-colors">
+                    <div class="substrate-color">
+                        <p class="substrate-color-p">Substrate color</p>
+                        <div class="input-color">
+                            <input class="input-colored input-substrate" id="light-color" name="light-color" value="#FFFFFF" type="color">
+                            <label class="label-input-colored label-substrate" for="light-color"> </label>
+                            <p class="input-hex p-substrate">#FFFFFF</p>
                         </div>
                     </div>
+                    <div class="primary-color">
+                        <p class="primary-color-p" >Primary color</p>
+                        <div class="input-color">
+                            <input class="input-colored input-primary" name="dark-color" id="dark-color"  value="#000000" type="color">
+                            <label class="label-input-colored label-primary" for="dark-color"></label>
+                            <p class="input-hex p-primary">#000000</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="url">
-                <img class="url-logo" src="{% static 'home_app/images/url_settings.png' %}" alt="">
-                <div class="url-settings">URL:</div>
-                <input class="url-input" placeholder="URL" type="text" name="url">
+            <div class="logo-setting">
+                <div class="title-logo" >
+                    <img class="title-logo-icon" src="{% static '/images/add-logo-icon.png' %}">
+                    <p class="title-logo-p" >Add Logo Image</p>
+                </div>
+                <div class="logo-buttons">
+                    <img class="logo-icon" src="{% static 'images/No-Logo.png' %}" data-no-logo="{% static 'images/No-Logo.png' %}">
+                    <div class="buttons">
+                        <input class="input-file-upload" type="file" name="upload" id="upload">
+                        <label for="upload" class="upload-label">Upload Logo</label>
+                        <button class="button-delete-logo button-logo" type="submit">Delete Logo</button>
+                    </div>
+                </div>
             </div>
-        </form>
-    </div>
-                    
-                   
-                    
-                    
-                
-            
-        
+            <div class="custom-style">
+                <div class="title-custom">
+                    <img class="title-custom-icon" src="{% static '/images/custom-style.png' %}">
+                    <p class="title-custom-p">Custom Style</p>
+                </div>
+                <div class="shapes">
+                    <div class="any-shape">
+                        <p class="shape-title">Frame Shape</p>
+                        <div class="div-shapes">
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame.jpg' %}"></div>
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/round-frame.jpg' %}"></div>
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/2rounded-frame.jpg' %}"></div>
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame-rounded.jpg' %}"></div>
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame-dotted.jpg' %}"></div>
+                           <div class="shape"><img class="img-shapes" src="{% static '/images/concave-angles-frame.jpg' %}"></div>
+                        </div>
+                    </div>
+                    <div class="any-shape">
+                        <p class="shape-title">Square Shape</p>
+                        <div class="div-shapes">
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/square-square.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/triangle-square.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/round-square.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/mini-rounded-square.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/dotted-square.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/2rounded-square.jpg' %}"></div>
+                        </div>
+                    </div>
+                    <div class="any-shape">
+                        <p class="shape-title">Body Shape</p>
+                        <div class="div-shapes">
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/squared-body.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/mini-rounded-body.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/dotted-body.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/rounded-body.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/triangle-body.jpg' %}"></div>
+                            <div class="shape"><img class="img-shapes" src="{% static '/images/big-dotted-body.jpg' %}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="secondary-div">
+            <div class="qr-field">
+                <div class="qr-code">
+                    <img class="qr" src="{% static '/images/qr-code.png' %}">
+                </div>
+                <div>
+                    <input placeholder="example.com" name="url" class="input-url-qr" type="text">
+                </div>
+                <div>
+                    <button class="create-qr-button" type="submit">Create QR</button>
+                </div>
+                <div>
+                    <button class="download-button" type="submit">Download</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </main>
+
+
+<script src="{% static 'js/createqr.js' %}"></script>
+
 {% endblock %}

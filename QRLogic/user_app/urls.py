@@ -1,8 +1,9 @@
-from user_app.views import render_reg
-from user_app.views import render_auth
+from user_app.views import render_signin, render_signup, logout_render
 from django.urls import path, include
 
 urlpatterns= [
-    path('signup/', render_reg, name= 'user_app'),
-    path('login/', render_auth, name='user_app')
+    path('signup/', render_signup, name= 'signup'),
+    path('signin/', render_signin, name='signin'),
+    path('logout/', logout_render, name='logout')
+    
 ]

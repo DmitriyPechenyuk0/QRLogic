@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Sign up to QRLogic
+{% endblock %}
+
+{% block body %}
+<main>
+    <form method="post" class="reg-frame">
+        {% csrf_token %}
+        <p class="title-reg">Registration</p>
+        <div class="form-div">
+            <div class="form">
+                <div class="login-div">
+                    <p>Login</p>
+                    <input type="text" name="login">
+                </div>
+                <div class="email-div">
+                    <p>Email</p>
+                    <input type="text" name="email">
+                </div>
+                <div class="password-div">
+                    <p>Password</p>
+                    <input type="password" name="password">
+                </div>
+                <div class="password-confirm-div">
+                    <p>Confirm password</p>
+                    <input type="password" name="confirmpassword">
+                </div>
+            </div>
+            {% if integrity_error %}
+                <p class="alert">User with this login already exists</p>
+            {% endif %}
+            {% if password_error %}
+            <p class="alert" >Passwords don't match</p>
+            {% endif %}
+        </div>
+        <button class="submit-button" name="submit-button">Submit</button>
+    </form>
+</main>
+{% endblock %}

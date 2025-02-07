@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/authentication_required.css' %}">
+{% endblock %}
+
+{% block title %}
+Unknown
+{% endblock %}
+{% block body %}
+
+<main>
+    <div class="must" >
+        <p>You must be logged in to view this page.</p>
+    </div>
+</main>
+
+{% endblock %}

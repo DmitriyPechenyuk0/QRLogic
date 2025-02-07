@@ -1,0 +1,17 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.must{
+    display: flex;
+    height: 200px;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+
+}
+p{
+    font-size: 36px;
+}

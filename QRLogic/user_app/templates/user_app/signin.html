@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/signinn.css' %}">
+{% endblock %}
+
+{% block title %}
+Sign in to QRLogic
+{% endblock %}
+
+{% block body %}
+<main>
+    <form class="reg-frame" method="post">
+        {% csrf_token %}
+        <p class="title-reg">Authorization</p>
+        <div class="form-div">
+            <div class="form" method="post">
+                <div class="login-div">
+                    <p>Login</p>
+                    <input type="text" name="login">
+                </div>
+                <div class="password-div">
+                    <p>Password</p>
+                    <input type="password" name="password">
+                </div>
+
+                {% if user_error %}
+                    <p class="alert">User with this login not found</p>
+                {% endif %}
+
+            </div>
+        </div>
+        <button class="submit-button" name="submit-button">Submit</button>
+    </form>
+</main>
+{% endblock %}

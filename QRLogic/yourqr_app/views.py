@@ -20,7 +20,11 @@ def render_yourqr_app(request):
         filepath = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{request.user.id}/{qr.name}")
         if os.path.exists(filepath):
             qr.image_url = f"{settings.MEDIA_URL}{request.user.username}_{request.user.id}/{qr.name}"
-    
+            context ={
+                'page': 'myqr',
+                'qrcodes': qrcodes,
+                'qrimage': qr.image_url
+            }
         
 
     context = {
