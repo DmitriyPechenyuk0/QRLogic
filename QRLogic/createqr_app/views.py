@@ -62,7 +62,10 @@ def render_ceateqr_app(request):
                     background_color= str(light_color),
                     color= str(dark_color)
                 )
+
+                
                 context={'page': 'createqr', 'logo': logo_url}
+                
                 return render(request, 'createqr_app/createqrr.html', context=context)
 
             else:

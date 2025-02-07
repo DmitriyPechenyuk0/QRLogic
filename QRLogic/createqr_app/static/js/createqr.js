@@ -33,7 +33,7 @@ fileInput.addEventListener("change", () => {
         const reader = new FileReader();
         reader.onload = function (event) {
             logoImage.style.border = "1px solid black"
-            logoImage.style.borderRadius = "6px"
+            logoImage.style.borderRadius = "2px"
             logoImage.src = event.target.result;
         };
         reader.readAsDataURL(file);
