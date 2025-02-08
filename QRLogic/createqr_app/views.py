@@ -69,18 +69,28 @@ def render_ceateqr_app(request):
 
                 out.seek(0)
 
-                img = Image.open(out)
-                img = img.convert('RGB')
+                img = Image.open(out).convert('RGBA')
                 img_width, img_height = img.size
                 logo_max_size = img_height // 4
-                logo_img = Image.open(logo_url)
-                logo_img.thumbnail((logo_max_size, logo_max_size), Image.Resampling.LANCZOS)
-                box = ((img_width - logo_img.size[0]) // 2, (img_height - logo_img.size[1]) // 2)
-                
-                img.paste(logo_img, box)
+
+                logo_img = Image.open(logo_url).convert("RGBA")
+
+                logo_width, logo_height = logo_img.size
+
+                max_side = max(logo_width, logo_height)
+                square_logo = Image.new("RGBA", (max_side, max_side), (255, 255, 255, 0))
+
+                x_offset = (max_side - logo_width) // 2
+                y_offset = (max_side - logo_height) // 2
+                square_logo.paste(logo_img, (x_offset, y_offset), logo_img)
+
+                square_logo = square_logo.resize((logo_max_size, logo_max_size), Image.Resampling.LANCZOS)
+
+                box = ((img_width - logo_max_size) // 2, (img_height - logo_max_size) // 2)
+
+                img.paste(square_logo, box, square_logo)
+
                 img.save(qr_path)
-
-
 
                 QrCode.objects.create(
                     owner = profile,
