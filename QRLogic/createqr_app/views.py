@@ -1,5 +1,4 @@
-import segno, os, datetime
-
+import segno, os, io
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -9,14 +8,21 @@ from django.core.files.base import ContentFile
 from QRLogic import settings
 from user_app.models import Profile
 from .models import QrCode
+from PIL import Image
 
 # Create your views here.
 
 def render_ceateqr_app(request):
     context = {'page': 'createqr'}
+
+
+
+
+
     if request.user.is_authenticated:
         if request.method == 'POST':
 
+            
             profile = Profile.objects.get(user = request.user)
 
             url = request.POST.get('url')
@@ -26,6 +32,8 @@ def render_ceateqr_app(request):
             
             logo = request.FILES.get("upload")
             
+            scale = request.POST.get('sizeqr')
+
             if logo:
                 filepath_logo = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "Logos")
 
@@ -40,9 +48,13 @@ def render_ceateqr_app(request):
                     for part in logo.chunks():
                         logo_file.write(part)
                 
-                logo_url = f"/media/{request.user.username}_{request.user.id}/Logos/{logo_name}"
+                logo_url = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{request.user.id}", 'Logos', logo_name)
+                
 
-                qr = segno.make(content = url)
+            
+                out = io.BytesIO()
+
+                qr = segno.make(content = url, error='h')
                 
                 filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
 
@@ -53,18 +65,36 @@ def render_ceateqr_app(request):
 
                 qr_path = os.path.join(filepath_qr, qr_name)
 
-                qr.save(out = str(qr_path), kind='png', dark=dark_color, light = light_color)
+                qr.save(out = out, kind='png', dark=dark_color, light = light_color, scale=scale)
+
+                out.seek(0)
+
+                img = Image.open(out)
+                img = img.convert('RGB')
+                img_width, img_height = img.size
+                logo_max_size = img_height // 4
+                logo_img = Image.open(logo_url)
+                logo_img.thumbnail((logo_max_size, logo_max_size), Image.Resampling.LANCZOS)
+                box = ((img_width - logo_img.size[0]) // 2, (img_height - logo_img.size[1]) // 2)
+                
+                img.paste(logo_img, box)
+                img.save(qr_path)
+
+
 
                 QrCode.objects.create(
                     owner = profile,
                     url= url,
                     name= qr_name,
                     background_color= str(light_color),
-                    color= str(dark_color)
+                    color= str(dark_color),
                 )
 
-                
-                context={'page': 'createqr', 'logo': logo_url}
+                relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
+
+                context={'page': 'createqr',
+                          'logo': logo_url,
+                          'qrcode': '/' + relative_qr_path.replace("\\", "/")}
                 
                 return render(request, 'createqr_app/createqrr.html', context=context)
 
@@ -80,9 +110,7 @@ def render_ceateqr_app(request):
 
                 qr_path = os.path.join(filepath_qr, qr_name)
 
-
-
-                qr.save(out = str(qr_path), kind='png', dark=dark_color, light = light_color)
+                qr.save(out = str(qr_path), kind='png', dark=dark_color, light = light_color, scale=scale)
 
                 QrCode.objects.create(
                     owner = profile,

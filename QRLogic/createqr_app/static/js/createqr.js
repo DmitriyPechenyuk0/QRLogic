@@ -9,6 +9,8 @@ const logoImage = document.querySelector(".logo-icon");
 const deleteButton = document.querySelector(".button-delete-logo");
 const defaultColor = InputSubstrate.value;
 const defaultColor2 = inputPrimary.value;
+const rangeInput = document.querySelector('.sizeqr');
+const label = document.querySelector('.sizeqrlabel');
 
 labelSubstrate.style.backgroundColor = defaultColor;
 pSubstrate.textContent = defaultColor;
@@ -16,7 +18,9 @@ pSubstrate.textContent = defaultColor;
 labelPrimary.style.backgroundColor = defaultColor2;
 pPrimary.textContent = defaultColor2;
 
-
+rangeInput.addEventListener('input', () => {
+  label.textContent = rangeInput.value;
+});
 
 InputSubstrate.addEventListener('input', () => {
     pSubstrate.textContent = InputSubstrate.value;

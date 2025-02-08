@@ -99,7 +99,20 @@ Create QR Code
         <div class="secondary-div">
             <div class="qr-field">
                 <div class="qr-code">
-                    <img class="qr" src="{% static '/images/qr-code.png' %}">
+                    <!-- <p>Финальный путь к изображению: {{ MEDIA_URL }}{{ qrcode }}</p> -->
+                    {% if qrcode %}
+                        <img class="qr" src="{{ MEDIA_URL }}{{ qrcode }}">
+                    {% else %}
+                        <img class="qr" src="{% static '/images/qr-code.png' %}">
+                    {% endif %}
+                </div>
+                <div class="input-range">
+                    <p class="sizeqrtitle" >Size Of QR Code</p>
+                    <div class="div-input-range" >
+                        <input class="sizeqr" max="100" min="1" type="range" value="50" name="sizeqr" id="sizeqr">
+                        <label class="sizeqrlabel">50</label>
+                    </div>
+
                 </div>
                 <div>
                     <input placeholder="example.com" name="url" class="input-url-qr" type="text">
