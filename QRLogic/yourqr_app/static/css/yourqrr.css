@@ -1,201 +1,106 @@
-body {
-    margin: 0;
-    height: 100vh;
+.main-div{
     display: flex;
-    justify-content: row;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.div-qrs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 0px 100px;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 36px;
-  }
-  
-  
-  .container{
-    display: flex;
-    width: 1300px;
+    padding: 10px;
+    flex-wrap: wrap;
     height: 800px;
-    background-color: #EEEEEE;
+    width: 1400px;
     border-radius: 20px;
-    padding: 30px 30px;
-  }
-  
-  .container-settings{
+    background-color: #eeeeee;
+}
+h1{
+    font-size: 36px;
+    font-weight: 400;
+    width: 1400px;
+    height: fit-content;
+    text-align: center;
+}
+.border-qrs{
     display: flex;
+    height: 780px;
+    width: 1380px;
+    justify-content: start;
+    align-items: start;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+    flex-wrap: wrap;
+    position: sticky;
+    overflow-y: auto;
+}
+.qrs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 21px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.qr{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    height: 500px;
     width: 250px;
-    height: fit-content;
-    align-items: center;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    padding: 20px 20px;
-    border-radius: 8px;
-  
-  }
-  
-  
-  .qr-code p{
-    font-size: 20px;
-    text-align: center;
-  
-    
-  }
-  
-  .logo-logo{
-    width: 210px;
-    height: 200px;
-  }
-  
-  
-  .settings p{
-    font-size: 20px;
-  }
-  
-  
-  .color-box-p{
+    border: 1px solid black;
+    border-radius: 2px;
+}
+.qr-component{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    gap: 10px;
-  }
-  
-  
-  .color-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    gap: 10px;
-  }
-  
-  .input-a{
-    border: none;
-    width: 50px;
-    height: 50px;
-    background-color: #FFFFFF;
-  }
-  
-  .input-b{
-    border: none;
-    width: 50px;
-    height: 50px;
-    background-color: #FFFFFF;
-  }
-  
-  
-  .qwer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  
-  
-  
-  .qwe{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  
-  }
-  
-  
-  .filter{
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    background-color: #EEEEEE;
-    border-radius: 20px;
-    padding: 15px 19px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  
-  }
-  
-  .date{
-    width: 227px;
-    height: 75px;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    text-align: center;
-    border: none;
-  }
-  
-  .fnd{
-    width: 60px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    border: none;
-  }
-  
-  .name{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 20px;
-    border: none;
-    gap: 20px;
-    
-  }
-  
-  .text{
-    width: 205px;
-    height: 27px;
-    border-radius: 8px;
-    background-color: #EEEEEE;
-  }
-  
-  .pppp{
-    text-align: center;
     font-size: 18px;
-    margin: 0;
-  }
-  
-  
-  .fndd{
-    width: 60px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    border: none;
-  }
-  
-  
-  .filter-p{
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.qr-image{
+    height: 200px;
+    width: 200px;
+}
+
+.qr-params{
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-  
-  .pop{
+    justify-content: center;
+    align-items: start;
+}
+label{
     display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    padding: 10px 10px;
-    border-radius: 20px;
-  }
-  
-  .filter-settings{
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    height: 40px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+label::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.div-component{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-  }
-  
-  .popop{
-    font-size: 20px;
-    margin: 0;
-  }
+
+}

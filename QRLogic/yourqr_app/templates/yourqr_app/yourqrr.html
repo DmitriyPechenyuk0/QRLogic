@@ -12,47 +12,41 @@ My QR Codes
 
 {% block body %}
 <main>
-    <div class="qwe">
-        <div class="qwer">
-            <h1>YOUR QR-codes</h1>
-            <div class="container">
-                <div class="container-settings">
-                    <div class="qr-code">
-                        <img class="logo-logo" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-                        <p>Name: qrlogic.com</p>
-                        <p class="pp">Date: 24.01.2025</p>
-                    </div>
-                    <div class="settings">
-                        <div class="color-box-p">
-                            <p>color:</p>
-                            <input class="input-a" type="color">
+
+    <div class="main-div">
+        <h1>My QR Codes</h1>
+        <div class="div-qrs">
+            <div class="border-qrs">
+                <div class="qrs">
+                    {% for qr in qrcodes %}
+                    <div class="qr">
+                        <img class="qr-image" src="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}">
+                        <div class="qr-params" >
+                            <div class="div-component">
+                                <p class="qr-component" >Url: <label>{{ qr.url }}</label></p>
+                            </div>
+                            <div class="div-component">
+                                <p class="qr-component" >Creation Date: {{ qr.create_date }}</p>
+                            </div>
+                            <div class="div-component">
+                                <p class="qr-component" >Expires Date: {{ qr.expire_date }}</p>
+                            </div>
+                            <div class="div-component">
+                                <p class="qr-component" >Primary Color: {{ qr.color }}</p>
+                            </div>
+                            <div class="div-component">
+                                <p class="qr-component" >Substrate Color: {{ qr.background_color }}</p>
+                            </div>
                         </div>
-                        <div class="color-box">
-                            <p>background color:</p>
-                            <input class="input-b" type="color">
-                        </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="filter">
-            <p class="popop">Filters</p>
-            <div class="filter-settings">
-                <div class="filter-p">
-                    <img src="" alt=""> 
-                    <div class="name">
-                        <input class="date" type="date">
-                        <button type="submit" class="fnd" name="button">find</button>
-                    </div>
-                    <div class="name">
-                        <div class="pop"><p class="pppp">Name</p>
-                        <input class="text" type="text"></div>
-                        <button type="submit" class="fndd" name="button">find</button>
-                    </div>  
-                </div>
-            </div>
+        <div class="filtes">
+
         </div>
-    </div>           
+    </div>
 </main>
 
 {% endblock %}
