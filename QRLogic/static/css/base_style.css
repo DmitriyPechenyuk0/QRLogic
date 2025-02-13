@@ -93,6 +93,7 @@ a{
     justify-content: center;
     gap: 10px;
 
+
 }
 .log-out-button{
     display: flex;
@@ -107,4 +108,8 @@ a{
     padding-right: 10px;
     gap: 5px;
     height: max-content;
+}
+.account-auth{
+    position: absolute;
+    right: 0px;
 }

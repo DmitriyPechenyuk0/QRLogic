@@ -130,6 +130,12 @@ def render_ceateqr_app(request):
                     color= str(dark_color)
                 )
 
+                relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
+
+                context= {'page': 'createqr',
+                          'qrcode': '/' + relative_qr_path.replace("\\", "/")}
+                
+
                 return render(request, 'createqr_app/createqrr.html', context=context)
         return render(request, 'createqr_app/createqrr.html', context=context)
     else:
