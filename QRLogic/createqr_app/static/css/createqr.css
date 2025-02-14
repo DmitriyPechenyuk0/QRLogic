@@ -410,7 +410,7 @@
     background: #ffffff;
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -5px;
+    margin-top: -4px;
     border: 2px solid;
     position: relative;
   }
@@ -450,4 +450,19 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+.checkbox-none{
+    display: none;
+}
+.label-shape{
+    cursor: pointer;
+    transition: all 250ms;
+}
+.label-shape:hover{
+    opacity: 0.7;
+}
+
+input[type="radio"]:checked + .shape label img {
+    border: 1px solid black;
+    border-radius: 5px;
 }

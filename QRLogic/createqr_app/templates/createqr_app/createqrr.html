@@ -63,34 +63,142 @@ Create QR Code
                     <div class="any-shape">
                         <p class="shape-title">Frame Shape</p>
                         <div class="div-shapes">
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame.jpg' %}"></div>
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/round-frame.jpg' %}"></div>
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/2rounded-frame.jpg' %}"></div>
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame-rounded.jpg' %}"></div>
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/square-frame-dotted.jpg' %}"></div>
-                           <div class="shape"><img class="img-shapes" src="{% static '/images/concave-angles-frame.jpg' %}"></div>
+                            
+                            <input type="radio" class="checkbox-none" name="frame" id="square-frame" checked>
+                            <div class="shape">
+                                <label for="square-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/square-frame.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="frame" id="round-frame">
+                            <div class="shape">
+                                <label for="round-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/round-frame.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="frame" id="tworound-frame">
+                            <div class="shape">
+                                <label for="tworound-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/2rounded-frame.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="frame" id="square-rounded-frame">
+                            <div class="shape">
+                                <label for="square-rounded-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/square-frame-rounded.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="frame" id="square-dotted-frame">
+                            <div class="shape">
+                                <label for="square-dotted-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/square-frame-dotted.jpg' %}">
+                                </label>
+                            </div>
+
+                            <input type="radio" class="checkbox-none" name="frame" id="concave-angles-frame">
+                            <div class="shape">
+                                <label for="concave-angles-frame" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/concave-angles-frame.jpg' %}">
+                                </label>
+                            </div>
+
                         </div>
                     </div>
                     <div class="any-shape">
                         <p class="shape-title">Square Shape</p>
                         <div class="div-shapes">
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/square-square.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/triangle-square.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/round-square.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/mini-rounded-square.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/dotted-square.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/2rounded-square.jpg' %}"></div>
+                            <input type="radio" class="checkbox-none" name="squares" id="square-square" checked>
+                            <div class="shape">
+                                <label for="square-square" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/square-square.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="squares" id="triangle-square">
+                            <div class="shape">
+                                <label for="triangle-square" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/triangle-square.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="squares" id="round-square">
+                            <div class="shape">
+                                <label for="round-square" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/round-square.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="squares" id="mini-rounded-square">
+                            <div class="shape">
+                                <label for="mini-rounded-square" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/mini-rounded-square.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="squares" id="dotted-square">
+                            <div class="shape">
+                                <label for="dotted-square" class="label-shape" >
+                                    <img class="img-shapes" src="{% static '/images/dotted-square.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="squares" id="tworounded-square">
+                            <div class="shape">
+                                <label for="tworounded-square" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/2rounded-square.jpg' %}">
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="any-shape">
                         <p class="shape-title">Body Shape</p>
                         <div class="div-shapes">
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/squared-body.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/mini-rounded-body.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/dotted-body.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/rounded-body.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/triangle-body.jpg' %}"></div>
-                            <div class="shape"><img class="img-shapes" src="{% static '/images/big-dotted-body.jpg' %}"></div>
+                            <input type="radio" class="checkbox-none" name="body" id="squared-body" checked>
+
+                            <div class="shape shapep">
+                                <label id="label-squared-body" class="label-shape" for="squared-body">
+                                    <img class="img-shapes" src="{% static '/images/squared-body.jpg' %}">
+                                </label>
+                            </div>
+                            
+                            <input type="radio" class="checkbox-none" name="body" id="miniround-body">
+                            <div class="shape shapep">
+                                <label id="label-miniround" class="label-shape" for="miniround-body">
+                                    <img class="img-shapes" src="{% static '/images/mini-rounded-body.jpg' %}">
+                                </label>
+                            </div>
+
+                            <input type="radio" class="checkbox-none" name="body" id="dotted-body">
+                            <div class="shape">
+                                <label for="dotted-body" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/dotted-body.jpg' %}">
+                                </label>
+                            </div>
+
+                            <input type="radio" class="checkbox-none" name="body" id="round-body">
+                            <div class="shape">
+                                <label for="round-body" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/rounded-body.jpg' %}">
+                                </label>
+                            </div>
+
+                            <input type="radio" class="checkbox-none" name="body" id="triangle-body">
+                            <div class="shape">
+                                <label for="triangle-body" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/triangle-body.jpg' %}">
+                                </label>
+                            </div>
+
+                            <input type="radio" class="checkbox-none" name="body" id="big-dotted-body">
+                            <div class="shape">
+                                <label for="big-dotted-body" class="label-shape">
+                                    <img class="img-shapes" src="{% static '/images/big-dotted-body.jpg' %}">
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
