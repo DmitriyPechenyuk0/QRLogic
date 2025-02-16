@@ -37,9 +37,9 @@ def render_signup(request):
                 return redirect('/user/signin/')
 
             except IntegrityError:
-                context = {'integrity_error': True}
+                context = {'integrity_error': True,'page': 'signup'}
         else:
-            context = {'password_error': True}
+            context = {'password_error': True,'page': 'signup'}
     return render(request, 'user_app/signup.html', context=context)
 
 def render_signin(request):
@@ -54,7 +54,7 @@ def render_signin(request):
             login(request=request, user=user)
             return redirect('/')
         else:
-            context = {'user_error': True}
+            context = {'user_error': True, 'page': 'signup'}
 
     return render(request, 'user_app/signin.html', context=context)
 

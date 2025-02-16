@@ -161,6 +161,9 @@
         font-size: 28px;
     }
     .permonth{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: 'Prompt';
         font-size: 20px;
     }
