@@ -1,27 +1,30 @@
-import segno, os, io
+import segno, os, io, qrcode, datetime
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
 from QRLogic import settings
 from user_app.models import Profile
+from qrcode.image.styledpil import StyledPilImage
+from qrcode.image.styles.moduledrawers import GappedSquareModuleDrawer,CircleModuleDrawer,SquareModuleDrawer,RoundedModuleDrawer, VerticalBarsDrawer, HorizontalBarsDrawer
+from qrcode.image.styles.colormasks import SolidFillColorMask
 from .models import QrCode
 from PIL import Image
 
 # Create your views here.
 
+def hex_to_rgb(hex_color):
+    hex_color = hex_color.lstrip("#")
+    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+
 def render_ceateqr_app(request):
     context = {'page': 'createqr'}
 
 
-
-
-
     if request.user.is_authenticated:
         if request.method == 'POST':
-
+            
             
             profile = Profile.objects.get(user = request.user)
 
@@ -29,10 +32,22 @@ def render_ceateqr_app(request):
 
             light_color= request.POST.get('light-color')
             dark_color = request.POST.get('dark-color')
-            
+            light_color= hex_to_rgb(light_color)
+            dark_color = hex_to_rgb(dark_color)
             logo = request.FILES.get("upload")
+            today = datetime.datetime.today()
+            expire = today + datetime.timedelta(days=30)
             
             scale = request.POST.get('sizeqr')
+
+            body = request.POST.get('body')
+
+            drawers = { 'rounded': RoundedModuleDrawer(),
+                        'square': SquareModuleDrawer(),
+                        'circle': CircleModuleDrawer(),
+                        'gapped': GappedSquareModuleDrawer(),
+                        'horizontal': HorizontalBarsDrawer(),
+                        'vertical': VerticalBarsDrawer()}
 
             if logo:
                 filepath_logo = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "Logos")
@@ -54,7 +69,17 @@ def render_ceateqr_app(request):
             
                 out = io.BytesIO()
 
-                qr = segno.make(content = url, error='h')
+                # qr = segno.make(content = url, error='h')
+                qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+                qr.add_data(url)
+                qr.make()
+
+                qr_code = qr.make_image(
+                    image_factory=StyledPilImage,
+                    module_drawer=drawers[body],
+                    fill_color=light_color,
+                    back_color=dark_color,
+                    )
                 
                 filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
 
@@ -65,7 +90,8 @@ def render_ceateqr_app(request):
 
                 qr_path = os.path.join(filepath_qr, qr_name)
 
-                qr.save(out = out, kind='png', dark=dark_color, light = light_color, scale=scale)
+                # qr.save(out = out, kind='png', dark=dark_color, light = light_color, scale=scale)
+                qr_code.save(out, kind='png')
 
                 out.seek(0)
 
@@ -98,6 +124,9 @@ def render_ceateqr_app(request):
                     name= qr_name,
                     background_color= str(light_color),
                     color= str(dark_color),
+                    body_style=body,
+                    create_date=today,
+                    expire_date=expire
                 )
 
                 relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
@@ -109,7 +138,15 @@ def render_ceateqr_app(request):
                 return render(request, 'createqr_app/createqrr.html', context=context)
 
             else:
-                qr = segno.make(content = url)
+                # qr = segno.make(content = url)
+                qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+                qr.add_data(url)
+                qr.make(fit=True)
+
+                qr_code = qr.make_image(
+                    image_factory=StyledPilImage,
+                    module_drawer=drawers[body],
+                    color_mask=SolidFillColorMask(front_color=light_color, back_color=dark_color))
                 
                 filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
 
@@ -120,14 +157,18 @@ def render_ceateqr_app(request):
 
                 qr_path = os.path.join(filepath_qr, qr_name)
 
-                qr.save(out = str(qr_path), kind='png', dark=dark_color, light = light_color, scale=scale)
+                # qr.save(out = str(qr_path), kind='png', dark=dark_color, light = light_color, scale=scale)
+                qr_code.save(str(qr_path), kind='png')
 
                 QrCode.objects.create(
                     owner = profile,
                     url= url,
                     name= qr_name,
                     background_color= str(light_color),
-                    color= str(dark_color)
+                    color= str(dark_color),
+                    body_style=body,
+                    create_date=today,
+                    expire_date=expire
                 )
 
                 relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))

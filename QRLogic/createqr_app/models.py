@@ -11,6 +11,6 @@ class QrCode(models.Model):
     url = models.URLField(max_length=255, null=True)
     color = models.CharField(max_length=255, null=True, blank=True)
     background_color = models.CharField(max_length=255, null=True, blank=True)
-    body_style = models.IntegerField(null=True, blank=True)
-    frame_style = models.IntegerField(null=True, blank=True)
+    body_style = models.CharField(max_length=255 ,null=True, blank=True)
+    frame_style = models.IntegerField(null=True, blank=True)    
     square_style = models.IntegerField(null=True, blank=True)

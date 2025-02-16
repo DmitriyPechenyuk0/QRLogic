@@ -81,8 +81,8 @@ a{
     padding-right: 30px;
 }
 .log-out-icon{
-    height: 13px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
 }
 .account-username{ 
     display: flex;
@@ -106,6 +106,8 @@ a{
     border-color: #808080;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     gap: 5px;
     height: max-content;
 }
