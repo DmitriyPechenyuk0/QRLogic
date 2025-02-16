@@ -161,42 +161,42 @@ Create QR Code
 
                             <div class="shape shapep">
                                 <label id="label-squared-body" class="label-shape" for="square">
-                                    <img class="img-shapes" src="{% static '/images/squared-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/square-body.png' %}">
                                 </label>
                             </div>
                             
                             <input type="radio" class="checkbox-none" name="body" value="gapped" id="dots">
                             <div class="shape shapep">
                                 <label id="label-miniround" class="label-shape" for="dots">
-                                    <img class="img-shapes" src="{% static '/images/mini-rounded-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/gapped-body.png' %}">
                                 </label>
                             </div>
 
                             <input type="radio" class="checkbox-none" name="body" value="circle" id="circle">
                             <div class="shape">
                                 <label for="circle" class="label-shape">
-                                    <img class="img-shapes" src="{% static '/images/dotted-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/dots-body.png' %}">
                                 </label>
                             </div>
 
                             <input type="radio" class="checkbox-none" name="body" value="rounded" id="rounded">
                             <div class="shape">
                                 <label for="rounded" class="label-shape">
-                                    <img class="img-shapes" src="{% static '/images/rounded-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/rounded-body.png' %}">
                                 </label>
                             </div>
 
                             <input type="radio" class="checkbox-none" name="body" value="vertical" id="vertical">
                             <div class="shape">
                                 <label for="vertical" class="label-shape">
-                                    <img class="img-shapes" src="{% static '/images/triangle-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/vertical-body.png' %}">
                                 </label>
                             </div>
 
                             <input type="radio" class="checkbox-none" name="body" value="horizontal" id="horizontal">
                             <div class="shape">
                                 <label for="horizontal" class="label-shape">
-                                    <img class="img-shapes" src="{% static '/images/big-dotted-body.jpg' %}">
+                                    <img class="img-shapes" src="{% static '/images/horizontal-body.png' %}">
                                 </label>
                             </div>
                         </div>
@@ -207,7 +207,6 @@ Create QR Code
         <div class="secondary-div">
             <div class="qr-field">
                 <div class="qr-code">
-                    <!-- <p>Финальный путь к изображению: {{ MEDIA_URL }}{{ qrcode }}</p> -->
                     {% if qrcode %}
                         <img class="qr" src="{{ MEDIA_URL }}{{ qrcode }}">
                     {% else %}
@@ -223,7 +222,7 @@ Create QR Code
 
                 </div>
                 <div>
-                    <input placeholder="example.com" name="url" class="input-url-qr" type="text">
+                    <input placeholder="example.com" name="url" class="input-url-qr" type="text" required>
                 </div>
                 <div>
                     <button class="create-qr-button" type="submit">Create QR</button>

@@ -6,6 +6,7 @@ def render_yourqr_app(request):
     context = {'page': 'myqr'}
     
     qrcodes = QrCode.objects.filter(owner=request.user.profile)
+    
     context = {'page': 'myqr', 'qrcodes': qrcodes}
 
     if request.user.is_authenticated:

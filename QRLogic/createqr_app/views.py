@@ -34,13 +34,17 @@ def render_ceateqr_app(request):
             dark_color = request.POST.get('dark-color')
             light_color= hex_to_rgb(light_color)
             dark_color = hex_to_rgb(dark_color)
+
             logo = request.FILES.get("upload")
+            
             today = datetime.datetime.today()
             expire = today + datetime.timedelta(days=30)
             
             scale = request.POST.get('sizeqr')
 
             body = request.POST.get('body')
+            frame = request.POST.get('frame')
+            square = request.POST.get('squares')
 
             drawers = { 'rounded': RoundedModuleDrawer(),
                         'square': SquareModuleDrawer(),
@@ -77,9 +81,8 @@ def render_ceateqr_app(request):
                 qr_code = qr.make_image(
                     image_factory=StyledPilImage,
                     module_drawer=drawers[body],
-                    fill_color=light_color,
-                    back_color=dark_color,
-                    )
+                    color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
+                    
                 
                 filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
 
@@ -125,8 +128,11 @@ def render_ceateqr_app(request):
                     background_color= str(light_color),
                     color= str(dark_color),
                     body_style=body,
+                    frame_style=frame,
+                    square_style=square,
                     create_date=today,
-                    expire_date=expire
+                    expire_date=expire,
+
                 )
 
                 relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
@@ -146,7 +152,7 @@ def render_ceateqr_app(request):
                 qr_code = qr.make_image(
                     image_factory=StyledPilImage,
                     module_drawer=drawers[body],
-                    color_mask=SolidFillColorMask(front_color=light_color, back_color=dark_color))
+                    color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
                 
                 filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
 
@@ -167,6 +173,8 @@ def render_ceateqr_app(request):
                     background_color= str(light_color),
                     color= str(dark_color),
                     body_style=body,
+                    frame_style=frame,
+                    square_style=square,
                     create_date=today,
                     expire_date=expire
                 )
