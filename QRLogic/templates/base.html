@@ -14,17 +14,17 @@
             
             {% if page == 'home' and user.is_authenticated != True %}
                 <div class="account">
-                    <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                    <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                    <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                    <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
                 </div>
-                <div class="contact"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
+                <div class="contact url"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
             {% endif %}
 
             {% if page == 'home' and user.is_authenticated %}
-            <div class="account-login"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
-            <div class="contact"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
+            <div class="account-login url"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="contact url"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
 
             <div class="account account-auth">
                 <div class="account-username">
@@ -36,38 +36,38 @@
 
             {% if page == 'signup'%}
                 <div class="account">
-                    <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                    <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                    <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                    <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
                 </div>
-                <div class="home-url"><a class="home" href="/">Home</a></div>
+                <div class="home-url url"><a class="home" href="/">Home</a></div>
             
             {% endif %}
             
             {% if page == 'signin'%}
 
                 <div class="account">
-                    <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                    <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                    <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                    <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
                 </div>
-                <div class="home-url"><a class="home" href="/">Home</a></div>
+                <div class="home-url url"><a class="home" href="/">Home</a></div>
             
             {% endif %}
             
             {% if page == 'contacts' and user.is_authenticated != True  %}
-                <div class="home-url"><a class="home" href="/">Home</a></div>
+                <div class="home-url url"><a class="home" href="/">Home</a></div>
                 <div class="account">
-                    <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                    <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                    <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                    <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
                 </div>
 
             
             {% endif %}
 
             {% if page == 'contacts' and user.is_authenticated  %}
-            <div class="home-url"><a class="home" href="{% url 'home_app' %}">Home</a></div>
-            <div class="account-login"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="home-url url"><a class="home" href="{% url 'home_app' %}">Home</a></div>
+            <div class="account-login url"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
 
             <div class="account account-auth">
                 <div class="account-username">
@@ -78,10 +78,10 @@
             {% endif %}
 
             {% if page == 'createqr' and user.is_authenticated %}
-            <div class="home-url"><a class="home" href="/">Home</a></div>
-            <div class="account-login"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
-            <div class="contact"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
+            <div class="account-login url"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="contact url"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
 
             <div class="account account-auth">
                 <div class="account-username">
@@ -93,20 +93,20 @@
 
             {% if page == 'createqr' and user.is_authenticated != True %}
 
-            <div class="home-url"><a class="home" href="/">Home</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
 
             <div class="account">
-                <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
             </div>
 
             {% endif %}
 
             {% if page == 'myqr' and user.is_authenticated %}
-            <div class="home-url"><a class="home" href="/">Home</a></div>
-            <div class="account-login"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
-            <div class="contact"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
+            <div class="account-login url"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'managesub_app' %}">Manage Subscription</a></div>
+            <div class="contact url"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
 
             <div class="account account-auth">
                 <div class="account-username">
@@ -118,19 +118,19 @@
             
             {% if page == 'myqr' and user.is_authenticated != True %}
 
-            <div class="home-url"><a class="home" href="/">Home</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
 
             <div class="account">
-                <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
             </div>
             {% endif %}
 
             {% if page == 'managesub' and user.is_authenticated %}
-            <div class="home-url"><a class="home" href="/">Home</a></div>
-            <div class="account-login"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
-            <div class="account-login"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
-            <div class="contact"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
+            <div class="account-login url"><a href="{% url 'createqr_app' %}">Create QR Codes</a></div>
+            <div class="account-login url"><a href="{% url 'myqr_app' %}">My QR Codes</a></div>
+            <div class="contact url"><a class="contact-url" href="{% url 'contact_app' %}">Contacts</a></div>
 
             <div class="account account-auth">
                 <div class="account-username">
@@ -141,11 +141,11 @@
             {% endif %}
 
             {% if page == 'managesub' and user.is_authenticated != True %}
-            <div class="home-url"><a class="home" href="/">Home</a></div>
+            <div class="home-url url"><a class="home" href="/">Home</a></div>
 
             <div class="account">
-                <div class="account-login"><a href="{% url 'signin' %}">Sing In</a></div>
-                <div class="account-signup"><a href="{% url 'signup' %}">Sign Up</a></div>
+                <div class="account-login url"><a href="{% url 'signin' %}">Sing In</a></div>
+                <div class="account-signup url"><a href="{% url 'signup' %}">Sign Up</a></div>
             </div>
             {% endif %}
         </header>
