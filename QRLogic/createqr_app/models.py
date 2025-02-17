@@ -14,3 +14,6 @@ class QrCode(models.Model):
     body_style = models.IntegerField(null=True, blank=True)
     frame_style = models.IntegerField(null=True, blank=True)
     square_style = models.IntegerField(null=True, blank=True)
+    create_date = models.DateTimeField(auto_now_add=True)
+
+

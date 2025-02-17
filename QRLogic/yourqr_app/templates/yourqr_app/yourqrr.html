@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -5,55 +6,81 @@
     <link rel="stylesheet" href="{% static 'css/yourqrr.css' %}">
 {% endblock %}
 
+{% block title%}
+My QR Codes
+{% endblock %}
+
+
 {% block body %}
 <main>
-    <div class="qwe">
-        <div class="qwer">
-            <h1>Your QR codes</h1>
-            <div class="container">
-                {% for qr in qrcodes %}
-                <div class="container-settings">
-                    <div class="qr-code">
-                        {% if qr.image_url %}
-                            <img class="logo-logo" src="{% static 'home_app/images/qr-code.png' %}" alt="">
-                        {% endif %}
-                        <p>Url: {{ qr.url }}</p>
-                        <p class="pp">Date: {{ qr.create_date|date:"d.m.Y" }}</p>
-                    </div>
-                    <div class="settings">
-                        <div class="color-box-p">
-                            <p>Primary color:</p>
-                            <input class="input-a" type="color" value="{{ qr.color }}" disabled>
+
+    <div class="main-div">
+        <div>
+            <h1>My QR Codes</h1>
+            <div class="div-qrs">
+                <div class="border-qrs">
+                    <div class="qrs">
+                        {% for qr in qrcodes %}
+                        <div class="qr">
+                            <img class="qr-image" src="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}">
+                            <div class="qr-params" >
+                                <div class="div-component">
+                                    <p class="qr-component" >Url: <label>{{ qr.url }}</label></p>
+                                </div>
+                                <div class="div-component">
+                                    <p class="qr-component" >Creation Date: {{ qr.create_date }}</p>
+                                </div>
+                                <div class="div-component">
+                                    <p class="qr-component" >Expires Date: {{ qr.expire_date }}</p>
+                                </div>
+                                <div class="div-component">
+                                    <p class="qr-component" >Primary Color: {{ qr.color }}</p>
+                                </div>
+                                <div class="div-component">
+                                    <p class="qr-component" >Substrate Color: {{ qr.background_color }}</p>
+                                </div>
+                                <div class="btn">
+                                    <div>
+                                        <button class="download-btn" type="submit">Download</button>
+                                    </div>
+                                    <div>
+                                        <button class="download-btn" type="submit">
+                                            <img src="{% static 'createqr_app/images/color-settings.png' %}" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="color-box">
-                            <p>Substrate color:</p>
-                            <input class="input-b" type="color" value="{{ qr.background_color }}" disabled>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-        <form method="post" class="filter">
-            {% csrf_token %}
-            <p class="popop">Filters</p>
-            <div class="filter-settings">
-                <div class="filter-p">
-                    <img src="" alt=""> 
-                    <div class="name">
-                        <input class="date" type="date">
-                        <button type="submit" class="fnd" name="button">find</button>
+        <div class="filtes">
+            <form method="post" class="filter">
+                {% csrf_token %}
+                <p class="popop">Filters</p>
+                <div class="filter-settings">
+                    <div class="filter-p">
+                        <img src="" alt=""> 
+                        <div class="name">
+                            <input class="date" type="date" name="date_filter" value="{{ request.POST.date_filter }}">
+                            <button type="submit" class="fnd" name="button">find</button>
+                        </div>
+                        <div class="name">
+                            <div class="pop"><p class="pppp">Url</p>
+                            <input class="text" type="text" name="url_filter" value="{{ request.POST.url_filter }}"></div>
+                            <button type="submit" class="fndd" name="button">find</button>
+                        </div>  
                     </div>
-                    <div class="name">
-                        <div class="pop"><p class="pppp">Url</p>
-                        <input class="text" type="text"></div>
-                        <button type="submit" class="fndd" name="button">find</button>
-                    </div>  
                 </div>
-            </div>
-        </form>
-    </div>           
+            </form>
+        </div>
+    </div>
 </main>
 
-
 {% endblock %}
+
+
+
+
