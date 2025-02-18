@@ -123,35 +123,6 @@
         padding-top: 10px;
         gap: 10px;
     }
-
-    .logo{
-        position: absolute;
-        height: 120px;
-        width: 280px;
-        top: 0px;
-        left: 0px;
-    }
-    .account{
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-    .account-login{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    .account-signup{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    .contact{
-        display: flex;
-        height: max-content;
-        justify-content: center;
-        align-items: center;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
     .contact-url{
         height: fit-content;
         width: fit-content;

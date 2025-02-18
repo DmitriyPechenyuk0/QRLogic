@@ -11,13 +11,14 @@ Manage Subscription Page
 {% endblock %}
 
 {% block body %}
+<script defer src="{% static 'managesub_app/js/managesub.js' %}"></script>
 <main>
     <div class="title">
         <h1 class="title-text">Subscription Management Center</h1>
     </div>
 
     <div class="current-plan">
-        <div class="plan-title" ><p class="current-plan-title">Current plan: <b>Free</b></p></div>
+        <div class="plan-titled" ><p class="current-plan-title">Current plan: <b>Free</b></p></div>
         <div class="body-of-plan">
             <div class="info-about-plan">
                 <ul>
@@ -35,7 +36,94 @@ Manage Subscription Page
                 </button>
             </div>
         </div>
+    </div>
+
+    <div id="notification" class="notification">
+        You successfully unsubscribed
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="popup-cancel">
+        <div class="confirmation">
+            <p>Are you sure you want to cancel your subscription?</p>
+            <p class="cannot-cancel">If you cancel your subscription, you will be assigned the "Free" plan. You cannot cancel the "Free" plan.</p>
+            <div class="popup-buttons" >
+                <button class="button-popup-cancel kill-sub" onclick="showNotification()" >Kill my sub</button>
+                <button class="button-popup-cancel save-sub" >Save it</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup">
+        <div class="choice-plan">
+            <h3>Pick the plan you want</h3>
+            <button class="close-popup"><img class="close-popup-img"  src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
+            <div class="plans">
+                <div class="plan">
+                    <div class="plan-title">
+                        <p class="plan-title-text">Free</p>
+                    </div>
+                    <div class="info-about-plan">
+                        <div class="info">
+                            <ul>
+                                <li>1 QR code for up to 6 months</li>
+                                <li>Simple setup, no skills needed.</li>
+                                <li>Basic color options.</li>
+                                <li>Perfect for personal use.</li>
+                                <li>Completely free, no hidden fees!</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <p class="price">$0</p>
+                            <p class="permonth">USD/month</p>
+                        </div>
+                    <button class="buy-now">BUY NOW</button>
+                    </div>
+                </div>
         
+                <div class="plan">
+                    <div class="plan-title">
+                        <p class="plan-title-text">Standart</p>
+                    </div>
+                    <div class="info-about-plan">
+                        <div class="info">
+                            <ul>
+                                <li>Includes everything in "Free."</li>
+                                <li>Up to 10 QR codes.</li>
+                                <li>Full color and logo customization.</li>
+                                <li>High-quality downloads.</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <p class="price">$2</p>
+                            <p class="permonth">USD/month</p>
+                        </div>
+                    <button class="buy-now">BUY NOW</button>
+                    </div>
+                </div>
+        
+                <div class="plan">
+                    <div class="plan-title">
+                        <p class="plan-title-text">Pro</p>
+                    </div>
+                    <div class="info-about-plan">
+                        <div class="info">
+                            <ul>
+                                <li>Includes everything in "Standard."</li>
+                                <li>Up to 100 QR codes</li>
+                                <li>Advanced designs.</li>
+                                <li>Priority support.</li>
+                            </ul>
+                        </div>
+                        <div class="pricing">
+                            <p class="price">$10</p>
+                            <p class="permonth">USD/month</p>
+                        </div>
+                    <button class="buy-now">BUY NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </main>

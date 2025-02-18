@@ -31,10 +31,7 @@ li{
 .current-plan-title{
     font-size: 26px;
 }
-.log-out-icon{
-    width: 10px;
-    height: 10px;
-}
+
 .current-plan{
     display: flex;
     flex-direction: column;
@@ -84,7 +81,14 @@ li{
 }
 .button:hover{
     border: none;
+    cursor: pointer;
 
+}
+.button:active{
+    border: 1px solid;
+}
+.button:focus{
+    border: 1px solid;
 }
 
 .cancel-button:hover{
@@ -108,4 +112,283 @@ li{
     align-items: center;
     height: 18px;
 
+}
+
+/* ПопАпы */
+.popup{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popup-cancel{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.popup-cancel-opened{
+    display: flex;
+    opacity: 1;
+}
+
+.confirmation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0px;
+    gap: 10px;
+    font-size: 25px;
+    width: 700px;
+    height: fit-content;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+}
+.popup-buttons{
+    display: flex;
+    gap: 20px;
+}
+.button-popup-cancel{
+    width: 300px;
+    height: 100px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 22px;
+    background: none;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.save-sub:hover{
+    background-color: #69CA60;
+    border: none;
+    scale: 102%;
+    cursor: pointer;
+}
+
+.kill-sub:hover{
+    background-color: #ea3d3d;
+    border: none;
+    scale: 102%;
+    cursor: pointer;
+}
+.cannot-cancel{
+    font-size: 13px;
+    color: #808080;
+    text-align: center;
+}
+
+.popup-opened{
+    display: flex;
+}
+
+.close-popup{
+    height: 80px;
+    width: 80px;
+    background:none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: all 0.4s;
+}
+.close-popup-img{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    border: none;
+}
+.close-popup:hover{
+    transform: rotate(90deg);
+}
+/* Настройка планов в попАпе */
+.choice-plan{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    opacity: 1;
+    border: 1px solid;
+    border-radius: 20px;
+    height: 800px;
+    width: 1400px;
+}
+h3{
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.plan{
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    justify-content: start;
+    align-items: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+.contact-url{
+    height: fit-content;
+    width: fit-content;
+}
+.price{
+    font-family: 'Pridi';
+    font-size: 28px;
+}
+.permonth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Prompt';
+    font-size: 20px;
+}
+.buy-now{
+    height: 40px;
+    width: 300px;
+    border-radius: 8px;
+    font-family: 'Prompt';
+    font-size: 26px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.buy-now:hover{
+    border: none;
+    background-color: #69CA60;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+li{
+    text-align: start;
+    font-size: 20px;
+    
+}
+a{
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+}
+.info{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 400px;
+    width: 380px;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+.info-about-plan{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 600px;
+    width: 400px;
+    gap: 10px;
+}
+.h1-title{
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+}
+.pricing{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 43px;
+    width: 370px;
+    justify-content: center;
+    align-items: center;
+}
+.plan-title{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    width: 380px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.plan-title-text{
+    height: max-content;
+    width: max-content;
+    text-align: center;
+    font-size: 32px;
+    
+}
+.plans{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.plan{
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    height: 600px;
+    width: 400px;
+    border-radius: 20px;
+    justify-content: start;
+    align-items: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+
+/* NOTIFICATION */
+
+.notification {
+    position: absolute;
+    display: flex;
+    top: 100px;
+    right: -90px;
+    transform: translateX(-50%);
+    background: #f9f9f9;
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    height: 60px;
+    text-align: center;
+    justify-content: center;
+    display: none;
+}
+.progress-bar {
+    height: 3px;
+    background: #000000;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 50%;
+    border: none;
+    animation: progress 3s linear;
+}
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0; }
 }
