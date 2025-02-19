@@ -10,6 +10,8 @@ This project was created as a practice over a Django module. Its purpose was to 
 * [Нікіта Емріх](https://github.com/NikitaEmrih)
 
 ## __Installation guide for the project__ | __Інструкція до встановлення проекту__
+
+### English language
 __Step 1__: Download and install Python: Go to the official website [python.org](https://www.python.org/) and download the latest version of Python for your operating system. Make sure to check the 'Add Python to PATH' option during the installation<br><br>
 __Step 2__: Download and install Git: Go to the official website [git-scm.com](https://git-scm.com/) and download the latest version of Git for your operating system.<br><br>
 __Step 3__: Install Visual Studio Code from the official website: https://code.visualstudio.com/<br><br>
@@ -18,6 +20,7 @@ __Step 5__: Use the shortcut ```Ctrl + ~``` to open the terminal menu and select
 __Step 6__: Copy the command ```git clone https://github.com/DmitriyPechenyuk0/QRLogic.git``` into the Git terminal<br><br>
 __Step 7__: Create a new Command Prompt terminal, then copy the command ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver``` into it<br><br>
 
+### Українською мовою
 __Крок 1__: Завантажте та встановіть Python: Перейдіть на офіційний сайт [python.org](https://www.python.org/) і завантажте останню версію Python для вашої операційної системи. Під час встановлення обов’язково відзначте опцію "Add Python to PATH"<br><br>
 __Крок 2__: Завантажте та встановіть Git: Перейдіть на офіційний сайт [git-scm.com](https://git-scm.com/) і завантажте останню версію Git для вашої операційної системи<br><br>
 __Крок 3__: Встановіть Visual Studio Code з офіційного сайту: https://code.visualstudio.com/<br><br>
