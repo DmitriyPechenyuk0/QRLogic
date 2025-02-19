@@ -1,15 +1,15 @@
-# Project "QRLogic" | Проект "QRLogic"
+# Project "QRLogic" | Проєкт "QRLogic"
 
-## __Purpose of the Project__ | __Мета створення проекту__
+## __Purpose of the Project__ | __Мета створення проєкту__
 
-This project was created as a practice over a Django module. Its purpose was to learn the key features of the module, to improve our coding skills<br> <br> Цей проєкт був створений як практика над модулем Django. Його метою було вивчити ключові можливості модуля, вдосконалити наші скіли в кодингу
+This project was created as a practice over a Django module. Its purpose was to learn the key features of the module and improve our coding skills<br> <br> Цей проєкт створений для практики з модулем Django. Його метою було вивчити ключові можливості модуля, вдосконалити наші скіли в кодингу
 
-## __Team lineup__ | __Склад команди__
+## __Team members__ | __Склад команди__
 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
 * [Нікіта Емріх](https://github.com/NikitaEmrih)
 
-## __Installation guide for the project__ | __Інструкція до встановлення проекту__
+## __Project installation guide__ | __Інструкція до встановлення проєкту__
 
 ### In English
 * __Step 1__: Download and install Python: Go to the official website [python.org](https://www.python.org/) and download the latest version of Python for your operating system. Make sure to check the 'Add Python to PATH' option during the installation<br><br>
@@ -30,7 +30,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 * __Крок 7__: Створіть новий термінал Command Prompt, а потім скопіюйте в нього команду ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver```<br><br>
 
 
-## __Useful links related to the project__ | __Корисні посилання стосовно проекту__
+## __Useful project-related links__ | __Корисні посилання стосовно проекту__
 
 * [Figma Design](https://www.figma.com/design/zuJFbfVMv3Gj0Nj5enrInM/QRLogic-Design?node-id=5-3&p=f&t=m3kC5uEKsHLNVoZs-0)
 * [FigJam](https://www.figma.com/board/6FgTky1OFCN0xwHK6livO5/QRLogic-FigJam?node-id=0-1&p=f&t=55d6m70bPoKnphCC-0)
