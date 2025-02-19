@@ -13,8 +13,9 @@ This project was created as a practice over a Django module. Its purpose was to 
 __Step 1__:Download and install Python: Go to the official website [python.org](https://www.python.org/) and download the latest version of Python for your operating system. Make sure to check the 'Add Python to PATH' option during the installation<br>
 __Step 2__: Download and install Git: Go to the official website [git-scm.com](https://git-scm.com/) and download the latest version of Git for your operating system.<br>
 __Step 3__: Install Visual Studio Code from the official website: https://code.visualstudio.com/<br>
-__Step 4__: Open Visual Studio Code, select the folder where you want to run the project through the navigation menu 'File' -> 'Open Folder'
-__Step 5__: 
+__Step 4__: Open Visual Studio Code, select the folder where you want to run the project through the navigation menu 'File' -> 'Open Folder'<br>
+__Step 5__: Use the shortcut Ctrl + ~ to open the terminal menu and select 'Git Bash'<br>
+__Step 6__: Copy the command ```git clone https://github.com/DmitriyPechenyuk0/QRLogic.git``` into the Git terminal.<br>
 
 
 ## __Useful links related to the project__ | __Корисні посилання стосовно проекту__
