@@ -18,6 +18,15 @@ __Step 5__: Use the shortcut Ctrl + ~ to open the terminal menu and select 'Git 
 __Step 6__: Copy the command ```git clone https://github.com/DmitriyPechenyuk0/QRLogic.git``` into the Git terminal<br><br>
 __Step 7__: Create a new Command Prompt terminal, then copy the command ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver``` into it<br><br>
 
+__Крок 1__: Завантажте та встановіть Python: Перейдіть на офіційний сайт [python.org](https://www.python.org/) і завантажте останню версію Python для вашої операційної системи. Під час встановлення обов’язково відзначте опцію "Add Python to PATH"<br><br>
+__Крок 2__: Завантажте та встановіть Git: Перейдіть на офіційний сайт [git-scm.com](https://git-scm.com/) і завантажте останню версію Git для вашої операційної системи<br><br>
+__Крок 3__: Встановіть Visual Studio Code з офіційного сайту: https://code.visualstudio.com/<br><br>
+__Крок 4__: Відкрийте Visual Studio Code, виберіть папку, в якій хочете запустити проєкт, через навігаційне меню "File" -> "Open Folder"<br><br>
+__Крок 5__: Скористайтеся комбінацією клавіш ```Ctrl + ~```, щоб відкрити меню терміналів, і виберіть "Git Bash"<br><br>
+__Крок 6__: Скопіюйте команду git clone ```https://github.com/DmitriyPechenyuk0/QRLogic.git``` у Git-термінал<br><br>
+__Крок 7__: Створіть новий термінал Command Prompt, а потім скопіюйте в нього команду ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver```<br><br>
+
+
 ## __Useful links related to the project__ | __Корисні посилання стосовно проекту__
 
 * [Figma Design](https://www.figma.com/design/zuJFbfVMv3Gj0Nj5enrInM/QRLogic-Design?node-id=5-3&p=f&t=m3kC5uEKsHLNVoZs-0)
