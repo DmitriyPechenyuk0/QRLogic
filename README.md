@@ -2,7 +2,7 @@
 
 ## __Purpose of the Project__ | __Мета створення проекту__
 
-This project was created as a practice over a Django module. Its purpose was to learn the key features of the module, to improve our coding skills | Цей проєкт був створений як практика над модулем Django. Його метою було вивчити ключові можливості модуля, вдосконалити наші скіли в кодингу
+This project was created as a practice over a Django module. Its purpose was to learn the key features of the module, to improve our coding skills<br> --------------- <br> Цей проєкт був створений як практика над модулем Django. Його метою було вивчити ключові можливості модуля, вдосконалити наші скіли в кодингу
 
 ## __Team lineup__ | __Склад команди__
 
