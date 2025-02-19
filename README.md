@@ -16,7 +16,7 @@ __Step 3__: Install Visual Studio Code from the official website: https://code.v
 __Step 4__: Open Visual Studio Code, select the folder where you want to run the project through the navigation menu 'File' -> 'Open Folder'<br><br>
 __Step 5__: Use the shortcut Ctrl + ~ to open the terminal menu and select 'Git Bash'<br><br>
 __Step 6__: Copy the command ```git clone https://github.com/DmitriyPechenyuk0/QRLogic.git``` into the Git terminal<br><br>
-__Step 7__: Create a new Command Prompt terminal, then copy the command ```python -m venv QRLogic/venv cd QRLogic/venv/Scripts activate.bat cd ../.. pip install -r requirements.txt python QRLogic/manage.py runserver``` into it<br><br>
+__Step 7__: Create a new Command Prompt terminal, then copy the command ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver``` into it<br><br>
 
 ## __Useful links related to the project__ | __Корисні посилання стосовно проекту__
 
