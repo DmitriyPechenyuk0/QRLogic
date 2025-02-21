@@ -39,15 +39,20 @@ My QR Codes
                                 <div class="div-component">
                                     <p class="qr-component" >Substrate Color: {{ qr.background_color }}</p>
                                 </div>
+
                                 <div class="btn">
                                     <div>
-                                        <button class="download-btn" type="submit">Download</button>
-                                    </div>
-                                    <div>
                                         <button class="download-btn" type="submit">
-                                            <img src="{% static 'createqr_app/images/color-settings.png' %}" alt="">
+                                            <a href="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}" download="{{ qr.name }}" class="">download</a>
                                         </button>
                                     </div>
+                                    <div>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="delete_qr" value="{{ qr.id }}">
+                                            <button class="btn btn-danger" type="submit"><img src="" alt="">delete</button> 
+                                        </form>
+                                    </div>                                    
                                 </div>
                             </div>
                         </div>

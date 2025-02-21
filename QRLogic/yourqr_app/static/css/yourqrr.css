@@ -14,9 +14,10 @@
   padding: 10px;
   flex-wrap: wrap;
   height: 800px;
-  width: 1400px;
+  width: 1600px;
   border-radius: 20px;
   background-color: #eeeeee;
+  
 }
 h1{
   font-size: 36px;
@@ -28,7 +29,7 @@ h1{
 .border-qrs{
   display: flex;
   height: 780px;
-  width: 1380px;
+  width: 1580px;
   justify-content: start;
   align-items: start;
   background-color: #ffffff;
@@ -37,6 +38,7 @@ h1{
   flex-wrap: wrap;
   position: sticky;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 .qrs{
   display: flex;
