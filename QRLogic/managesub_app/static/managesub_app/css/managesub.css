@@ -8,7 +8,13 @@ main{
     align-items: center;
     gap: 50px;
 }
-
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
 h1{
     font-size: 28px;
     font-weight: 400;
@@ -113,8 +119,224 @@ li{
     height: 18px;
 
 }
-
+/*  */
 /* ПопАпы */
+/*  */
+
+.popup-entercard{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.popup-entercard-opened{
+    display: flex;
+}
+
+.overlay-entercard{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+}
+.entercard{
+    display: flex;
+    position: relative;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+    width: 600px;
+    height: 400px;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+.entercard-p{
+    font-size: 26px;
+    text-align: center;
+    width: 580px;
+    height: fit-content;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+.cardnumber{
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+    justify-content: center;
+    align-items: start;
+    width: 500px;
+    height: 89px;
+    flex-direction: column;
+    padding: 10px;
+}
+.cardnumber input{
+    width: 480px;
+    height: 40px;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.exp-cvv{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+}
+.expiration{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+    align-items: start;
+    width: 235px;
+    height: 69px;
+}
+.expiration p{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    font-size: 16px;
+    width: fit-content;
+    height: max-content;
+}
+.expiration input{
+    width: 235px;
+    height: 40px;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 16px;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.cvv{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+    align-items: start;
+    width: 235px;
+    height: 69px;
+    position: relative;
+}
+.cvv p{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    font-size: 16px;
+    width: fit-content;
+    height: max-content;
+}
+.cvv input{
+    width: 235px;
+    height: 40px;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+    justify-content: start;
+    align-items: start;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.cvv input:focus{
+    border: 1px;
+    outline: 1px solid;
+}
+.expiration input:focus{
+    border: 1px;
+    outline: 1px solid;
+}
+.cardnumber input{
+    border: 1px;
+    outline: 1px solid;
+}
+
+.subscribe{
+    position: absolute;
+    top: 336px;
+    left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    gap: 10px;
+    font-size: 22px;
+    background-color: none;
+    background: none;
+    border: 1px solid;
+    border-radius: 10px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.subscribe:hover{
+    cursor: pointer;
+    background-color: #69CA60;
+    border: none;
+}
+
+.info-security{
+    position: absolute;
+    top: 35px;
+    left: 201px;
+    width: 28px;
+    height: 28px;
+
+}
+.infocvv{
+    width: 185px;
+    height: 55px;
+    display: flex;
+    padding: 2px 3px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: white;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.infocvv p{
+    font-size: 11px;
+}
+.info-security:hover + .infocvv{
+    opacity: 1;
+    visibility: visible;
+}
+.info-security img{
+    width: 28px;
+    height: 28px;
+}
+
 .popup{
     display: none;
     position: absolute;

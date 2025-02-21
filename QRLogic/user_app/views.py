@@ -30,8 +30,8 @@ def render_signup(request):
 
                 Profile.objects.create(
                     user=user,
-                    subscription = 1,
-                    subscription_expires=datetime.date.today() + datetime.timedelta(weeks=261)
+                    subscription = 'free',
+                    subscription_expires=datetime.date.today() + datetime.timedelta(weeks=4)
                 )
 
                 return redirect('/user/signin/')

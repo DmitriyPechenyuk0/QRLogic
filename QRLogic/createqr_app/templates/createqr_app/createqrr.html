@@ -12,6 +12,10 @@ Create QR Code
 {% block body %}
 
 <main>
+    {% if sub_error %}
+        <p>Sub error</p>
+    {% endif %}
+
     <form class="main-div" method="post" enctype="multipart/form-data" >
         {% csrf_token %}
         <div class="settings">
@@ -41,6 +45,9 @@ Create QR Code
                 </div>
             </div>
             <div class="logo-setting">
+                {% if user.profile.subscription == 'free'%}
+                <div class="overlay"><p>Logo customization is available for Standart and Pro users</p></div>
+                {% endif %}
                 <div class="title-logo" >
                     <img class="title-logo-icon" src="{% static '/images/add-logo-icon.png' %}">
                     <p class="title-logo-p" >Add Logo Image</p>
@@ -59,39 +66,42 @@ Create QR Code
                     <img class="title-custom-icon" src="{% static '/images/custom-style.png' %}">
                     <p class="title-custom-p">Custom Style</p>
                 </div>
+                {% if user.profile.subscription == 'free' or user.profile.subscription == 'standart' %}
+                    <div class="overlay"><p>Shape customization is available for Pro users only</p></div>
+                {% endif %}
                 <div class="shapes">
                     <div class="any-shape">
                         <p class="shape-title">Frame Shape</p>
                         <div class="div-shapes">
-                            
+
                             <input type="radio" class="checkbox-none" name="frame" id="square-frame" checked>
                             <div class="shape">
                                 <label for="square-frame" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/square-frame.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="frame" id="round-frame">
                             <div class="shape">
                                 <label for="round-frame" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/round-frame.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="frame" id="tworound-frame">
                             <div class="shape">
                                 <label for="tworound-frame" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/2rounded-frame.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="frame" id="square-rounded-frame">
                             <div class="shape">
                                 <label for="square-rounded-frame" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/square-frame-rounded.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="frame" id="square-dotted-frame">
                             <div class="shape">
                                 <label for="square-dotted-frame" class="label-shape">
@@ -117,35 +127,35 @@ Create QR Code
                                     <img class="img-shapes" src="{% static '/images/square-square.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="squares" id="triangle-square">
                             <div class="shape">
                                 <label for="triangle-square" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/triangle-square.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="squares" id="round-square">
                             <div class="shape">
                                 <label for="round-square" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/round-square.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="squares" id="mini-rounded-square">
                             <div class="shape">
                                 <label for="mini-rounded-square" class="label-shape">
                                     <img class="img-shapes" src="{% static '/images/mini-rounded-square.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="squares" id="dotted-square">
                             <div class="shape">
                                 <label for="dotted-square" class="label-shape" >
                                     <img class="img-shapes" src="{% static '/images/dotted-square.jpg' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="squares" id="tworounded-square">
                             <div class="shape">
                                 <label for="tworounded-square" class="label-shape">
@@ -157,14 +167,14 @@ Create QR Code
                     <div class="any-shape">
                         <p class="shape-title">Body Shape</p>
                         <div class="div-shapes">
-                            
+
                             <input type="radio" class="checkbox-none" name="body" value="square"  id="square" checked>
                             <div class="shape shapep">
                                 <label id="label-squared-body" class="label-shape" for="square">
                                     <img class="img-shapes" src="{% static '/images/square-body.png' %}">
                                 </label>
                             </div>
-                            
+
                             <input type="radio" class="checkbox-none" name="body" value="gapped" id="dots">
                             <div class="shape shapep">
                                 <label id="label-miniround" class="label-shape" for="dots">

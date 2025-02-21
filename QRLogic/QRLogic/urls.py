@@ -20,7 +20,7 @@ from home_app.views import render_home_app
 from contact_app.views import render_contact_app
 from managesub_app.views import render_managesub_app
 from yourqr_app.views import render_yourqr_app
-from createqr_app.views import render_ceateqr_app
+from createqr_app.views import render_ceateqr_app, qr_redirect
 from . import settings
 from django.conf.urls.static import static
 
@@ -37,7 +37,10 @@ urlpatterns = [
 
     path('myqr/', render_yourqr_app, name= 'myqr_app'),
 
-    path("createqr/", render_ceateqr_app, name="createqr_app")
+    path("createqr/", render_ceateqr_app, name="createqr_app"),
+
+    path('qr/<int:qr_code_id>/', qr_redirect, name='qr_redirect'),
+
 ]
 
 if settings.DEBUG:

@@ -3,6 +3,5 @@ colorama==0.4.6
 Django==5.1.5
 pillow==11.1.0
 qrcode==8.0
-segno==1.6.1
 sqlparse==0.5.3
 tzdata==2025.1

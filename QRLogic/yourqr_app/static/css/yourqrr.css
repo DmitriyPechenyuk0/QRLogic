@@ -41,7 +41,7 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 21px;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10px;
@@ -58,7 +58,7 @@ h1{
     gap: 10px;
     justify-content: start;
     align-items: center;
-    height: 500px;
+    height: fit-content;
     width: 250px;
     border: 1px solid black;
     border-radius: 2px;

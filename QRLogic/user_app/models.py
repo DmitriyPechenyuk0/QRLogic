@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    subscription = models.IntegerField(null=False)
+    subscription = models.CharField(max_length=255,null=False)
     subscription_expires = models.DateField()
 
 

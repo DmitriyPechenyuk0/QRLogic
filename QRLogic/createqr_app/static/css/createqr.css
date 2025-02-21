@@ -466,3 +466,16 @@ input[type="radio"]:checked + .shape label img {
     border: 1px solid black ;
     border-radius: 5px;
 }
+
+.overlay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 22px;
+    width: 660px;
+    height: 230px;
+    border-radius: 4px;
+}

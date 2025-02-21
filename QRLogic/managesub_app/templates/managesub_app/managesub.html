@@ -13,119 +13,156 @@ Manage Subscription Page
 {% block body %}
 <script defer src="{% static 'managesub_app/js/managesub.js' %}"></script>
 <main>
-    <div class="title">
-        <h1 class="title-text">Subscription Management Center</h1>
-    </div>
-
-    <div class="current-plan">
-        <div class="plan-titled" ><p class="current-plan-title">Current plan: <b>Free</b></p></div>
-        <div class="body-of-plan">
-            <div class="info-about-plan">
-                <ul>
-                    <li>Customize QR codes</li>
-                    <li>Up to 100 QR codes </li>
-                    <li>QR codes that last forever</li>
-                </ul>
-            </div>
-            <div class="buttons">
-                <button class="change-button button">
-                    Change Plan
-                </button>
-                <button class="cancel-button button">
-                    Cancel Plan
-                </button>
-            </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="title">
+            <h1 class="title-text">Subscription Management Center</h1>
         </div>
-    </div>
 
-    <div id="notification" class="notification">
-        You successfully unsubscribed
-        <div class="progress-bar"></div>
-    </div>
-
-    <div class="popup-cancel">
-        <div class="confirmation">
-            <p>Are you sure you want to cancel your subscription?</p>
-            <p class="cannot-cancel">If you cancel your subscription, you will be assigned the "Free" plan. You cannot cancel the "Free" plan.</p>
-            <div class="popup-buttons" >
-                <button class="button-popup-cancel kill-sub" onclick="showNotification()" >Kill my sub</button>
-                <button class="button-popup-cancel save-sub" >Save it</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="popup">
-        <div class="choice-plan">
-            <h3>Pick the plan you want</h3>
-            <button class="close-popup"><img class="close-popup-img"  src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
-            <div class="plans">
-                <div class="plan">
-                    <div class="plan-title">
-                        <p class="plan-title-text">Free</p>
-                    </div>
-                    <div class="info-about-plan">
-                        <div class="info">
-                            <ul>
-                                <li>1 QR code for up to 6 months</li>
-                                <li>Simple setup, no skills needed.</li>
-                                <li>Basic color options.</li>
-                                <li>Perfect for personal use.</li>
-                                <li>Completely free, no hidden fees!</li>
-                            </ul>
-                        </div>
-                        <div class="pricing">
-                            <p class="price">$0</p>
-                            <p class="permonth">USD/month</p>
-                        </div>
-                    <button class="buy-now">BUY NOW</button>
-                    </div>
+        <div class="current-plan">
+            <div class="plan-titled" ><p class="current-plan-title">Current plan: <b>Free</b></p></div>
+            <div class="body-of-plan">
+                <div class="info-about-plan">
+                    <ul>
+                        <li>Customize QR codes</li>
+                        <li>Up to 100 QR codes </li>
+                        <li>QR codes that last forever</li>
+                    </ul>
                 </div>
-        
-                <div class="plan">
-                    <div class="plan-title">
-                        <p class="plan-title-text">Standart</p>
-                    </div>
-                    <div class="info-about-plan">
-                        <div class="info">
-                            <ul>
-                                <li>Includes everything in "Free."</li>
-                                <li>Up to 10 QR codes.</li>
-                                <li>Full color and logo customization.</li>
-                                <li>High-quality downloads.</li>
-                            </ul>
-                        </div>
-                        <div class="pricing">
-                            <p class="price">$2</p>
-                            <p class="permonth">USD/month</p>
-                        </div>
-                    <button class="buy-now">BUY NOW</button>
-                    </div>
-                </div>
-        
-                <div class="plan">
-                    <div class="plan-title">
-                        <p class="plan-title-text">Pro</p>
-                    </div>
-                    <div class="info-about-plan">
-                        <div class="info">
-                            <ul>
-                                <li>Includes everything in "Standard."</li>
-                                <li>Up to 100 QR codes</li>
-                                <li>Advanced designs.</li>
-                                <li>Priority support.</li>
-                            </ul>
-                        </div>
-                        <div class="pricing">
-                            <p class="price">$10</p>
-                            <p class="permonth">USD/month</p>
-                        </div>
-                    <button class="buy-now">BUY NOW</button>
-                    </div>
+                <div class="buttons">
+                    <button type="button" class="change-button button">
+                        Change Plan
+                    </button>
+                    <button type="button" class="cancel-button button">
+                        Cancel Plan
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div id="notification" class="notification">
+            You successfully unsubscribed
+            <div class="progress-bar"></div>
+        </div>
+
+        <!-- <div id="notification-subscribed" class="notification">
+            You successfully selected a {{ type_sub }} subscription
+            <div class="progress-bar"></div>
+        </div> -->
+
+        <div class="popup-cancel">
+            <div class="confirmation">
+                <p>Are you sure you want to cancel your subscription?</p>
+                <p class="cannot-cancel">If you cancel your subscription, you will be assigned the "Free" plan. You cannot cancel the "Free" plan.</p>
+                <div class="popup-buttons" >
+                    <button class="button-popup-cancel kill-sub" name="action" value="killsub" >Kill my sub</button>
+                    <button class="button-popup-cancel save-sub" >Save it</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup">
+            <div class="choice-plan">
+                <h3>Pick the plan you want</h3>
+                <button class="close-popup"><img class="close-popup-img"  src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
+                <div class="plans">
+                    <div class="plan">
+                        <div class="plan-title">
+                            <p class="plan-title-text">Free</p>
+                        </div>
+                        <div class="info-about-plan">
+                            <div class="info">
+                                <ul>
+                                    <li>1 QR code for up to 1 months</li>
+                                    <li>Simple setup, no skills needed.</li>
+                                    <li>Basic color options.</li>
+                                    <li>Perfect for personal use.</li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="pricing">
+                                <p class="price">$0</p>
+                                <p class="permonth">USD/month</p>
+                            </div>
+                        <button type="button" name="plans"  value="free" class="buy-now">BUY NOW</button>
+                        </div>
+                    </div>
+                
+                    <div class="plan">
+                        <div class="plan-title">
+                            <p class="plan-title-text">Standart</p>
+                        </div>
+                        <div class="info-about-plan">
+                            <div class="info">
+                                <ul>
+                                    <li>Includes everything in "Free."</li>
+                                    <li>Up to 10 QR codes.</li>
+                                    <li>Full color and logo customization.</li>
+                                    <li>High-quality downloads.</li>
+                                </ul>
+                            </div>
+                            <div class="pricing">
+                                <p class="price">$2</p>
+                                <p class="permonth">USD/month</p>
+                            </div>
+                            <button type="button" name="plans" value="standart" class="buy-now">BUY NOW</button>
+                        </div>
+                    </div>
+                
+                    <div class="plan">
+                        <div class="plan-title">
+                            <p class="plan-title-text">Pro</p>
+                        </div>
+                        <div class="info-about-plan">
+                            <div class="info">
+                                <ul>
+                                    <li>Includes everything in "Standard."</li>
+                                    <li>Up to 100 QR codes</li>
+                                    <li>Advanced designs.</li>
+                                    <li>Priority support.</li>
+                                </ul>
+                            </div>
+                            <div class="pricing">
+                                <p class="price">$10</p>
+                                <p class="permonth">USD/month</p>
+                            </div>
+                            <button type="button" name="plans" value="pro" class="buy-now">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-entercard">
+            <div class="overlay-entercard">
+                <div class="entercard">
+                    <p class="entercard-p">
+                        Enter card details
+                    </p>
+                    <div class="cardnumber">
+                        <p>Card number</p>
+                        <input placeholder="0000-0000-0000-0000" type="text" maxlength="cardnumber" id="cardnumber">
+                    </div>
+                    <div class="exp-cvv">
+                        <div class="expiration">
+                            <p>Expiration date</p>
+                            <input type="text" name="expiration-date" placeholder="MM/YY" id="expiration-date">
+                        </div>
+                        <div class="cvv">
+                            <p>Security code</p>
+                            <input type="text" name="expiration-date" maxlength="4" id="expiration-date">
+                            <div class="info-security">
+                                <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
+                            </div>
+                            <div class="infocvv">
+                                <p>The security code or CVV/CVC is the three or four digit code on the back of your card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </main>
 
 {% endblock %}
