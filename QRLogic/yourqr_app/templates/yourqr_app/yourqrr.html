@@ -43,14 +43,14 @@ My QR Codes
                                 <div class="btn">
                                     <div>
                                         <button class="download-btn" type="submit">
-                                            <a href="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}" download="{{ qr.name }}" class="">download</a>
+                                            <a href="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}" download="{{ qr.name }}" class="">Download</a>
                                         </button>
                                     </div>
                                     <div>
                                         <form method="post">
                                             {% csrf_token %}
                                             <input type="hidden" name="delete_qr" value="{{ qr.id }}">
-                                            <button class="btn btn-danger" type="submit"><img src="" alt="">delete</button> 
+                                            <button class="delete" type="submit"><img src="{% static '/images/trash.png' %}" alt=""></button> 
                                         </form>
                                     </div>                                    
                                 </div>
