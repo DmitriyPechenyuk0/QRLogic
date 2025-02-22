@@ -62,9 +62,41 @@ My QR Codes
             </div>
         </div>
         <div class="filtes">
-            <form method="post" class="filter">
+            <form method="post" class="">
                 {% csrf_token %}
-                <p class="popop">Filters</p>
+                <div class="filter-settings">
+                    <div class="filter-pp">
+                        <div class="filter-date">
+                            <p class="filter-p">Filter by date</p>
+                            <input class="date" type="date" name="date_filter" value="{{ request.POST.date_filter }}">
+                        </div>
+                        <div class="button-filter">
+                            <button type="submit" class="fnd" name="button">find</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="url-filter">
+                    <div class="url-p">
+                        <p class="filter-p">Filter by Url</p>
+                        <div class="url-fon">
+                            <input class="text" type="text" name="url_filter" value="{{ request.POST.url_filter }}">
+                        </div>
+                    </div>
+                    <div class="button-url">
+                        <button type="submit" class="fnd" name="button">find</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+
+
+<!-- <p class="popop">Filters</p>
                 <div class="filter-settings">
                     <div class="filter-p">
                         <img src="" alt=""> 
@@ -78,14 +110,4 @@ My QR Codes
                             <button type="submit" class="fndd" name="button">find</button>
                         </div>  
                     </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</main>
-
-{% endblock %}
-
-
-
-
+                </div> -->
