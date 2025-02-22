@@ -14,10 +14,11 @@ My QR Codes
 <main>
     <div class="codes-and-filter">
         <div class="main-div">
-            <h1>My QR Codes</h1>
+            <!-- <h1>My QR Codes</h1> -->
             <div class="div-qrs">
                 <div class="border-qrs">
                     <div class="qrs">
+                    {% if qrcodes %}
                         {% for qr in qrcodes %}
                         <div class="qr">
                             <img class="qr-image" src="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}">
@@ -37,20 +38,55 @@ My QR Codes
                                 <div class="div-component">
                                     <p class="qr-component" >Substrate Color: {{ qr.background_color }}</p>
                                 </div>
+                                <div class="btn">
+                                    <div>
+                                        <button class="download-btn" type="submit">
+                                            <a href="{% get_media_prefix %}{{ qr.owner.user.username }}_{{ qr.owner.user.id }}/QRCodes/{{ qr.name }}" download="{{ qr.name }}" class="">Download</a>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="delete_qr" value="{{ qr.id }}">
+                                            <button class="delete" type="submit"><img src="{% static '/images/trash.png' %}" alt=""></button> 
+                                        </form>
+                                    </div>                                    
+                                </div>
                             </div>
                         </div>
                         {% endfor %}
+                    {% else %}
+                        <p>You don't have qr codes</p>
+                    {% endif %}
                     </div>
                 </div>
             </div>
             <div class="filtes">
-            <!-- <div>
-                <p>Choose filter by</p>
-                <select name="filter" id="filter">
-                    <option value=""></option>
-                </select>
-                <button>Apply</button>
-            </div> -->
+                <form method="post" class="">
+                    {% csrf_token %}
+                    <div class="filter-settings">
+                        <div class="filter-pp">
+                            <div class="filter-date">
+                                <p class="filter-p">Filter by creation date</p>
+                                <input class="date" type="date" name="date_filter" value="{{ request.POST.date_filter }}">
+                            </div>
+                            <div class="button-filter">
+                                <button type="submit" class="fnd" name="button">find</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="url-filter">
+                        <div class="url-p">
+                            <p class="filter-p">Filter by Url</p>
+                            <div class="url-fon">
+                                <input class="text" type="text" name="url_filter" placeholder="example.com" value="{{ request.POST.url_filter }}">
+                            </div>
+                        </div>
+                        <div class="button-url">
+                            <button type="submit" class="fnd" name="button">find</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

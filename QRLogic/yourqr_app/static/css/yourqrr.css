@@ -1,4 +1,4 @@
-.main-div{
+/* .main-div{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -103,4 +103,317 @@ label::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
 
-}
+} */
+
+.main-div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .div-qrs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    height: 800px;
+    width: 1600px;
+    border-radius: 20px;
+    background-color: #eeeeee;
+    
+  }
+  h1{
+    font-size: 36px;
+    font-weight: 400;
+    width: 1400px;
+    height: fit-content;
+    text-align: center;
+  }
+  .border-qrs{
+    display: flex;
+    height: 780px;
+    width: 1580px;
+    justify-content: start;
+    align-items: start;
+    background-color: #ffffff;
+    border-radius: 10px;
+  
+    flex-wrap: wrap;
+    position: sticky;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .qrs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 21px;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .qr{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    height: fit-content;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 2px;
+  }
+  .qr-component{
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  .qr-image{
+    height: 200px;
+    width: 200px;
+  }
+  
+  .qr-params{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+  }
+  label{
+    display: flex;
+    width: 180px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    height: 40px;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  label::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .div-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  
+  
+  
+  .qwe{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  
+  }
+  
+  
+  .btn{
+    display: flex;
+    width: 225px;
+    height: 45px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .download-btn{
+    display: flex;
+    width: 170px;
+    height: 45px;
+    background-color: #EEEEEE;
+    background: none;
+    border-radius: 8px;
+    border: black 1px solid;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .download-btn:hover{
+    background-color: #69CA60;
+    cursor: pointer;
+  }
+  
+  
+  .delete{
+   display: flex;
+   width: 45px;
+   height: 45px;
+   border: black 1px solid;
+   border-radius: 8px;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+   background: none;
+   transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .delete:hover{
+    cursor: pointer;
+    background-color: #EA3D3D;
+  }
+  
+  .delete img{
+    width: 45px;
+    height: 45px;
+  }
+  
+  .filtes{
+    display: flex;
+    width: 310px;
+    height: 225px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EEEEEE;
+    border-radius: 16px;
+    padding: 10px 10px;
+    gap: 10px 5px;
+  
+  }
+  
+  
+  .filter-pp{
+    display: flex;
+    width: fit-content;
+    height: 91px; 
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+  
+  }
+  
+  
+  
+  .date{
+    width: 230px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    text-align: center;
+    border: none;
+    font-size: 20px;
+    padding: 21px 12px;
+  }
+  
+  
+  .button-filter{
+    display: flex;
+    align-items: flex-start;
+    justify-content: end;
+    flex-direction: column;
+    padding: 38.5px 4px;
+    gap: 10px;
+  }
+  
+  
+  .fnd{
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: none;
+    font-size: 16px;
+    
+  }
+  
+  
+  
+  .filter-p{
+    display: flex;
+    font-size: 18px;
+  }
+  
+  
+  .filter-settings{
+    display: flex;
+    width: 285px;
+    height: 91px;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 5px;
+  }
+  
+  .filter-date{
+    display: flex;
+    width: 230px;
+    height: 91px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .url-filter{
+    display: flex;
+    width: 285px;
+    height: 91px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 10px -10px;
+    gap: 10px;
+  }
+  .url-p{
+    display: flex;
+    width: 230px;
+    height: 87px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+  }
+  
+  
+  .url-fon{
+    display: flex;
+    width: 230px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+  }
+  
+  .text{
+    display: flex;
+    width: 225px;
+    height: 45px;
+    padding: 5px 10px;
+    border: black 1px solid;
+    border-radius: 3px; 
+  }
+  
+  .button-url{
+    display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-top: 35.6px;
+  }
