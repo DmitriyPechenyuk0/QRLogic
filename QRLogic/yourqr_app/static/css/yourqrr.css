@@ -287,18 +287,19 @@ label::-webkit-scrollbar {
   width: 230px;
   height: 50px;
   align-items: center;
-  padding: 5px 5px;
+  justify-content: center;
+  flex-direction: row;
   background-color: #FFFFFF;
   border-radius: 4px;
 }
 
 .text{
   display: flex;
-  width: 228px;
-  height: 48px;
+  width: 225px;
+  height: 45px;
   padding: 5px 10px;
   border: black 1px solid;
-  border-radius: 3px;
+  border-radius: 3px; 
 }
 
 .button-url{

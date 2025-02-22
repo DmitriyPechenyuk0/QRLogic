@@ -67,7 +67,7 @@ My QR Codes
                 <div class="filter-settings">
                     <div class="filter-pp">
                         <div class="filter-date">
-                            <p class="filter-p">Filter by date</p>
+                            <p class="filter-p">Filter by creation date</p>
                             <input class="date" type="date" name="date_filter" value="{{ request.POST.date_filter }}">
                         </div>
                         <div class="button-filter">
@@ -79,7 +79,7 @@ My QR Codes
                     <div class="url-p">
                         <p class="filter-p">Filter by Url</p>
                         <div class="url-fon">
-                            <input class="text" type="text" name="url_filter" value="{{ request.POST.url_filter }}">
+                            <input class="text" type="text" name="url_filter" placeholder="example.com" value="{{ request.POST.url_filter }}">
                         </div>
                     </div>
                     <div class="button-url">
