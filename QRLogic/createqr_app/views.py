@@ -11,6 +11,7 @@ from qrcode.image.styles.moduledrawers import GappedSquareModuleDrawer,CircleMod
 from qrcode.image.styles.colormasks import SolidFillColorMask
 from .models import QrCode
 from PIL import Image
+from django.http import Http404
 from django.urls import reverse
 
 # Create your views here.
@@ -21,8 +22,10 @@ def hex_to_rgb(hex_color):
 
 def qr_redirect(request, qr_code_id):
     qr_code = get_object_or_404(QrCode, id=qr_code_id)
-
-    return redirect(qr_code.url)
+    if timezone.now() < qr_code.expire_date:
+        return redirect(qr_code.url)
+    else:
+        return Http404('QR code was expired')
 
 def render_ceateqr_app(request):
     context = {'page': 'createqr'}
@@ -60,7 +63,6 @@ def render_ceateqr_app(request):
                 scale = request.POST.get('sizeqr')
 
                 body = request.POST.get('body')
-                frame = request.POST.get('frame')
                 square = request.POST.get('squares')
 
                 drawers = { 'rounded': RoundedModuleDrawer(),
@@ -88,7 +90,6 @@ def render_ceateqr_app(request):
                         background_color= str(light_color),
                         color= str(dark_color),
                         body_style=body,
-                        frame_style=frame,
                         square_style=square,
                         create_date=today,
                         expire_date=expire
@@ -105,6 +106,7 @@ def render_ceateqr_app(request):
                     qr_code = qr.make_image(
                         image_factory=StyledPilImage,
                         module_drawer=drawers[body],
+                        eye_drawer=drawers[square],
                         color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
 
                     qr_code.save(out, kind='png')
@@ -174,7 +176,6 @@ def render_ceateqr_app(request):
                         background_color= str(light_color),
                         color= str(dark_color),
                         body_style=body,
-                        frame_style=frame,
                         square_style=square,
                         create_date=today,
                         expire_date=expire
@@ -190,6 +191,7 @@ def render_ceateqr_app(request):
                     qr_code = qr.make_image(
                         image_factory=StyledPilImage,
                         module_drawer=drawers[body],
+                        eye_drawer=drawers[square],
                         color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
 
                     qr_code.save(str(qr_path), kind='png')

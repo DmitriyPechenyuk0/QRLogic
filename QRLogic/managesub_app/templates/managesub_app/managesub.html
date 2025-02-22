@@ -20,14 +20,39 @@ Manage Subscription Page
         </div>
 
         <div class="current-plan">
-            <div class="plan-titled" ><p class="current-plan-title">Your plan: <b>Free</b></p></div>
+            <div class="plan-titled" ><p class="current-plan-title">Your plan:   {{ user.profile.subscription.capitalize }}</p></div>
             <div class="body-of-plan">
                 <div class="info-about-plan">
-                    <ul>
-                        <li>Customize QR codes</li>
-                        <li>Up to 100 QR codes </li>
-                        <li>QR codes that last forever</li>
-                    </ul>
+                    {% if user.profile.subscription == 'pro' %}
+                        <ul>
+                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                            <li style="list-style: none">   </li>
+                            <li>Includes everything in "Standard."</li>
+                            <li>Up to 100 QR codes</li>
+                            <li>Advanced designs.</li>
+                            <li>Priority support.</li>
+                        </ul>
+                    {% endif %}
+                    {% if user.profile.subscription == 'standart' %}
+                        <ul>
+                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                            <li style="list-style: none">   </li>
+                            <li>Includes everything in "Free."</li>
+                            <li>Up to 10 QR codes.</li>
+                            <li>Full color and logo customization.</li>
+                            <li>High-quality downloads.</li>
+                        </ul>
+                    {% endif %}
+                    {% if user.profile.subscription == 'free' %}
+                        <ul>
+                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                            <li style="list-style: none">   </li>
+                            <li>1 QR code for up to 6 months</li>
+                            <li>Simple setup, no skills needed.</li>
+                            <li>Basic color options.</li>
+                            <li>Perfect for personal use.</li>
+                        </ul>
+                    {% endif %}
                 </div>
                 <div class="buttons">
                     <button type="button" class="change-button button">
@@ -39,11 +64,6 @@ Manage Subscription Page
                 </div>
             </div>
         </div>
-
-        <!-- <div id="notification" class="notification">
-            You successfully unsubscribed
-            <div class="progress-bar"></div>
-        </div> -->
         <div class="popup-cancel">
             <div class="confirmation">
                 <p>Are you sure you want to cancel your subscription?</p>
@@ -145,16 +165,16 @@ Manage Subscription Page
                     </p>
                     <div class="cardnumber">
                         <p>Card number</p>
-                        <input placeholder="0000-0000-0000-0000" type="text" required maxlength="cardnumber" id="cardnumber" class="cardnumber-free">
+                        <input placeholder="0000-0000-0000-0000" type="text"  maxlength="cardnumber" id="cardnumber" class="cardnumber-free">
                     </div>
                     <div class="exp-cvv">
                         <div class="expiration">
                             <p>Expiration date</p>
-                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-free" class="expiration-free">
+                            <input type="text" name="expiration-date"  placeholder="MM/YY" id="expiration-date-free" class="expiration-free">
                         </div>
                         <div class="cvv">
                             <p>Security code</p>
-                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
+                            <input type="text" name="expiration-date"  maxlength="4" id="expiration-date">
                             <div class="info-security">
                                 <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
                             </div>
@@ -163,6 +183,7 @@ Manage Subscription Page
                             </div>
                         </div>
                     </div>
+                    <button class="subscribe-close-popup"><img class="subscribe-close-popup-img" src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
                     <button class="subscribe-free subscribe"  value="free" name="subscribe" type="submit">Subscribe</button>
                 </div>
             </div>
@@ -176,16 +197,16 @@ Manage Subscription Page
                     </p>
                     <div class="cardnumber">
                         <p>Card number</p>
-                        <input placeholder="0000-0000-0000-0000" required type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-standart">
+                        <input placeholder="0000-0000-0000-0000"  type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-standart">
                     </div>
                     <div class="exp-cvv">
                         <div class="expiration">
                             <p>Expiration date</p>
-                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-standart" class="expiration-standart">
+                            <input type="text" name="expiration-date"  placeholder="MM/YY" id="expiration-date-standart" class="expiration-standart">
                         </div>
                         <div class="cvv">
                             <p>Security code</p>
-                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
+                            <input type="text" name="expiration-date"  maxlength="4" id="expiration-date">
                             <div class="info-security">
                                 <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
                             </div>
@@ -194,6 +215,7 @@ Manage Subscription Page
                             </div>
                         </div>
                     </div>
+                    <button class="subscribe-close-popup"><img class="subscribe-close-popup-img" src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
                     <button class="subscribe-standart subscribe" value="standart" name="subscribe" type="submit">Subscribe</button>
                 </div>
             </div>
@@ -207,16 +229,16 @@ Manage Subscription Page
                     </p>
                     <div class="cardnumber">
                         <p>Card number</p>
-                        <input placeholder="0000-0000-0000-0000" required type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-pro">
+                        <input placeholder="0000-0000-0000-0000"  type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-pro">
                     </div>
                     <div class="exp-cvv">
                         <div class="expiration">
                             <p>Expiration date</p>
-                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-pro" class="expiration-pro">
+                            <input type="text" name="expiration-date"  placeholder="MM/YY" id="expiration-date-pro" class="expiration-pro">
                         </div>
                         <div class="cvv">
                             <p>Security code</p>
-                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
+                            <input type="text" name="expiration-date"  maxlength="4" id="expiration-date">
                             <div class="info-security">
                                 <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
                             </div>
@@ -225,6 +247,7 @@ Manage Subscription Page
                             </div>
                         </div>
                     </div>
+                    <button class="subscribe-close-popup"><img class="subscribe-close-popup-img" src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
                     <button class="subscribe-pro subscribe" value="pro" name="subscribe" type="submit">Subscribe</button>
                 </div>
             </div>
