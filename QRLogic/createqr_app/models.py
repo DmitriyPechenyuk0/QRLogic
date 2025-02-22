@@ -18,3 +18,6 @@ class QrCode(models.Model):
 
     def expired(self):
         return self.expire_date and now().date() > self.expire_date
+    
+    def __str__(self):
+        return f'{self.owner.user.username}_{self.pk}'

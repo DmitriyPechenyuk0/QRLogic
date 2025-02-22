@@ -20,7 +20,7 @@ Manage Subscription Page
         </div>
 
         <div class="current-plan">
-            <div class="plan-titled" ><p class="current-plan-title">Current plan: <b>Free</b></p></div>
+            <div class="plan-titled" ><p class="current-plan-title">Your plan: <b>Free</b></p></div>
             <div class="body-of-plan">
                 <div class="info-about-plan">
                     <ul>
@@ -40,16 +40,10 @@ Manage Subscription Page
             </div>
         </div>
 
-        <div id="notification" class="notification">
+        <!-- <div id="notification" class="notification">
             You successfully unsubscribed
             <div class="progress-bar"></div>
-        </div>
-
-        <!-- <div id="notification-subscribed" class="notification">
-            You successfully selected a {{ type_sub }} subscription
-            <div class="progress-bar"></div>
         </div> -->
-
         <div class="popup-cancel">
             <div class="confirmation">
                 <p>Are you sure you want to cancel your subscription?</p>
@@ -77,14 +71,17 @@ Manage Subscription Page
                                     <li>Simple setup, no skills needed.</li>
                                     <li>Basic color options.</li>
                                     <li>Perfect for personal use.</li>
-                                    <li></li>
                                 </ul>
                             </div>
                             <div class="pricing">
                                 <p class="price">$0</p>
                                 <p class="permonth">USD/month</p>
                             </div>
-                        <button type="button" name="plans"  value="free" class="buy-now">BUY NOW</button>
+                        {% if user.profile.subscription != 'free' %}
+                            <button type="button" name="plans"  value="free" class="buy-now free-sub">BUY NOW</button>
+                        {% else %}
+                            <button type="button" name="plans"  value="free" class="buy-now free-sub" disabled>Already in use</button>
+                        {% endif %}
                         </div>
                     </div>
                 
@@ -105,8 +102,12 @@ Manage Subscription Page
                                 <p class="price">$2</p>
                                 <p class="permonth">USD/month</p>
                             </div>
-                            <button type="button" name="plans" value="standart" class="buy-now">BUY NOW</button>
-                        </div>
+                            {% if user.profile.subscription != 'standart' %}
+                                <button type="button" name="plans" value="standart" class="buy-now standart-sub">BUY NOW</button>
+                            {% else %}
+                                <button type="button" name="plans" value="standart" class="buy-now standart-sub" disabled>Already in use</button>
+                            {% endif %}
+                        </div>  
                     </div>
                 
                     <div class="plan">
@@ -126,13 +127,17 @@ Manage Subscription Page
                                 <p class="price">$10</p>
                                 <p class="permonth">USD/month</p>
                             </div>
-                            <button type="button" name="plans" value="pro" class="buy-now">BUY NOW</button>
+                            {% if user.profile.subscription != 'pro' %}
+                                <button type="button" name="plans" value="pro" class="buy-now pro-sub">BUY NOW</button>
+                            {% else %}
+                                <button type="button" name="plans" value="pro" class="buy-now pro-sub" disabled>Already in use</button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="popup-entercard">
+        <div class="popup-entercard free-entercard">
             <div class="overlay-entercard">
                 <div class="entercard">
                     <p class="entercard-p">
@@ -140,16 +145,16 @@ Manage Subscription Page
                     </p>
                     <div class="cardnumber">
                         <p>Card number</p>
-                        <input placeholder="0000-0000-0000-0000" type="text" maxlength="cardnumber" id="cardnumber">
+                        <input placeholder="0000-0000-0000-0000" type="text" required maxlength="cardnumber" id="cardnumber" class="cardnumber-free">
                     </div>
                     <div class="exp-cvv">
                         <div class="expiration">
                             <p>Expiration date</p>
-                            <input type="text" name="expiration-date" placeholder="MM/YY" id="expiration-date">
+                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-free" class="expiration-free">
                         </div>
                         <div class="cvv">
                             <p>Security code</p>
-                            <input type="text" name="expiration-date" maxlength="4" id="expiration-date">
+                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
                             <div class="info-security">
                                 <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
                             </div>
@@ -158,7 +163,69 @@ Manage Subscription Page
                             </div>
                         </div>
                     </div>
-                    <button class="subscribe" type="submit">Subscribe</button>
+                    <button class="subscribe-free subscribe"  value="free" name="subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-entercard standart-entercard">
+            <div class="overlay-entercard">
+                <div class="entercard">
+                    <p class="entercard-p">
+                        Enter card details
+                    </p>
+                    <div class="cardnumber">
+                        <p>Card number</p>
+                        <input placeholder="0000-0000-0000-0000" required type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-standart">
+                    </div>
+                    <div class="exp-cvv">
+                        <div class="expiration">
+                            <p>Expiration date</p>
+                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-standart" class="expiration-standart">
+                        </div>
+                        <div class="cvv">
+                            <p>Security code</p>
+                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
+                            <div class="info-security">
+                                <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
+                            </div>
+                            <div class="infocvv">
+                                <p>The security code or CVV/CVC is the three or four digit code on the back of your card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="subscribe-standart subscribe" value="standart" name="subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-entercard pro-entercard">
+            <div class="overlay-entercard">
+                <div class="entercard">
+                    <p class="entercard-p">
+                        Enter card details
+                    </p>
+                    <div class="cardnumber">
+                        <p>Card number</p>
+                        <input placeholder="0000-0000-0000-0000" required type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-pro">
+                    </div>
+                    <div class="exp-cvv">
+                        <div class="expiration">
+                            <p>Expiration date</p>
+                            <input type="text" name="expiration-date" required placeholder="MM/YY" id="expiration-date-pro" class="expiration-pro">
+                        </div>
+                        <div class="cvv">
+                            <p>Security code</p>
+                            <input type="text" name="expiration-date" required maxlength="4" id="expiration-date">
+                            <div class="info-security">
+                                <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
+                            </div>
+                            <div class="infocvv">
+                                <p>The security code or CVV/CVC is the three or four digit code on the back of your card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="subscribe-pro subscribe" value="pro" name="subscribe" type="submit">Subscribe</button>
                 </div>
             </div>
         </div>

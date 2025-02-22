@@ -6,12 +6,8 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     subscription = models.CharField(max_length=255,null=False)
-    subscription_expires = models.DateField()
+    subscription_expires = models.DateTimeField()
 
-
-# subscription
-
-# 0 - without
-# 1 - free
-# 2 - standart
-# 3 - pro   
+    def __str__(self):
+        return self.user.username
+    
