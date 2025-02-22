@@ -26,7 +26,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 * __Крок 3__: Встановіть Visual Studio Code з офіційного сайту: https://code.visualstudio.com/<br><br>
 * __Крок 4__: Відкрийте Visual Studio Code, виберіть папку, в якій хочете запустити проєкт, через навігаційне меню "File" -> "Open Folder"<br><br>
 * __Крок 5__: Скористайтеся комбінацією клавіш ```Ctrl + ~```, щоб відкрити меню терміналів, і виберіть "Git Bash"<br><br>
-* __Крок 6__: Скопіюйте команду git clone ```https://github.com/DmitriyPechenyuk0/QRLogic.git``` у Git-термінал<br><br>
+* __Крок 6__: Скопіюйте команду ```git clone https://github.com/DmitriyPechenyuk0/QRLogic.git``` у Git-термінал<br><br>
 * __Крок 7__: Створіть новий термінал Command Prompt, а потім скопіюйте в нього команду ```python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver```<br><br>
 
 
