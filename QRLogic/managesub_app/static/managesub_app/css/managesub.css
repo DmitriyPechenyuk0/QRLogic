@@ -16,7 +16,7 @@ form{
     align-items: center;
 }
 h1{
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 400;
 }
 ul{
@@ -35,7 +35,7 @@ li{
     gap: 10px;
 }
 .current-plan-title{
-    font-size: 26px;
+    font-size: 30px;
 }
 
 .current-plan{
@@ -43,14 +43,17 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 900px;
+    width: 580px;
     height: 800px;
     background-color: #f1f1f1;
     border-radius: 20px;
     gap: 10px;
 }
 .info-about-plan{
-    width: 860px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 640px;
     height: 620px;
     padding: 10px;
 
@@ -65,16 +68,16 @@ li{
     align-items: center;
     border-radius: 10px;
     background-color: #f7f7f7;
-    height: 731px;
-    width: 880px;
+    height: 730px;
+    width: 560px;
 }
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 860px;
-    height: 81px;
+    width: 560px;
+    height: 80px;
     padding: auto;
     gap: 10px;
 }

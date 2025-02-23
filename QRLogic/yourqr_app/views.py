@@ -8,20 +8,19 @@ from QRLogic import settings
 
 def render_yourqr_app(request):
     context = {'page': 'myqr'}
-
-    qrcodes = QrCode.objects.filter(owner=request.user.profile)
-
-    for qr in qrcodes:
+    profile = Profile.objects.get(user=request.user)
+    qrcodess = QrCode.objects.filter(owner=request.user.profile)
+    qrcodes = QrCode.objects.filter(owner=profile).order_by('-create_date')
+    for qr in qrcodess:
         if qr.expire_date != datetime.datetime.now():
-            context = {'page': 'myqr', 'qrcodes': qrcodes}
-        profile = Profile.objects.get(user=request.user)
+            context = {'page': 'myqr', 'qrcodes': qrcodess}
 
     qrcodes = QrCode.objects.filter(owner=profile).order_by('-create_date')
 
     if request.method == "POST" and "delete_qr" in request.POST:
         qr_id = request.POST.get("delete_qr")
         qr = get_object_or_404(QrCode, id=qr_id, owner__user=request.user)
-        
+         
         file_path = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{request.user.id}", qr.name)
         if os.path.exists(file_path):
             os.remove(file_path)
