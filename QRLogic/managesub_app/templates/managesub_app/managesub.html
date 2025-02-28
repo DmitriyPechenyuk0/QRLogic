@@ -23,6 +23,9 @@ Manage Subscription Page
             <div class="plan-titled" ><p class="current-plan-title">Your plan:   {{ user.profile.subscription.capitalize }}</p></div>
             <div class="body-of-plan">
                 <div class="info-about-plan">
+                    {% if user.profile.commerce == True %}
+                        <div class="plan-titled" ><p class="current-plan-title">Commercial status active</p></div><br>
+                    {% endif %}
                     {% if user.profile.subscription == 'pro' %}
                         <ul>
                             <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
