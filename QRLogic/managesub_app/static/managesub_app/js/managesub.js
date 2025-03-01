@@ -24,6 +24,13 @@ const expirationFree = document.getElementById('expiration-date-free')
 const expirationStandart = document.getElementById('expiration-date-standart')
 const expirationPro = document.getElementById('expiration-date-pro')
 
+
+const overlay = document.querySelector('.overlay-slots')
+const overlayDiv = document.querySelector('.slots-div')
+const slotsClose = document.querySelector('.slots-close')
+const offers = document.querySelectorAll('.offer-input')
+let slotsInput = document.querySelector('.input-slots')
+
 let listExpiration = [expirationFree, expirationStandart, expirationPro]
 let listCards = [freeCardNumber, standartCardNumber, proCardNumber]
 
@@ -120,4 +127,15 @@ listExpiration.forEach((input) => {
             event.target.value = formattedValue;
         });
     }
+});
+
+slotsClose.addEventListener('click', () => { 
+    overlay.classList.toggle('slots-opened')
+    overlayDiv.classList.toggle('slots-opened')
+})
+
+offers.forEach((offer) => {
+    offer.addEventListener('click', () => {
+        slotsInput.value = offer.value;
+    });
 });

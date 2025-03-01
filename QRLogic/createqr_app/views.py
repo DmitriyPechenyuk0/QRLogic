@@ -210,7 +210,7 @@ def render_ceateqr_app(request):
                         context= {'page': 'createqr',
                                   'qrcode': '/' + relative_qr_path.replace("\\", "/")}
                 else:
-                    return HttpResponseBadRequest()
+                    context= {'page': 'createqr', 'commerce_error' : 'With your subscription you can create QR codes for url only! '}
 
             else:
                 context= {'page': 'createqr', 'sub_error': 'You have reached the QR code limit!'}

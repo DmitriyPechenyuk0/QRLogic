@@ -18,54 +18,53 @@ Manage Subscription Page
         <div class="title">
             <h1 class="title-text">Subscription Management Center</h1>
         </div>
-
-        <div class="current-plan">
-            <div class="plan-titled" ><p class="current-plan-title">Your plan:   {{ user.profile.subscription.capitalize }}</p></div>
-            <div class="body-of-plan">
-                <div class="info-about-plan">
-                    {% if user.profile.commerce == True %}
-                        <div class="plan-titled" ><p class="current-plan-title">Commercial status active</p></div><br>
-                    {% endif %}
-                    {% if user.profile.subscription == 'pro' %}
-                        <ul>
-                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
-                            <li style="list-style: none">   </li>
-                            <li>Includes everything in "Standard."</li>
-                            <li>Up to 100 QR codes</li>
-                            <li>Advanced designs.</li>
-                            <li>Priority support.</li>
-                        </ul>
-                    {% endif %}
-                    {% if user.profile.subscription == 'standart' %}
-                        <ul>
-                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
-                            <li style="list-style: none">   </li>
-                            <li>Includes everything in "Free."</li>
-                            <li>Up to 10 QR codes.</li>
-                            <li>Full color and logo customization.</li>
-                            <li>High-quality downloads.</li>
-                        </ul>
-                    {% endif %}
-                    {% if user.profile.subscription == 'free' %}
-                        <ul>
-                            <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
-                            <li style="list-style: none">   </li>
-                            <li>1 QR code for up to 6 months</li>
-                            <li>Simple setup, no skills needed.</li>
-                            <li>Basic color options.</li>
-                            <li>Perfect for personal use.</li>
-                        </ul>
-                    {% endif %}
-                </div>
-                <div class="buttons">
-                    <button type="button" class="change-button button">
-                        Change Plan
-                    </button>
-                    <button type="button" class="cancel-button button">
-                        Cancel Plan
-                    </button>
+        <div style="display: flex; flex-direction: column; gap:20px">
+            <div class="current-plan">
+                <div class="plan-titled" ><p class="current-plan-title">Your plan:   {{ user.profile.subscription.capitalize }}</p></div>
+                <div class="body-of-plan">
+                    <div class="info-about-plan">
+                        {% if user.profile.subscription == 'pro' %}
+                            <ul>
+                                <!-- <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                                <li style="list-style: none">   </li> -->
+                                <li>Includes everything in "Standard."</li>
+                                <li>Up to 100 QR codes</li>
+                                <li>Advanced designs.</li>
+                                <li>Priority support.</li>
+                            </ul>
+                        {% endif %}
+                        {% if user.profile.subscription == 'standart' %}
+                            <ul>
+                                <!-- <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                                <li style="list-style: none">   </li> -->
+                                <li>Includes everything in "Free."</li>
+                                <li>Up to 10 QR codes.</li>
+                                <li>Full color and logo customization.</li>
+                                <li>High-quality downloads.</li>
+                            </ul>
+                        {% endif %}
+                        {% if user.profile.subscription == 'free' %}
+                            <ul>
+                                <!-- <li style="list-style: none;font-size:24px; text-align:center;">Subscription Features</li>
+                                <li style="list-style: none">   </li> -->
+                                <li>1 QR code for up to 6 months</li>
+                                <li>Simple setup, no skills needed.</li>
+                                <li>Basic color options.</li>
+                                <li>Perfect for personal use.</li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <div class="buttons">
+                        <button type="button" class="change-button button">
+                            Change Plan
+                        </button>
+                        <button type="button" class="cancel-button button">
+                            Cancel Plan
+                        </button>
+                    </div>
                 </div>
             </div>
+            <!-- <div class="current-plan"></div> -->
         </div>
         <div class="popup-cancel">
             <div class="confirmation">
@@ -74,6 +73,46 @@ Manage Subscription Page
                 <div class="popup-buttons" >
                     <button class="button-popup-cancel kill-sub" name="action" value="killsub" >Kill my sub</button>
                     <button class="button-popup-cancel save-sub" >Save it</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-slots">
+            <div class="slots-div">
+                <div class="slots-p-close">
+                    <p>Select the number of slots you need</p>
+                    <button type="button" class="slots-close"><img class="slots-close-img" src="cross.svg"></button>
+                </div>
+                <div class="slots-inputs">
+                    <p>Fast slot selection</p>
+                    <div class="slots-offers">
+                        <div class="slots-offer">
+                            <input type="radio" class="offer-input" value="10" name="offer" id="ten">
+                            <label for="ten">10</label>
+                        </div>
+                        <div class="slots-offer">
+                            <input type="radio" class="offer-input" value="20" name="offer" id="twenty">
+                            <label for="twenty">20</label>
+                        </div>
+                        <div class="slots-offer">
+                            <input type="radio" class="offer-input" value="30" name="offer" id="thirsty">
+                            <label for="thirsty">30</label>
+                        </div>
+                        <div class="slots-offer">
+                            <input type="radio" class="offer-input" value="50" name="offer" id="fifty">
+                            <label for="fifty">50</label>
+                        </div>
+                        <div class="slots-offer">
+                            <input type="radio" class="offer-input" value="100" name="offer" id="hundred">
+                            <label for="hundred">100</label>
+                        </div>
+                    </div>
+                    <div class="slots-input">
+                        <input type="number" class="input-slots" placeholder="Slot count" name="slot" id="slot">
+                    </div>
+                </div>
+                <div class="slots-button">
+                    <button type="submit" class="buy-button" name="buy-button">Buy</button>
                 </div>
             </div>
         </div>

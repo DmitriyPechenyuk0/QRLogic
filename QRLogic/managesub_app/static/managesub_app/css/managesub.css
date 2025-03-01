@@ -4,14 +4,14 @@
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 50px;
 }
 form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 100px;
     justify-content: center;
     align-items: center;
 }
@@ -41,10 +41,10 @@ li{
 .current-plan{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    width: 580px;
-    height: 800px;
+    width: 600px;
+    height: 320px;
     background-color: #f1f1f1;
     border-radius: 20px;
     gap: 10px;
@@ -54,7 +54,7 @@ li{
     justify-content: start;
     align-items: start;
     width: 640px;
-    height: 620px;
+    /* height: 180px; */
     padding: 10px;
 
 
@@ -68,7 +68,7 @@ li{
     align-items: center;
     border-radius: 10px;
     background-color: #f7f7f7;
-    height: 730px;
+    height: 250px;
     width: 560px;
 }
 .buttons{
@@ -600,38 +600,146 @@ a{
     gap: 10px;
 }
 
-
-/* NOTIFICATION */
-
-.notification {
-    position: absolute;
-    display: flex;
-    top: 100px;
-    right: -90px;
-    transform: translateX(-50%);
-    background: #f9f9f9;
-    border: 1px solid black;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 280px;
-    height: 60px;
-    text-align: center;
+label{
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+label:hover{
+    background-color: rgba(0, 0, 0, 0.09);
+    cursor: pointer
+}
+.overlay-slots{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
     justify-content: center;
+    align-items: center;
+}
+.slots-opened{
+    display: flex;
+}
+.slots-div{
+    flex-direction: column;
+    display: none;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    width: 437px;
+    height: 243px;
+    padding: 20px;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+}
+.slots-p-close{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 397px;
+    height: 30px;
+}
+.slots-p-close p{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slots-close{
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+}
+
+.slots-close-img{
+    width: 30px;
+    height: 30px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.slots-close-img:hover{
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+.slots-inputs{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 397px;
+    height: 113px;
+    gap: 5px;
+}
+.slots-inputs p{
+    font-size: 12px;
+    width: 250px;
+    height: 18px;
+}
+.slots-offers{
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+.slots-offer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.slots-offer input{
     display: none;
 }
-.progress-bar {
-    height: 3px;
-    background: #000000;
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    border-radius: 50%;
-    border: none;
-    animation: progress 3s linear;
+.slots-offer label{
+    font-size: 11px;
+    width: 45px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-@keyframes progress {
-    from { width: 100%; }
-    to { width: 0; }
+.slots-input input{
+    width: 250px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+
+    font-size: 12px;   
+    padding: 10px;
+}
+.slots-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: 250px;
+    height: 40px;
+    font-size: 17px;
+}
+.slots-button button{
+    width: 250px;
+    height: 40px;
+    font-size: 17px;
+    background-color: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+.buy-button:hover{
+    cursor: pointer;
 }
