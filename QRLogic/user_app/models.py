@@ -8,7 +8,7 @@ class Profile(models.Model):
     subscription = models.CharField(max_length=255,null=False)
     subscription_expires = models.DateTimeField()
     commerce = models.BooleanField(default=False)
-    commerce_cells = models.IntegerField(default=0)
+    commerce_cells = models.IntegerField(default=20)
 
     def __str__(self):
         return self.user.username

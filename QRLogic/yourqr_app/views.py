@@ -3,10 +3,11 @@ from createqr_app.models import QrCode
 import datetime,os
 from user_app.models import Profile
 from QRLogic import settings
+from django.http import HttpRequest
 # from django.contrib import now
 # Create your views here.
 
-def render_yourqr_app(request):
+def render_yourqr_app(request: HttpRequest):
     context = {'page': 'myqr'}
     profile = Profile.objects.get(user=request.user)
     qrcodess = QrCode.objects.filter(owner=request.user.profile)

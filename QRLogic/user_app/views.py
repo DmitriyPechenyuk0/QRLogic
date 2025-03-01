@@ -4,11 +4,12 @@ from .models import Profile
 from django.db.utils import IntegrityError
 from django.contrib.auth import authenticate, login, logout
 import os, datetime
+from django.http import HttpRequest
 from QRLogic import settings
 
 # Create your views here.
 
-def render_signup(request):
+def render_signup(request: HttpRequest):
     context = {'page': 'signup'}
     if request.method == 'POST':
         username = request.POST.get('login')
@@ -42,7 +43,7 @@ def render_signup(request):
             context = {'password_error': True,'page': 'signup'}
     return render(request, 'user_app/signup.html', context=context)
 
-def render_signin(request):
+def render_signin(request: HttpRequest):
     context = {'page': 'signin'}
     if request.method == 'POST':
         username = request.POST.get('login')   

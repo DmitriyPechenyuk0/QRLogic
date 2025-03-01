@@ -11,10 +11,12 @@ const killSub = document.querySelector('.kill-sub')
 const PopupEntercardFree = document.querySelector('.free-entercard')
 const PopupEntercardStandart = document.querySelector('.standart-entercard')
 const PopupEntercardPro = document.querySelector('.pro-entercard')
+const PopupEntercardCommerce = document.querySelector('.commerce-entercard')
 
 const buttonFree = document.querySelector('.free-sub')
 const buttonStandart = document.querySelector('.standart-sub')
 const buttonPro = document.querySelector('.pro-sub')
+const buttonCommerce = document.querySelector('.commerce-sub')
 
 const freeCardNumber = document.querySelector('.cardnumber-free')
 const standartCardNumber = document.querySelector('.cardnumber-standart')
@@ -24,12 +26,14 @@ const expirationFree = document.getElementById('expiration-date-free')
 const expirationStandart = document.getElementById('expiration-date-standart')
 const expirationPro = document.getElementById('expiration-date-pro')
 
-
+const slotsOpener = document.querySelector('.buy-slots-button')
 const overlay = document.querySelector('.overlay-slots')
 const overlayDiv = document.querySelector('.slots-div')
 const slotsClose = document.querySelector('.slots-close')
 const offers = document.querySelectorAll('.offer-input')
 let slotsInput = document.querySelector('.input-slots')
+let slotsBuyButton = document.querySelector('.slots-buy-button')
+
 
 let listExpiration = [expirationFree, expirationStandart, expirationPro]
 let listCards = [freeCardNumber, standartCardNumber, proCardNumber]
@@ -67,6 +71,9 @@ buttonPro.addEventListener('click', () => {
     PopupEntercardPro.classList.toggle('popup-entercard-opened')
 })
 
+buttonCommerce.addEventListener('click', () => {
+    PopupEntercardCommerce.classList.toggle('popup-entercard-opened')
+})
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && popupCancel.classList.contains('popup-cancel-opened')) {
@@ -104,7 +111,6 @@ listCards.forEach((input) => {
         });
     }
 });
-
 listExpiration.forEach((input) => {
     if (input) {
         input.addEventListener('input', (event) => {
@@ -129,6 +135,15 @@ listExpiration.forEach((input) => {
     }
 });
 
+slotsInput.addEventListener('input', () => {
+    let slotsDollar = slotsInput.value * 0.10
+    slotsBuyButton.innerHTML = `Buy ${slotsInput.value} for <b>${slotsDollar.toFixed(2)}$</b>`
+})
+slotsOpener.addEventListener('click', () => {
+    overlay.classList.toggle('slots-opened')
+    overlayDiv.classList.toggle('slots-opened')
+})
+
 slotsClose.addEventListener('click', () => { 
     overlay.classList.toggle('slots-opened')
     overlayDiv.classList.toggle('slots-opened')
@@ -137,5 +152,6 @@ slotsClose.addEventListener('click', () => {
 offers.forEach((offer) => {
     offer.addEventListener('click', () => {
         slotsInput.value = offer.value;
+        slotsInput.dispatchEvent(new Event('input'));
     });
 });

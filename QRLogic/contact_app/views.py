@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
-
+from django.http import HttpRequest
 # Create your views here.
 
-def render_contact_app(request):
+def render_contact_app(request: HttpRequest):
     context = {'page': 'contacts'}
     if request.method == 'POST':
         name = request.POST.get('name')

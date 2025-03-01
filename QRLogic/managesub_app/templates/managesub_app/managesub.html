@@ -11,7 +11,6 @@ Manage Subscription Page
 {% endblock %}
 
 {% block body %}
-<script defer src="{% static 'managesub_app/js/managesub.js' %}"></script>
 <main>
     <form method="post">
         {% csrf_token %}
@@ -64,7 +63,23 @@ Manage Subscription Page
                     </div>
                 </div>
             </div>
-            <!-- <div class="current-plan"></div> -->
+            {% if user.profile.commerce == True %}
+                <div class="current-plan">
+                    <div class="plan-titled" ><p class="current-plan-title">Commerce plan</p></div>
+                    <div class="body-of-plan">
+                        <div class="info-about-plan">
+                            <ul>
+                                <li>Current slot count: {{ user.profile.commerce_cells }}</li>
+                                <li>Create QR codes for text</li>
+                                <li>1 extra slot = 0.10 USD</li>
+                            </ul>
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="buy-slots-button button">Buy slots</button>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
         <div class="popup-cancel">
             <div class="confirmation">
@@ -81,7 +96,7 @@ Manage Subscription Page
             <div class="slots-div">
                 <div class="slots-p-close">
                     <p>Select the number of slots you need</p>
-                    <button type="button" class="slots-close"><img class="slots-close-img" src="cross.svg"></button>
+                    <button type="button" class="slots-close"><img class="slots-close-img" src="{% static 'home_app/images/cross.svg' %}"></button>
                 </div>
                 <div class="slots-inputs">
                     <p>Fast slot selection</p>
@@ -108,11 +123,11 @@ Manage Subscription Page
                         </div>
                     </div>
                     <div class="slots-input">
-                        <input type="number" class="input-slots" placeholder="Slot count" name="slot" id="slot">
+                        <input type="number" class="input-slots" maxlength="4" min="0" placeholder="Slot count" name="slot" id="slot">
                     </div>
                 </div>
                 <div class="slots-button">
-                    <button type="submit" class="buy-button" name="buy-button">Buy</button>
+                    <button type="submit" class="buy-button slots-buy-button" name="buy-button">Buy</button>
                 </div>
             </div>
         </div>
@@ -136,7 +151,7 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">$0</p>
+                                <p class="price">Free</p>
                                 <p class="permonth">USD/month</p>
                             </div>
                         {% if user.profile.subscription != 'free' %}
@@ -161,7 +176,7 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">$2</p>
+                                <p class="price">2</p>
                                 <p class="permonth">USD/month</p>
                             </div>
                             {% if user.profile.subscription != 'standart' %}
@@ -186,13 +201,38 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">$10</p>
+                                <p class="price">10</p>
                                 <p class="permonth">USD/month</p>
                             </div>
                             {% if user.profile.subscription != 'pro' %}
                                 <button type="button" name="plans" value="pro" class="buy-now pro-sub">BUY NOW</button>
                             {% else %}
                                 <button type="button" name="plans" value="pro" class="buy-now pro-sub" disabled>Already in use</button>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="plan">
+                        <div class="plan-title">
+                            <p class="plan-title-text">Commerce</p>
+                        </div>
+                        <div class="info-about-plan">
+                            <div class="info">
+                                <ul>
+                                    <li>One-time purchase</li>
+                                    <li>Create QR codes for text</li>
+                                    <li>20 slots included</li>
+                                    <li>Extra slots cost extra</li>
+                                </ul>
+                            </div>
+                            <div class="pricing">
+                                <p class="price">100</p>
+                                <p class="permonth">USD</p>
+                            </div>
+                            {% if user.profile.commerce == False %}
+                                <button type="button" name="plans" value="pro" class="buy-now commerce-sub">BUY NOW</button>
+                            {% else %}
+                                <button type="button" name="plans" value="pro" class="buy-now commerce-sub" disabled>Already buyed</button>
                             {% endif %}
                         </div>
                     </div>
@@ -294,7 +334,38 @@ Manage Subscription Page
                 </div>
             </div>
         </div>
+        <div class="popup-entercard commerce-entercard">
+            <div class="overlay-entercard">
+                <div class="entercard">
+                    <p class="entercard-p">
+                        Enter card details
+                    </p>
+                    <div class="cardnumber">
+                        <p>Card number</p>
+                        <input placeholder="0000-0000-0000-0000"  type="text" maxlength="cardnumber" id="cardnumber" class="cardnumber-commerce">
+                    </div>
+                    <div class="exp-cvv">
+                        <div class="expiration">
+                            <p>Expiration date</p>
+                            <input type="text" name="expiration-date"  placeholder="MM/YY" id="expiration-date-pro" class="expiration-commerce">
+                        </div>
+                        <div class="cvv">
+                            <p>Security code</p>
+                            <input type="text" name="expiration-date"  maxlength="4" id="expiration-date">
+                            <div class="info-security">
+                                <img src="{% static 'home_app/images/infoimg.png' %}" alt="infoimg">
+                            </div>
+                            <div class="infocvv">
+                                <p>The security code or CVV/CVC is the three or four digit code on the back of your card</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="subscribe-close-popup"><img class="subscribe-close-popup-img" src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
+                    <button class="subscribe-commerce subscribe" value="commerce" name="subscribe" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
     </form>
 </main>
-
+<script src="{% static 'managesub_app/js/managesub.js' %}"></script>
 {% endblock %}

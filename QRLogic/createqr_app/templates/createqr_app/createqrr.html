@@ -183,18 +183,24 @@ Create QR Code
                     </div>
 
                 </div>
-                <div>
-                    <input placeholder="example.com" name="url" class="input-url-qr" type="text" required>
-                </div>
+                {% if user.profile.commerce != True %}
+                    <div>
+                        <input placeholder="example.com" name="url" class="input-url-qr" type="text" required>
+                    </div>
+                {% else %}
+                    <div>
+                        <input placeholder="Any text" name="url" class="input-url-qr" type="text" required>
+                    </div>
+                {% endif %}
                 <div>
                     <button class="create-qr-button" type="submit">Create QR</button>
                 </div>
                 <div>
                     <button class="download-button" type="submit">Download</button>
                 </div>
-                {% if commerce_error %}
+                {% if commerce_sub %}
                 <div>
-                    <p>{{ commerce_error }}</p>
+                    <p>{{ commerce_sub }}</p>
                 </div>
                 {% endif %}
             </div>
