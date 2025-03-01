@@ -15,6 +15,7 @@ class QrCode(models.Model):
     body_style = models.CharField(max_length=255 ,null=True, blank=True)
     frame_style = models.CharField(max_length=255 , null=True, blank=True)    
     square_style = models.CharField(max_length=255 ,null=True, blank=True)
+    type_qr = models.CharField(max_length=255,null=True, blank=True)
 
     def expired(self):
         return self.expire_date and now().date() > self.expire_date
