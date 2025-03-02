@@ -9,6 +9,7 @@ from django.http import HttpRequest
 
 def render_yourqr_app(request: HttpRequest):
     context = {'page': 'myqr'}
+
     profile = Profile.objects.get(user=request.user)
     qrcodess = QrCode.objects.filter(owner=request.user.profile)
     qrcodes = QrCode.objects.filter(owner=profile).order_by('-create_date')
@@ -54,7 +55,7 @@ def render_yourqr_app(request: HttpRequest):
     context = {
         'page': 'myqr',
         'qrcodes': qrcodes,
-        'qr_images': qr_images,
+        'qr_images': qr_images
     }
 
     if request.user.is_authenticated:
