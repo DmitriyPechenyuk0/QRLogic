@@ -26,12 +26,16 @@ My QR Codes
                                 <div class="div-component">
                                     <p class="qr-component" >Url: <label>{{ qr.url }}</label></p>
                                 </div>
-                                <div class="div-component">
-                                    <p class="qr-component" >Creation Date: {{ qr.create_date }}</p>
-                                </div>
-                                <div class="div-component">
-                                    <p class="qr-component" >Expires Date: {{ qr.expire_date }}</p>
-                                </div>
+                                {% if qr.type_qr != 'commerce' %}
+                                    <div class="div-component">
+                                        <p class="qr-component" >Creation Date: {{ qr.create_date }}</p>
+                                    </div>
+                                    <div class="div-component">
+                                        <p class="qr-component" >Expires Date: {{ qr.expire_date }}</p>
+                                    </div>
+                                {% else %}
+                                    
+                                {% endif %}
                                 <div class="div-component">
                                     <p class="qr-component" >Primary Color: {{ qr.color }}</p>
                                 </div>
