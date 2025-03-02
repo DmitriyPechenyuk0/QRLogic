@@ -135,7 +135,7 @@ Manage Subscription Page
         <div class="popup">
             <div class="choice-plan">
                 <h3>Pick the plan you want</h3>
-                <button class="close-popup"><img class="close-popup-img"  src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
+                <button type="button" class="close-popup"><img class="close-popup-img"  src="{% static 'home_app/images/cross.svg' %}" alt=""></button>
                 <div class="plans">
                     <div class="plan">
                         <div class="plan-title">
@@ -176,7 +176,7 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">2</p>
+                                <p class="price">$2</p>
                                 <p class="permonth">USD/month</p>
                             </div>
                             {% if user.profile.subscription != 'standart' %}
@@ -201,7 +201,7 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">10</p>
+                                <p class="price">$10</p>
                                 <p class="permonth">USD/month</p>
                             </div>
                             {% if user.profile.subscription != 'pro' %}
@@ -226,7 +226,7 @@ Manage Subscription Page
                                 </ul>
                             </div>
                             <div class="pricing">
-                                <p class="price">100</p>
+                                <p class="price">$100</p>
                                 <p class="permonth">USD</p>
                             </div>
                             {% if user.profile.commerce == False %}

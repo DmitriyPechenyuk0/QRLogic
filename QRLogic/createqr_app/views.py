@@ -367,7 +367,7 @@ def render_ceateqr_app(request: HttpRequest):
                 else:
                     context= {'page': 'createqr', 'sub_error': 'You have reached the QR code limit!'}
                                 
-        else:
+            else:
                 context= {'page': 'createqr', 'sub_error': 'You have reached the QR code limit!'}
 
                 return render(request, 'createqr_app/createqrr.html', context=context)
