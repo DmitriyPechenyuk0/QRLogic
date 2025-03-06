@@ -87,54 +87,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-listCards.forEach((input) => {
-    if (input) {
-        input.addEventListener('input', (event) => {
-            let value = event.target.value.replace(/[^\d-]/g, '');
-
-            let digitsOnly = value.replace(/\D/g, '');
-
-            let formattedValue = '';
-            for (let i = 0; i < digitsOnly.length; i++) {
-                formattedValue += digitsOnly[i];
-
-                if ((i + 1) % 4 === 0 && i + 1 < digitsOnly.length) {
-                    formattedValue += '-';
-                }
-            }
-
-            if (formattedValue.length > 19) {
-                formattedValue = formattedValue.slice(0, 19);
-            }
-
-            event.target.value = formattedValue;
-        });
-    }
-});
-listExpiration.forEach((input) => {
-    if (input) {
-        input.addEventListener('input', (event) => {
-            let value = event.target.value;
-
-            value = value.replace(/\D/g, '');
-            let formattedValue = '';
-
-            for (let i = 0; i < value.length; i++) {
-                formattedValue += value[i];
-                if (i === 1 && value.length > 2) {
-                    formattedValue += '/';
-                }
-            }
-
-            if (formattedValue.length > 5) {
-                formattedValue = formattedValue.slice(0, 5);
-            }
-
-            event.target.value = formattedValue;
-        });
-    }
-});
-
 slotsInput.addEventListener('input', () => {
     let slotsDollar = slotsInput.value * 0.10
     slotsBuyButton.innerHTML = `Buy ${slotsInput.value} for <b>${slotsDollar.toFixed(2)}$</b>`
