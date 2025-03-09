@@ -196,7 +196,13 @@ Create QR Code
                     <button class="create-qr-button" type="submit">Create QR</button>
                 </div>
                 <div>
-                    <button class="download-button" type="submit">Download</button>
+                    <button class="download-button" type="button">
+                        {% if qrcode %}
+                        <a href="{% get_media_prefix %}{{ profile.user.username }}_{{ profile.user.id }}/QRCodes/{{ qrio.name }}" download="{{ qrio.name }}" style="font-size: 20px;" >Download</a>
+                        {% else %}
+                        Download
+                        {% endif %}
+                    </button>
                 </div>
                 {% if commerce_sub %}
                 <div>

@@ -17,8 +17,6 @@ def render_yourqr_app(request: HttpRequest):
         if qr.expire_date != datetime.datetime.now():
             context = {'page': 'myqr', 'qrcodes': qrcodess}
 
-    qrcodes = QrCode.objects.filter(owner=profile).order_by('-create_date')
-
     if request.method == "POST" and "delete_qr" in request.POST:
         qr_id = request.POST.get("delete_qr")
         qr = get_object_or_404(QrCode, id=qr_id, owner__user=request.user)
@@ -33,7 +31,7 @@ def render_yourqr_app(request: HttpRequest):
     if request.method == "POST":
         date_filter = request.POST.get('date_filter')
         if date_filter:  
-                selected_date = datetime.strptime(date_filter, "%Y-%m-%d").date()
+                selected_date = datetime.datetime.strptime(date_filter, "%Y-%m-%d").date()
                 qrcodes = qrcodes.filter(create_date__date=selected_date)
 
 

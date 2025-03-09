@@ -54,6 +54,7 @@ def render_ceateqr_app(request: HttpRequest):
 
             profile = Profile.objects.get(user = request.user)
 
+
             url = request.POST.get('url')
 
             if any(key in url for key in keywords):
@@ -210,9 +211,16 @@ def render_ceateqr_app(request: HttpRequest):
 
                         relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
 
-                        context= {'page': 'createqr',
-                                    'qrcode': '/' + relative_qr_path.replace("\\", "/")}
+                        qrio = QrCode.objects.filter(owner=request.user.profile, type_qr = 'standart').order_by('-create_date')
+                        qrio = qrio[0]
 
+                        context= {'page': 'createqr',
+                                    'qrcode': '/' + relative_qr_path.replace("\\", "/"),
+                                    'qrio': qrio,
+                                    'profile': profile}
+                else:
+                    context= {'page': 'createqr',
+                              'sub_error': 'You have reached the QR code limit!'}
             elif request.user.profile.commerce == True and not any(key in url for key in keywords):
                 
                 count_of_cells = request.user.profile.commerce_cells
@@ -360,10 +368,16 @@ def render_ceateqr_app(request: HttpRequest):
                         qr_code.save(str(qr_path), kind='png')
 
                         relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
-
+                        
+                        qrio = QrCode.objects.filter(owner=request.user.profile, type_qr = 'commerce').order_by('-create_date')
+                        qrio = qrio[0]
+                        
                         context= {'page': 'createqr',
                                     'qrcode': '/' + relative_qr_path.replace("\\", "/"),
-                                    'commerce_sub': 'The QR code has been created, and will occupy a slot in the Commerce subscription'}
+                                    'commerce_sub': 'The QR code has been created, and will occupy a slot in the Commerce subscription',
+                                    'qrio': qrio,
+                                    'profile': profile}
+                
                 else:
                     context= {'page': 'createqr', 'sub_error': 'You have reached the QR code limit!'}
                                 
