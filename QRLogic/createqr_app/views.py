@@ -33,11 +33,11 @@ def qr_redirect(request, qr_code_id):
     else:
         # Display the error "Not found." | Виводимо помилку "Не знайдено".
         return Http404('QR code was expired')
-# 
+# Creating render function to createqr page. | Створення функції рендерингу для сторінки createqr.
 def render_ceateqr_app(request: HttpRequest):
-    # 
+    # Passes the page name to the context. | Передається в context назва сторінки.
     context = {'page': 'createqr'}
-    # 
+    # Creating an array with key phrases by which the link will be recognized. | Створюємо массив з ключовими фраза по яким буде розпізнаватися посилання.
     keywords = [
     "https://", "http://", ".com", ".org", ".net", ".info", ".biz", ".pro",
     ".us", ".uk", ".ru", ".de", ".fr", ".it", ".es", ".cn",
@@ -45,63 +45,63 @@ def render_ceateqr_app(request: HttpRequest):
     ".africa", ".lat", ".scot", ".cat", ".tech", ".app",
     ".dev", ".store", ".blog", ".news", ".xyz"
     ]
-    # 
+    # Checking if the user is registered. | Перевірка на те чи зареєстрований користувач.
     if request.user.is_authenticated:
-        # 
+        # Checking the method with which the request was sent. | Перевірка на те з яким методом надійшов запит.
         if request.method == 'POST':
-            # 
+            # Creating a variable where the user's current monthly subscription will be stored. | Створюємо змінну де буде зберігатися поточна щомісячна підписка користувача.
             sub = request.user.profile.subscription
-            # 
+            # Creating a dictionary with subscription types and their limitations. | Створюємо словник з типом підписок та їх обмеженнями.
             subs_type = {
                 'free': 1,
                 'standart':10,
                 'pro': 50,
             }
-            # 
+            # Creating a variable where the user's current profile will be stored. | Створюємо змінну де буде зберігатися поточний профіль користувача.
             profile = Profile.objects.get(user = request.user)
-            # 
+            # Creating variables by retrieving data from the request. | Створення зміних з отримуванням даних з запиту.
             url = request.POST.get('url')
-            # 
+            # Checking if the input provided by the user is a valid link. | Перевірка на те чи є силкою те що ввів користувач у поле введення.
             if any(key in url for key in keywords):
-                # 
+                # Store in a variable the number of QR codes created under the monthly subscription. | Зберігаємо у змінну кількість створених QR кодів що створені за щомісячною підпискою.
                 qr_count = QrCode.objects.filter(owner=request.user.profile, type_qr = 'standart').count()
-                # 
+                # Checking if the user has not exceeded the limits of their subscription. | Перевірка на те чи не вийшов користувач за ліміти своєї підписки.
                 if qr_count < subs_type[sub]:
-                    # 
+                    # Creating variables by retrieving data from the request. | Створення зміних з отримуванням даних з запиту.
                     light_color= request.POST.get('light-color')
                     dark_color = request.POST.get('dark-color')
-                    # 
+                    # Converting hex colors to RGB tuples. | Перетворюємо хеш кольори у ргб кортежі.
                     light_color= hex_to_rgb(light_color)
                     dark_color = hex_to_rgb(dark_color)
-                    # 
+                    # Creating variables by retrieving data from the request. | Створення зміних з отримуванням даних з запиту.
                     logo = request.FILES.get("upload")
-                    # 
+                    # Creating variables that define the expiration period of the QR code. | Создание переменных которые отвечают за срок действия QR кода.
                     today = datetime.datetime.today()
                     expire = today + datetime.timedelta(days=30)
-                    # 
+                    # Creating variables by retrieving data from the request. | Створення зміних з отримуванням даних з запиту.
                     scale = request.POST.get('sizeqr')
                     body = request.POST.get('body')
                     square = request.POST.get('squares')
-                    # 
+                    # Creating a dictionary with the names of the QR code "modules." | Створення словнику з назвами "модулів" QR коду.
                     drawers = { 'rounded': RoundedModuleDrawer(),
                                 'square': SquareModuleDrawer(),
                                 'circle': CircleModuleDrawer(),
                                 'gapped': GappedSquareModuleDrawer(),
                                 'horizontal': HorizontalBarsDrawer(),
                                 'vertical': VerticalBarsDrawer()}
-                    # 
+                    # Checking if the user is creating a QR code with a logo. | Перевірка на те чи користувач створює QR код з логотипом.
                     if logo:
-                        # 
+                        # Creating the path to the folder where the user's QR codes are stored. | Створення шляху до папки де зберігаються QR коди користувача.
                         filepath_qr = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "QRCodes")
-                        # 
+                        # Store in a variable the number of images in the user's QR code folder. | Зберігаємо у змінну кількість зображень у теці qr кодів користувача.
                         all_qrs = [qrcodes for qrcodes in os.listdir(filepath_qr) if qrcodes.endswith('.png')]
-                        # 
+                        # Storing the current QR code number in a variable. | Зберігання у змінну номер поточного QR коду.
                         next_nameofqr = len(all_qrs) + 1
-                        # 
+                        # Storing the current QR code name in a variable. | Зберігання у змінну назву поточного QR коду.
                         qr_name = f"{next_nameofqr}.png"
-                        # 
+                        # Merging the path to the user's QR code folder and the QR code name. | Об'єднання шляху папки QR кодів користувача та назви QR коду.
                         qr_path = os.path.join(filepath_qr, qr_name)
-                        # 
+                        # Creating a record in the database about the creation of a QR code. | Створення запису у базі даних про створення QR коду.
                         qri = QrCode.objects.create(
                             owner = profile,
                             url= url,
@@ -114,13 +114,13 @@ def render_ceateqr_app(request: HttpRequest):
                             expire_date=expire,
                             type_qr= 'standart'
                         )
-                        # 
+                        # Creating an object in memory. | Створення об'єкту у пам'яті.
                         out = io.BytesIO()
-                        # 
+                        # Creating a QR code image. | Створення зображення QR коду.
                         qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
-                        # 
+                        # Creating an absolute link to a page using Django's URL handler. | Створення абсолютного посилання на сторінку, використовуючи URL-обробник Django.
                         qr_link = request.build_absolute_uri(reverse('qr_redirect', args=[qri.id]))
-                        # 
+                        # Adding data to the QR code. | Додаємо дані до QR коду
                         qr.add_data(qr_link)
                         # 
                         qr.make()
