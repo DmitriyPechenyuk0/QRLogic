@@ -50,6 +50,8 @@ This project was created as a practice over a Django module. Its purpose was to 
   sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
   ```
 
+---
+
   ### Українською мовою
 
   * **Крок 1**: Відкрити термінал
