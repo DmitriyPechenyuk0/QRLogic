@@ -9,7 +9,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 [Team members | Склад команди](#team-members--склад-команди)<br>
 [Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
 [Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
-
+[Project structure | Структура проєкту](#project-structure--структура-проєкту)
 ## __Team members__ | __Склад команди__
 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
