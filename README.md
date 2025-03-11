@@ -160,9 +160,25 @@ A(QRLogic) --> G(manage.py)
 ## __Explanation of application specifications.__ | __Пояснення специфікації застосунків__
 
 <details>
-  <summary>contact_app</summary>
-  <summary>contact_app</summary>
-  <summary>contact_app</summary>
+  <summary><strong>`contact_app`</strong></summary>
+</details>
+<details>
+  <summary><strong>`createqr_app`</strong></summary>
+</details>
+<details>
+  <summary><strong>`home_app`</strong></summary>
+</details>
+<details>
+  <summary><strong>`managesub_app`</strong></summary>
+</details>
+<details>
+  <summary><strong>`QRLogic`</strong></summary>
+</details>
+<details>
+  <summary><strong>`user_app`</strong></summary>
+</details>
+<details>
+  <summary><strong>`yourqr_app`</strong></summary>
 </details>
 
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
