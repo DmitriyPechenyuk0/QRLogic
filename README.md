@@ -65,12 +65,92 @@ YSS(css) --> yourqrr.css
 
 
 A(QRLogic) --> O(contact_app)
+
+O(contact_app) --> OS(static)
+O(contact_app) --> OT(templates)
+O(contact_app) --> __init__.py
+O(contact_app) --> admin.py
+O(contact_app) --> apps.py
+O(contact_app) --> models.py
+O(contact_app) --> tests.py
+O(contact_app) --> urls.py
+O(contact_app) --> views.py
+OT(templates) --> contact.html
+OS(static)  --> OSS(css)
+OS(static)  --> OSI(images)
+OSS(css) --> contactt.css
+
+
 A(QRLogic) --> H(home_app)
+
+H(home_app) --> HS(static)
+H(home_app) --> HT(templates)
+H(home_app) --> __init__.py
+H(home_app) --> admin.py
+H(home_app) --> apps.py
+H(home_app) --> models.py
+H(home_app) --> tests.py
+H(home_app) --> urls.py
+H(home_app) --> views.py
+HT(templates) --> home.html
+HS(static)  --> HSS(css)
+HS(static)  --> HSI(images)
+HSS(css) --> homee.css
+
+
 A(QRLogic) --> M(managesub_app)
+
+M(managesub_app) --> MS(static)
+M(managesub_app) --> MT(templates)
+M(managesub_app) --> __init__.py
+M(managesub_app) --> admin.py
+M(managesub_app) --> apps.py
+M(managesub_app) --> models.py
+M(managesub_app) --> tests.py
+M(managesub_app) --> urls.py
+M(managesub_app) --> views.py
+MT(templates) --> managesub.html
+MS(static)  --> MSS(css)
+MS(static)  --> MSI(images)
+MSS(css) --> managesub.css
+MS(static)  --> MSJ(js)
+MSJ(js) --> managesub.js
+
+
 A(QRLogic) --> U(user_app)
+
+U(user_app) --> US(static)
+U(user_app) --> UT(templates)
+U(user_app) --> __init__.py
+U(user_app) --> admin.py
+U(user_app) --> apps.py
+U(user_app) --> models.py
+U(user_app) --> tests.py
+U(user_app) --> urls.py
+U(user_app) --> views.py
+UT(templates) --> signin.html
+UT(templates) --> signup.html
+US(static)  --> USS(css)
+US(static)  --> USI(img)
+USS(css) --> signin.css
+USS(css) --> signup.css
+
+
+
+
+
 A(QRLogic) --> E(media)
+
 A(QRLogic) --> S(static)
+
+S(static) --> favicon.ico
+S(static) --> SC(css)
+S(static) --> images
+SC(css) --> base_style.css
+
 A(QRLogic) --> T(templates)
+
+T(templates) --> base.html
 A(QRLogic) --> B(db.sqlite3)
 A(QRLogic) --> G(manage.py)
 
