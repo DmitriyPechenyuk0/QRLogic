@@ -19,6 +19,8 @@ This project was created as a practice over a Django module. Its purpose was to 
 ## __Project structure.__ | __Структура проєкту__
 <details>
     <summary>Project Structure</summary>
+
+    
     ```mermaid
     flowchart LR
 
@@ -77,6 +79,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 
 
     ```
+    
 </details>
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 <details>
