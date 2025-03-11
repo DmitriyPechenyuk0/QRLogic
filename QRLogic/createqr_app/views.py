@@ -122,19 +122,19 @@ def render_ceateqr_app(request: HttpRequest):
                         qr_link = request.build_absolute_uri(reverse('qr_redirect', args=[qri.id]))
                         # Adding data to the QR code. | Додаємо дані до QR коду
                         qr.add_data(qr_link)
-                        # 
+                        # Створення QR коду
                         qr.make()
-                        # 
+                        # Модіфікуємо qr код
                         qr_code = qr.make_image(
                             image_factory=StyledPilImage,
                             module_drawer=drawers[body],
                             eye_drawer=drawers[square],
                             color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
-                        # 
+                        # Зберігання qr коду у об'єкт пам'яті
                         qr_code.save(out, kind='png')
                         # 
                         out.seek(0)
-                        # 
+                        # Відкриваємо
                         img = Image.open(out).convert('RGBA')
                         # 
                         filepath_logo = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "Logos")

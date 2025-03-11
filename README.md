@@ -4,6 +4,10 @@
 
 This project was created as a practice over a Django module. Its purpose was to learn the key features of the module and improve our coding skills<br> <br> Цей проєкт створений для практики з модулем Django. Його метою було вивчити ключові можливості модуля, вдосконалити наші скіли в кодингу
 
+## __Plan-navigation for README__ | __План-навігація по README__
+[Purpose of the Project | Мета створення проєкту](#purpose-of-the-project--мета-створення-проєкту)<br>
+[Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)
+
 ## __Team members__ | __Склад команди__
 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
@@ -34,5 +38,3 @@ This project was created as a practice over a Django module. Its purpose was to 
 
 * [Figma Design](https://www.figma.com/design/zuJFbfVMv3Gj0Nj5enrInM/QRLogic-Design?node-id=5-3&p=f&t=m3kC5uEKsHLNVoZs-0)
 * [FigJam](https://www.figma.com/board/6FgTky1OFCN0xwHK6livO5/QRLogic-FigJam?node-id=0-1&p=f&t=55d6m70bPoKnphCC-0)
-
-
