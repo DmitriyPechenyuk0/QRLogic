@@ -7,9 +7,9 @@ This project was created as a practice over a Django module. Its purpose was to 
 ## __Plan-navigation for README__ | __План-навігація по README__
 [Purpose of the Project | Мета створення проєкту](#purpose-of-the-project--мета-створення-проєкту)<br>
 [Team members | Склад команди](#team-members--склад-команди)<br>
-[Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
-[Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
 [Project structure | Структура проєкту](#project-structure--структура-проєкту)
+[Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
+[Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
 ## __Team members__ | __Склад команди__
 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
@@ -191,6 +191,20 @@ A(QRLogic) --> G(manage.py)
   sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
   ```
 
+  * **Step 7**: Open Visual Studio Code, select the folder where you want to run the project through the navigation menu `File -> Open Folder`.
+
+  * **Step 8**: Use the shortcut <kbd>Ctrl</kbd> + <kbd>~</kbd> to open the terminal menu and select 'Git Bash'.
+
+  * **Step 9**: Copy the command below into the Git terminal:
+    ```sh
+    git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
+    ```
+
+  * **Step 10**: Create a new Power Shell terminal, then copy and run:
+    ```sh
+    python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
+    ```
+
 ---
 
   ### Українською мовою
@@ -217,7 +231,19 @@ A(QRLogic) --> G(manage.py)
   sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
   ```
 
+  * **Крок 7**: Відкрийте Visual Studio Code, виберіть папку, в якій хочете запустити проєкт, через навігаційне меню `File -> Open Folder`.
 
+  * **Крок 8**: Скористайтеся комбінацією клавіш <kbd>Ctrl</kbd> + <kbd>~</kbd>, щоб відкрити меню терміналів, і виберіть "Git Bash".
+
+  * **Крок 9**: Скопіюйте команду у Git-термінал:
+    ```sh
+    git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
+    ```
+
+  * **Крок 10**: Створіть новий термінал Power Shell і виконайте:
+    ```sh
+    python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
+    ```
 
 </details>
 <details>
