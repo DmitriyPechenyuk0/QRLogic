@@ -156,6 +156,15 @@ A(QRLogic) --> G(manage.py)
 
 
 ```
+
+## __Explanation of application specifications.__ | __Пояснення специфікації застосунків__
+
+<details>
+  <summary>contact_app</summary>
+  <summary>contact_app</summary>
+  <summary>contact_app</summary>
+</details>
+
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 <details>
   <summary><strong>For Linux</strong></summary>
@@ -295,8 +304,6 @@ A(QRLogic) --> G(manage.py)
     python -m venv QRLogic/venv && cd QRLogic/venv/Scripts && activate.bat && cd ../.. && pip install -r requirements.txt && python QRLogic/manage.py runserver
     ```
 </details>
-
-
 
 
 ## __Useful project-related links__ | __Корисні посилання стосовно проекту__
