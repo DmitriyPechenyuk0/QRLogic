@@ -35,20 +35,45 @@ This project was created as a practice over a Django module. Its purpose was to 
   sudo apt install python3
   ```  
 
-  * **Step 4**: Install pip (package manager for Python): 
+  * **Step 4**: Install pip (package manager for Python)
   ```sh
   sudo apt install python3-pip
   ```
 
-  * **Step 4**: Install Git
+  * **Step 5**: Install Git
    ```sh
    sudo apt install git
    ```
 
-  * **Step 5**: Install VSCode:
+  * **Step 6**: Install VSCode:
   ```sh
   sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
   ```
+
+  ### Українською мовою
+
+  * **Крок 1**: Відкрити термінал
+  * **Крок 2**: Оновити пакети
+  ```sh
+  sudo apt update
+  ```
+  * **Крок 3**: Встановити Python
+  ```sh
+  sudo apt install python3
+  ```  
+  * **Крок 4**: Встановити pip (пакетний менеджер у Python)
+  ```sh
+  sudo apt install python3-pip
+  ```
+  * **Крок 5**: Встановити Git
+   ```sh
+   sudo apt install git
+   ```
+  * **Крок 6**: Встановити VSCode
+  ```sh
+  sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
+  ```
+
 
 
 </details>
