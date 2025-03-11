@@ -15,6 +15,28 @@ This project was created as a practice over a Django module. Its purpose was to 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
 * [Нікіта Емріх](https://github.com/NikitaEmrih)
 
+
+## __Project structure.__ | __Структура проєкту__
+
+```mermaid
+flowchart TB
+
+A(QRLogic) --> Q(QRLogic)
+A(QRLogic) --> C(createqr_app)
+A(QRLogic) --> Y(yourqr_app)
+A(QRLogic) --> O(contact_app)
+A(QRLogic) --> H(home_app)
+A(QRLogic) --> M(managesub_app)
+A(QRLogic) --> U(user_app)
+A(QRLogic) --> E(media)
+A(QRLogic) --> S(static)
+A(QRLogic) --> T(templates)
+A(QRLogic) --> B(db.sqlite3)
+A(QRLogic) --> G(manage.py)
+
+
+```
+
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 <details>
   <summary><strong>For Linux</strong></summary>
