@@ -19,7 +19,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 ## __Project structure.__ | __Структура проєкту__
 
 ```mermaid
-flowchart LR
+flowchart TB
 
 A(QRLogic) --> Q(QRLogic)
 Q(QRLogic) --> __init__.py
