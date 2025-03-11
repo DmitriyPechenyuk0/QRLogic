@@ -21,11 +21,12 @@ This project was created as a practice over a Django module. Its purpose was to 
 ```mermaid
 flowchart TB
 
-A(QRLogic) --> Q(QRLogic) --> (asgi.py)
-A(QRLogic) --> Q(QRLogic) --> (wsgi.py)
-A(QRLogic) --> Q(QRLogic) --> (__init__.py)
-A(QRLogic) --> Q(QRLogic) --> (settings.py)
-A(QRLogic) --> Q(QRLogic) --> (urls.py)
+A(QRLogic) --> Q(QRLogic)
+Q(QRLogic) --> asgi.py
+Q(QRLogic) --> wsgi.py
+Q(QRLogic) --> __init__.py
+Q(QRLogic) --> settings.py
+Q(QRLogic) --> urls.py
 A(QRLogic) --> C(createqr_app) 
 A(QRLogic) --> Y(yourqr_app)
 A(QRLogic) --> O(contact_app)
