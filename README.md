@@ -17,12 +17,26 @@ This project was created as a practice over a Django module. Its purpose was to 
 
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 <details>
-  <summary>__For linux/MacOS__</summary>
-  <ul>
+  <summary><strong>For Linux</strong></summary>
 
-  </ul>
+  ### This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
+
+  ### In English
+
+  * **Step 1**: Open terminal
+
+  * **Step 2**: Update the packages ```sudo apt update```
+
+  * **Step 3**: Install Python ```sudo apt install python3```  
+
+  * **Step 4**: Install pip (package manager for Python): ```sudo apt install python3-pip```
+
+  * **Step 4**: Install Git: ```sudo apt install git```
+
+  * **Step 5**: Install VSCode: ```sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code```
+
+
 </details>
-
 <details>
   <summary><strong>For Windows</strong></summary>
 
