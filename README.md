@@ -19,25 +19,25 @@ This project was created as a practice over a Django module. Its purpose was to 
 ## __Project structure.__ | __Структура проєкту__
 
 ```mermaid
-flowchart LR
+flowchart TB
 
 A(QRLogic) --> Q(QRLogic)
 Q(QRLogic) --> __init__.py
-Q(QRLogic) --> asgi.py
-Q(QRLogic) --> settings.py
-Q(QRLogic) --> urls.py
-Q(QRLogic) --> wsgi.py
+Q(QRLogic) --> QQA(asgi.py)
+Q(QRLogic) --> QQS(settings.py)
+Q(QRLogic) --> QQU(urls.py)
+Q(QRLogic) --> QQW(wsgi.py)
 
 A(QRLogic) --> C(createqr_app) 
 C(createqr_app) --> CS(static)
 C(createqr_app) --> CT(templates)
-C(createqr_app) --> __init__.py
-C(createqr_app) --> admin.py
-C(createqr_app) --> apps.py
-C(createqr_app) --> models.py
-C(createqr_app) --> tests.py
-C(createqr_app) --> urls.py
-C(createqr_app) --> views.py
+C(createqr_app) --> CCI(__init__.py)
+C(createqr_app) --> CCA(admin.py)
+C(createqr_app) --> CCCA(apps.py)
+C(createqr_app) --> CCM(models.py)
+C(createqr_app) --> CCT(tests.py)
+C(createqr_app) --> CCU(urls.py)
+C(createqr_app) --> CCV(views.py)
 CT(templates) --> authentication_required.html
 CT(templates) --> createqrr.html
 CS(static)  --> CSS(css)
@@ -51,13 +51,13 @@ A(QRLogic) --> Y(yourqr_app)
 
 Y(yourqr_app) --> YS(static)
 Y(yourqr_app) --> YT(templates)
-Y(yourqr_app) --> __init__.py
-Y(yourqr_app) --> admin.py
-Y(yourqr_app) --> apps.py
-Y(yourqr_app) --> models.py
-Y(yourqr_app) --> tests.py
-Y(yourqr_app) --> urls.py
-Y(yourqr_app) --> views.py
+Y(yourqr_app) --> YYI(__init__.py)
+Y(yourqr_app) --> YYA(admin.py)
+Y(yourqr_app) --> YYYA(apps.py)
+Y(yourqr_app) --> YYM(models.py)
+Y(yourqr_app) --> YYT(tests.py)
+Y(yourqr_app) --> YYU(urls.py)
+Y(yourqr_app) --> YYV(views.py)
 YT(templates) --> yourqrr.html
 YS(static)  --> YSS(css)
 YSS(css) --> yourqrr.css
@@ -69,12 +69,12 @@ A(QRLogic) --> O(contact_app)
 O(contact_app) --> OS(static)
 O(contact_app) --> OT(templates)
 O(contact_app) --> __init__.py
-O(contact_app) --> admin.py
-O(contact_app) --> apps.py
-O(contact_app) --> models.py
-O(contact_app) --> tests.py
-O(contact_app) --> urls.py
-O(contact_app) --> views.py
+O(contact_app) --> OOA(admin.py)
+O(contact_app) --> OOOA(apps.py)
+O(contact_app) --> OOM(models.py)
+O(contact_app) --> OOT(tests.py)
+O(contact_app) --> OOU(urls.py)
+O(contact_app) --> OOV(views.py)
 OT(templates) --> contact.html
 OS(static)  --> OSS(css)
 OS(static)  --> OSI(images)
@@ -86,12 +86,12 @@ A(QRLogic) --> H(home_app)
 H(home_app) --> HS(static)
 H(home_app) --> HT(templates)
 H(home_app) --> __init__.py
-H(home_app) --> admin.py
-H(home_app) --> apps.py
-H(home_app) --> models.py
-H(home_app) --> tests.py
-H(home_app) --> urls.py
-H(home_app) --> views.py
+H(home_app) --> HHA(admin.py)
+H(home_app) --> HHHA(apps.py)
+H(home_app) --> HHM(models.py)
+H(home_app) --> HHT(tests.py)
+H(home_app) --> HHU(urls.py)
+H(home_app) --> HHV(views.py)
 HT(templates) --> home.html
 HS(static)  --> HSS(css)
 HS(static)  --> HSI(images)
@@ -103,12 +103,12 @@ A(QRLogic) --> M(managesub_app)
 M(managesub_app) --> MS(static)
 M(managesub_app) --> MT(templates)
 M(managesub_app) --> __init__.py
-M(managesub_app) --> admin.py
-M(managesub_app) --> apps.py
-M(managesub_app) --> models.py
-M(managesub_app) --> tests.py
-M(managesub_app) --> urls.py
-M(managesub_app) --> views.py
+M(managesub_app) --> MMA(admin.py)
+M(managesub_app) --> MMMA(apps.py)
+M(managesub_app) --> MMM(models.py)
+M(managesub_app) --> MMT(tests.py)
+M(managesub_app) --> MMU(urls.py)
+M(managesub_app) --> MMV(views.py)
 MT(templates) --> managesub.html
 MS(static)  --> MSS(css)
 MS(static)  --> MSI(images)
@@ -122,12 +122,12 @@ A(QRLogic) --> U(user_app)
 U(user_app) --> US(static)
 U(user_app) --> UT(templates)
 U(user_app) --> __init__.py
-U(user_app) --> admin.py
-U(user_app) --> apps.py
-U(user_app) --> models.py
-U(user_app) --> tests.py
-U(user_app) --> urls.py
-U(user_app) --> views.py
+U(user_app) --> UUA(admin.py)
+U(user_app) --> UUUA(apps.py)
+U(user_app) --> UUM(models.py)
+U(user_app) --> UUT(tests.py)
+U(user_app) --> UUU(urls.py)
+U(user_app) --> UUV(views.py)
 UT(templates) --> signin.html
 UT(templates) --> signup.html
 US(static)  --> USS(css)
