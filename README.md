@@ -182,9 +182,9 @@ A(QRLogic) --> G(manage.py)
   ```
 
   * **Step 5**: Install Git
-   ```sh
-   sudo apt install git
-   ```
+  ```sh
+  sudo apt install git
+  ```
 
   * **Step 6**: Install VSCode:
   ```sh
@@ -196,14 +196,14 @@ A(QRLogic) --> G(manage.py)
   * **Step 8**: Use the shortcut <kbd>Ctrl</kbd> + <kbd>~</kbd> to open the terminal menu and select 'Git Bash'.
 
   * **Step 9**: Copy the command below into the Git terminal:
-    ```sh
-    git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
-    ```
+  ```sh
+  git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
+  ```
 
   * **Step 10**: Create a new Power Shell terminal, then copy and run:
-    ```sh
-    python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
-    ```
+  ```sh
+  python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
+  ```
 
 ---
 
@@ -223,9 +223,9 @@ A(QRLogic) --> G(manage.py)
   sudo apt install python3-pip
   ```
   * **Крок 5**: Встановити Git
-   ```sh
-   sudo apt install git
-   ```
+  ```sh
+  sudo apt install git
+  ```
   * **Крок 6**: Встановити VSCode
   ```sh
   sudo apt install software-properties-common && sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /usr/share/keyrings/microsoft-archive-keyring.gpg && sudo apt update && sudo apt install code
@@ -236,14 +236,14 @@ A(QRLogic) --> G(manage.py)
   * **Крок 8**: Скористайтеся комбінацією клавіш <kbd>Ctrl</kbd> + <kbd>~</kbd>, щоб відкрити меню терміналів, і виберіть "Git Bash".
 
   * **Крок 9**: Скопіюйте команду у Git-термінал:
-    ```sh
-    git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
-    ```
+  ```sh
+  git clone https://github.com/DmitriyPechenyuk0/QRLogic.git
+  ```
 
   * **Крок 10**: Створіть новий термінал Power Shell і виконайте:
-    ```sh
-    python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
-    ```
+  ```sh
+  python3 -m venv QRLogic/venv && cd QRLogic/venv/bin && source activate && cd ../.. && pip3 install -r requirements.txt && python3 QRLogic/manage.py runserver
+  ```
 
 </details>
 <details>
