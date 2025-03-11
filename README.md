@@ -17,70 +17,65 @@ This project was created as a practice over a Django module. Its purpose was to 
 
 
 ## __Project structure.__ | __Структура проєкту__
-<details>
-    <summary>Project Structure</summary>
 
-    
-    ```mermaid
-    flowchart LR
+```mermaid
+flowchart LR
 
-    A(QRLogic) --> Q(QRLogic)
-    Q(QRLogic) --> __init__.py
-    Q(QRLogic) --> asgi.py
-    Q(QRLogic) --> settings.py
-    Q(QRLogic) --> urls.py
-    Q(QRLogic) --> wsgi.py
+A(QRLogic) --> Q(QRLogic)
+Q(QRLogic) --> __init__.py
+Q(QRLogic) --> asgi.py
+Q(QRLogic) --> settings.py
+Q(QRLogic) --> urls.py
+Q(QRLogic) --> wsgi.py
 
-    A(QRLogic) --> C(createqr_app) 
-    C(createqr_app) --> CS(static)
-    C(createqr_app) --> CT(templates)
-    C(createqr_app) --> __init__.py
-    C(createqr_app) --> admin.py
-    C(createqr_app) --> apps.py
-    C(createqr_app) --> models.py
-    C(createqr_app) --> tests.py
-    C(createqr_app) --> urls.py
-    C(createqr_app) --> views.py
-    CT(templates) --> authentication_required.html
-    CT(templates) --> createqrr.html
-    CS(static)  --> CSS(css)
-    CS(static)  --> CSJ(js)
-    CS(static)  --> CSI(images)
-    CSS(css) --> authentication_required.css
-    CSS(css) --> createqr.css
-    CSJ(js) --> createqr.js
+A(QRLogic) --> C(createqr_app) 
+C(createqr_app) --> CS(static)
+C(createqr_app) --> CT(templates)
+C(createqr_app) --> __init__.py
+C(createqr_app) --> admin.py
+C(createqr_app) --> apps.py
+C(createqr_app) --> models.py
+C(createqr_app) --> tests.py
+C(createqr_app) --> urls.py
+C(createqr_app) --> views.py
+CT(templates) --> authentication_required.html
+CT(templates) --> createqrr.html
+CS(static)  --> CSS(css)
+CS(static)  --> CSJ(js)
+CS(static)  --> CSI(images)
+CSS(css) --> authentication_required.css
+CSS(css) --> createqr.css
+CSJ(js) --> createqr.js
 
-    A(QRLogic) --> Y(yourqr_app)
+A(QRLogic) --> Y(yourqr_app)
 
-    Y(yourqr_app) --> YS(static)
-    Y(yourqr_app) --> YT(templates)
-    Y(yourqr_app) --> __init__.py
-    Y(yourqr_app) --> admin.py
-    Y(yourqr_app) --> apps.py
-    Y(yourqr_app) --> models.py
-    Y(yourqr_app) --> tests.py
-    Y(yourqr_app) --> urls.py
-    Y(yourqr_app) --> views.py
-    YT(templates) --> yourqrr.html
-    YS(static)  --> YSS(css)
-    YSS(css) --> yourqrr.css
+Y(yourqr_app) --> YS(static)
+Y(yourqr_app) --> YT(templates)
+Y(yourqr_app) --> __init__.py
+Y(yourqr_app) --> admin.py
+Y(yourqr_app) --> apps.py
+Y(yourqr_app) --> models.py
+Y(yourqr_app) --> tests.py
+Y(yourqr_app) --> urls.py
+Y(yourqr_app) --> views.py
+YT(templates) --> yourqrr.html
+YS(static)  --> YSS(css)
+YSS(css) --> yourqrr.css
 
 
 
-    A(QRLogic) --> O(contact_app)
-    A(QRLogic) --> H(home_app)
-    A(QRLogic) --> M(managesub_app)
-    A(QRLogic) --> U(user_app)
-    A(QRLogic) --> E(media)
-    A(QRLogic) --> S(static)
-    A(QRLogic) --> T(templates)
-    A(QRLogic) --> B(db.sqlite3)
-    A(QRLogic) --> G(manage.py)
+A(QRLogic) --> O(contact_app)
+A(QRLogic) --> H(home_app)
+A(QRLogic) --> M(managesub_app)
+A(QRLogic) --> U(user_app)
+A(QRLogic) --> E(media)
+A(QRLogic) --> S(static)
+A(QRLogic) --> T(templates)
+A(QRLogic) --> B(db.sqlite3)
+A(QRLogic) --> G(manage.py)
 
 
-    ```
-    
-</details>
+```
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 <details>
   <summary><strong>For Linux</strong></summary>
