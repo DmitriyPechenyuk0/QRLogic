@@ -10,13 +10,14 @@ This project was created as a practice over a Django module. Its purpose was to 
 [Project structure | Структура проєкту](#project-structure--структура-проєкту)
 [Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
 [Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
+
 ## __Team members__ | __Склад команди__
 
 * [Дмитро Печенюк](https://github.com/DmitriyPechenyuk0) Teamlead
 * [Нікіта Емріх](https://github.com/NikitaEmrih)
 
 
-## __Project structure.__ | __Структура проєкту__
+## __Project structure__ | __Структура проєкту__
 
 ```mermaid
 flowchart TB
