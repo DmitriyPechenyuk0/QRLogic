@@ -7,7 +7,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 ## __Plan-navigation for README__ | __План-навігація по README__
 [Purpose of the Project | Мета створення проєкту](#purpose-of-the-project--мета-створення-проєкту)<br>
 [Team members | Склад команди](#team-members--склад-команди)<br>
-[Project structure | Структура проєкту](#project-structure--структура-проєкту)
+[Project structure | Структура проєкту](#project-structure--структура-проєкту)<br>
 [Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
 [Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
 

@@ -132,33 +132,32 @@ def render_ceateqr_app(request: HttpRequest):
                             color_mask=SolidFillColorMask(front_color=dark_color, back_color=light_color))
                         # Зберігання qr коду у об'єкт пам'яті
                         qr_code.save(out, kind='png')
-                        # 
                         out.seek(0)
-                        # Відкриваємо
+                        # Відкриваємо зображення 
                         img = Image.open(out).convert('RGBA')
-                        # 
+                        # Зберігаємо у змінну шлях до папки 'Logos' користувача 
                         filepath_logo = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{str(request.user.id)}", "Logos")
-                        # 
+                        # Підраховуємо кількість картинок-логотипів користувача
                         all_logos = [logos for logos in os.listdir(filepath_logo) if logos.endswith('.png')]
-                        # 
+                        # Вираховуємо наступну назву лого
                         next_nameoflogo = len(all_logos) + 1
-                        # 
+                        # Зберігаємо назву файлу логотипу 
                         logo_name = f"{next_nameoflogo}.png"
-                        # 
+                        # Зберігаємо шлях до логотипу
                         logo_path = os.path.join(filepath_logo, logo_name)
-                        # 
+                        # Зберігаємо лого
                         with open(logo_path, 'wb') as logo_file:
                             for part in logo.chunks():
                                 logo_file.write(part)
-                        # 
+                        # Зберігаємо шлях від папки media до логотипу
                         logo_url = os.path.join(settings.MEDIA_ROOT, f"{request.user.username}_{request.user.id}", 'Logos', logo_name)
-                        # 
+                        # Зберігаємо змінні висоти та ширини зображення
                         img_width, img_height = img.size
-                        # 
+                        # зберігаємо розмір логотипу
                         logo_max_size = img_height // 4
-                        # 
+                        # Відкриваємо зображення
                         logo_img = Image.open(logo_url).convert("RGBA")
-                        # 
+                        # Зберігаємо у 
                         logo_width, logo_height = logo_img.size
                         # 
                         max_side = max(logo_width, logo_height)
@@ -180,7 +179,7 @@ def render_ceateqr_app(request: HttpRequest):
                         img.save(qr_path)
                         # 
                         relative_qr_path = os.path.join('media', os.path.relpath(qr_path, settings.MEDIA_ROOT))
-                        # 
+                        # Передаємо до дані шаблону 
                         context={'page': 'createqr',
                                     'logo': logo_url,
                                     'qrcode': '/' + relative_qr_path.replace("\\", "/")}
