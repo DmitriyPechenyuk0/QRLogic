@@ -163,50 +163,50 @@ A(QRLogic) --> G(manage.py)
 
 <details>
   <summary><strong>QRLogic</strong></summary>
-
+  <br>
 
   __QRLogic__ Це головний застосунок у проєкті  
 </details>
 
 <details>
   <summary><strong>home_app</strong></summary>
-
+  <br>
 
   __home_app__ Цей застосунок відповідає за відображення та налаштування головної сторінки
 </details>
 
 <details>
   <summary><strong>user_app</strong></summary>
-
+  <br>
 
   __user_app__ Цей застосунок відповідає за відображення та налаштування сторінок реєстрації та авторизації
 </details>
 
 <details>
   <summary><strong>contact_app</strong></summary>
-
+  <br>
 
   __contact_app__ Цей застосунок відповідає за відображення та налаштування сторінки контактів
 </details>
 
 <details>
   <summary><strong>managesub_app</strong></summary>
-
+  <br>
 
   __managesub_app__ Цей застосунок відповідає за відображення та налаштування сторінки налаштування підписки
 </details>
 
 <details>
   <summary><strong>createqr_app</strong></summary>
-
+  <br>
 
   __createqr_app__ Цей застосунок відповідає за відображення та налаштування сторінки створення QR кодів
 </details>
 
 <details>
   <summary><strong>yourqr_app</strong></summary>
-
-
+  <br>
+  
   __yourqr_app__ Цей застосунок відповідає за відображення та налаштування сторінки відстежування створених QR кодів
 </details>
 
