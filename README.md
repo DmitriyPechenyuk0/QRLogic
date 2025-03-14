@@ -215,6 +215,7 @@ A(QRLogic) --> G(manage.py)
 <details>
   <summary><strong>For Linux</strong></summary>
 
+  !!! note
   ### This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
 
   ### In English
