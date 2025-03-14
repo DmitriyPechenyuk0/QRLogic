@@ -8,6 +8,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 [Purpose of the Project | Мета створення проєкту](#purpose-of-the-project--мета-створення-проєкту)<br>
 [Team members | Склад команди](#team-members--склад-команди)<br>
 [Project structure | Структура проєкту](#project-structure--структура-проєкту)<br>
+[Explanation of application specifications | Пояснення специфікації застосунків](#explanation-of-application-specifications--пояснення-специфікації-застосунків)<br>
 [Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
 [Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
 
