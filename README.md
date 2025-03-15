@@ -206,14 +206,16 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>createqr_app</strong></summary>
 
   ---
+  ### In English
   > __createqr_app__ – this app is responsible for displaying and configuring the QR code creation page. It also includes the logic for customizing QR codes.<br>
   >* If the user has a Free subscription, only basic color changes and the ability to create one QR code are available.
   >* If the user has a Standard subscription, they can create up to 10 QR codes with a logo in the center and color customization.
   >* If the user has a Pro subscription, they can create up to 100 QR codes with color customization, shape modification, and logo addition.
   >* If the user has a Commerce subscription, they can only customize the color of QR codes. If they want to change the shape or add a logo, they need to purchase the corresponding monthly subscription.
   ---
-  
+
   ---
+  ### Українською мовою
   > __createqr_app__ – цей застосунок відповідає за відображення та налаштування сторінки створення QR-кодів. Також у ньому прописана логіка кастомізації QR-кодів.<br>
   >* Якщо користувач має підписку Free, йому доступна лише базова зміна кольору та можливість створення одного QR-коду.
   >* Якщо користувач має підписку Standard, він може створювати до 10 QR-кодів із логотипом у центрі та кастомізацією кольору.
