@@ -165,6 +165,12 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>QRLogic</strong></summary>
 
   ---
+  ### In English
+  > __QRLogic__ – This is the main app in the project. It handles the core project configurations.
+  ---
+
+  ---
+  ### Українською мовою
   > __QRLogic__ – це головний застосунок у проєкті. Саме в цьому застосунку здійснюються основні налаштування проєкту.
   ---
 </details>
@@ -173,6 +179,12 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>home_app</strong></summary>
 
   ---
+  ### In English
+  > __home_app__ – This app is responsible for displaying and configuring the homepage.
+  ---
+
+  ---
+  ### Українською мовою
   > __home_app__ – цей застосунок відповідає за відображення та налаштування головної сторінки.
   ---
 </details>
@@ -181,6 +193,12 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>user_app</strong></summary>
 
   ---
+  ### In English
+  > __user_app__ – This app is responsible for account creation, authentication, and logout. Additionally, this app includes the Profile model, which handles table creation in the database.
+  ---
+
+  ---
+  ### Українською мовою
   > __user_app__ – цей застосунок відповідає за створення акаунта, авторизацію, а також вихід із нього. Крім того, у цьому застосунку створено модель Profile, яка відповідає за створення таблиці в БД.
   ---
 </details>
@@ -189,6 +207,12 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>contact_app</strong></summary>
 
   ---
+  ### In English
+  > __contact_app__ – This app is responsible for displaying and configuring the contacts page, as well as sending feedback via email.
+  ---
+
+  ---
+  ### Українською мовою
   > __contact_app__ – цей застосунок відповідає за відображення та налаштування сторінки контактів, а також за надсилання відгуків на пошту.
   ---
 </details>
@@ -197,6 +221,14 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>managesub_app</strong></summary>
 
   ---
+  ### In English
+  > __managesub_app__ – this app is responsible for displaying and configuring the subscription settings page. It also includes the main logic for changing subscriptions. There are two types of subscriptions, divided into monthly and one-time purchases.  
+  > Monthly subscriptions include Free, Standard, and Pro. The one-time purchase subscription is Commerce. A user can have both types of subscriptions simultaneously.  
+  > With a monthly subscription, the user can create QR codes only with a link, and their validity period is 30 days.  
+  > With a one-time purchase subscription, the user can create QR codes only with text, and their validity period is unlimited.  
+  ---
+  ---
+  ### Українською мовою
   > __managesub_app__  – цей застосунок відповідає за відображення та налаштування сторінки налаштування підписки. Також у ньому прописана основна логіка зміни підписок. Є два типи підписок, які поділяються на щомісячні та одноразову покупку. Щомісячні підписки – це Free, Standard, Pro. Одноразово-купівельна підписка – це Commerce. Користувач може мати одночасно два типи підписки. З щомісячною підпискою користувач може створювати QR-коди тільки з посиланням, і їх строк придатності – 30 днів. З одноразово-купівельною підпискою користувач може створювати QR-коди тільки з текстом, і їх строк придатності – безмежний.
   ---
 
@@ -229,6 +261,11 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>yourqr_app</strong></summary>
 
   ---
+  ### In English
+  > __yourqr_app__ – This app is responsible for displaying and configuring the page for tracking created QR codes.
+  ---
+  ---
+  ### Українською мовою
   > __yourqr_app__ Цей застосунок відповідає за відображення та налаштування сторінки відстежування створених QR кодів
   ---
 </details>
