@@ -55,7 +55,7 @@ def render_ceateqr_app(request: HttpRequest):
             subs_type = {
                 'free': 1,
                 'standart':10,
-                'pro': 50,
+                'pro': 100,
             }
             # Creating a variable where the user's current profile will be stored. | Створюємо змінну де буде зберігатися поточний профіль користувача.
             profile = Profile.objects.get(user = request.user)
