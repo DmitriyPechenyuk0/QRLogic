@@ -11,7 +11,7 @@ This project was created as a practice over a Django module. Its purpose was to 
 * [Explanation of application specifications | Пояснення специфікації застосунків](#explanation-of-application-specifications--пояснення-специфікації-застосунків)<br>
 * [Useful project-related links | Корисні посилання стосовно проекту](#useful-project-related-links--корисні-посилання-стосовно-проекту)<br>
 * [Project installation guide | Інструкція до встановлення проєкту](#project-installation-guide--інструкція-до-встановлення-проєкту)<br>
-* [Сonclusion | Висновок](#conclusion--вивсновок)<br>
+* [Сonclusion | Висновок](#conclusion--висновок)<br>
 
 ## __Team members__ | __Склад команди__
 
