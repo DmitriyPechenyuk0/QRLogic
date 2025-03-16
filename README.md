@@ -409,4 +409,34 @@ A(QRLogic) --> G(manage.py)
 
 ## __Conclusion__ | __Висновок__
 
-Цей проект був дуже корисний
+### Українською мовою
+
+#### Цей проєкт був для нас дуже корисним, оскільки ми покращили свої навички роботи з Django та qrcode, а також отримали досвід у вирішенні проблем стосовно створення QR кодів й інтегрування їх до нашого веб додатку. Робота над ним допомогла нам покращити навички командної роботи / самостійного навчання.
+
+#### Труднощі розробки:
+
+Під час роботи над проєктом виникли певні проблеми. Одним із головних було некорректне створення qr кодів з зміненою формою та кольором. Це спричинило певні проблеми з відображанням їх на сторінках, що ускладнило процес розробки. На подолання цієї проблеми було витрачено багато часу, що значно загальмувало розвиток проєкту. Також довелося глибше вивчити модуль qrcode, що виявилося корисним для подальшого розвитку.
+
+#### Подальші перспективи проєкту:
+  * Оптимізувати роботу додатку createqr_app для більш ефективної роботи.
+  * Покращити дизайн та UX для зручнішої взаємодії користувачів.
+  * Додати оплату підписок через банкінг-сервіси
+  * Переробити усі post форми у проєкті на django forms за для більшої безпеки
+  * Додати підтримку двофакторної автентифікації.
+
+---
+
+### In English
+
+#### This project was very useful for us since we improved our skills in working with Django and qrcode, as well as gained experience in solving issues related to generating QR codes and integrating them into our web application. Working on it helped us enhance our teamwork and self-learning skills.
+
+#### Development Challenges:
+
+During the project, we encountered certain issues. One of the main challenges was the incorrect generation of QR codes with modified shapes and colors. This caused display problems on pages, making the development process more difficult. A significant amount of time was spent overcoming this issue, which considerably slowed down the project's progress. Additionally, we had to dive deeper into the qrcode module, which turned out to be beneficial for further development.
+
+#### Future prospects of the project:
+- Optimize the createqr_app application for better efficiency.
+- Improve the design and UX for a more user-friendly experience.
+- Add subscription payments via banking services.
+- Convert all post forms in the project to Django Forms for better security.
+- Implement support for two-factor authentication.
