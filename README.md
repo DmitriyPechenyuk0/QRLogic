@@ -264,7 +264,8 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>For Linux</strong></summary>
   
   #### EN
-
+  
+  > [!WARNING]
   > #### This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
 
   * **Step 1**: Open terminal
@@ -311,7 +312,7 @@ A(QRLogic) --> G(manage.py)
 ---
 
   #### UA
-
+  > [!WARNING]
   > #### Цей посібник призначений для Ubuntu. Для інших дистрибутивів Linux встановлення може відрізнятися.
 
   * **Крок 1**: Відкрити термінал
@@ -412,7 +413,6 @@ A(QRLogic) --> G(manage.py)
 
 ### UA
 
-#### Цей проєкт був для нас дуже корисним, оскільки ми покращили свої навички роботи з Django та qrcode, а також отримали досвід у вирішенні проблем стосовно створення QR кодів й інтегрування їх до нашого веб додатку. Робота над ним допомогла нам покращити навички командної роботи / самостійної роботи.
 
 #### Труднощі розробки:
 
