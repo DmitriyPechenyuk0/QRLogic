@@ -166,10 +166,10 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>QRLogic</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __QRLogic__ – This is the main app in the project. It handles the core project configurations.
   ---
-  ### UA
+  #### UA
   > __QRLogic__ – це головний застосунок у проєкті. Саме в цьому застосунку здійснюються основні налаштування проєкту.
   ---
 </details>
@@ -178,10 +178,10 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>home_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __home_app__ – This app is responsible for displaying and configuring the homepage.
   ---
-  ### UA
+  #### UA
   > __home_app__ – цей застосунок відповідає за відображення та налаштування головної сторінки.
   ---
 </details>
@@ -190,10 +190,10 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>user_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __user_app__ – This app is responsible for account creation, authentication, and logout. Additionally, this app includes the Profile model, which handles table creation in the database.
   ---
-  ### UA
+  #### UA
   > __user_app__ – цей застосунок відповідає за створення акаунта, авторизацію, а також вихід із нього. Крім того, у цьому застосунку створено модель Profile, яка відповідає за створення таблиці в БД.
   ---
 </details>
@@ -202,10 +202,10 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>contact_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __contact_app__ – This app is responsible for displaying and configuring the contacts page, as well as sending feedback via email.
   ---
-  ### UA
+  #### UA
   > __contact_app__ – цей застосунок відповідає за відображення та налаштування сторінки контактів, а також за надсилання відгуків на пошту.
   ---
 </details>
@@ -214,13 +214,13 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>managesub_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __managesub_app__ – this app is responsible for displaying and configuring the subscription settings page. It also includes the main logic for changing subscriptions. There are two types of subscriptions, divided into monthly and one-time purchases.  
   > Monthly subscriptions include Free, Standard, and Pro. The one-time purchase subscription is Commerce. A user can have both types of subscriptions simultaneously.  
   > With a monthly subscription, the user can create QR codes only with a link, and their validity period is 30 days.  
   > With a one-time purchase subscription, the user can create QR codes only with text, and their validity period is unlimited.  
   ---
-  ### UA
+  #### UA
   > __managesub_app__  – цей застосунок відповідає за відображення та налаштування сторінки налаштування підписки. Також у ньому прописана основна логіка зміни підписок. Є два типи підписок, які поділяються на щомісячні та одноразову покупку. Щомісячні підписки – це Free, Standard, Pro. Одноразово-купівельна підписка – це Commerce. Користувач може мати одночасно два типи підписки. З щомісячною підпискою користувач може створювати QR-коди тільки з посиланням, і їх строк придатності – 30 днів. З одноразово-купівельною підпискою користувач може створювати QR-коди тільки з текстом, і їх строк придатності – безмежний.
   ---
 
@@ -230,14 +230,14 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>createqr_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __createqr_app__ – this app is responsible for displaying and configuring the QR code creation page. It also includes the logic for customizing QR codes.<br>
   >* If the user has a Free subscription, only basic color changes and the ability to create one QR code are available.
   >* If the user has a Standard subscription, they can create up to 10 QR codes with a logo in the center and color customization.
   >* If the user has a Pro subscription, they can create up to 100 QR codes with color customization, shape modification, and logo addition.
   >* If the user has a Commerce subscription, they can only customize the color of QR codes. If they want to change the shape or add a logo, they need to purchase the corresponding monthly subscription.
   ---
-  ### UA
+  #### UA
   > __createqr_app__ – цей застосунок відповідає за відображення та налаштування сторінки створення QR-кодів. Також у ньому прописана логіка кастомізації QR-кодів.<br>
   >* Якщо користувач має підписку Free, йому доступна лише базова зміна кольору та можливість створення одного QR-коду.
   >* Якщо користувач має підписку Standard, він може створювати до 10 QR-кодів із логотипом у центрі та кастомізацією кольору.
@@ -251,10 +251,10 @@ A(QRLogic) --> G(manage.py)
   <summary><strong>yourqr_app</strong></summary>
 
   ---
-  ### EN
+  #### EN
   > __yourqr_app__ – This app is responsible for displaying and configuring the page for tracking created QR codes.
   ---
-  ### UA
+  #### UA
   > __yourqr_app__ Цей застосунок відповідає за відображення та налаштування сторінки відстежування створених QR кодів
   ---
 </details>
@@ -263,7 +263,7 @@ A(QRLogic) --> G(manage.py)
 <details>
   <summary><strong>For Linux</strong></summary>
   
-  ### EN
+  #### EN
 
   > #### This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
 
@@ -310,7 +310,7 @@ A(QRLogic) --> G(manage.py)
 
 ---
 
-  ### UA
+  #### UA
 
   > #### Цей посібник призначений для Ubuntu. Для інших дистрибутивів Linux встановлення може відрізнятися.
 
@@ -354,7 +354,7 @@ A(QRLogic) --> G(manage.py)
 <details>
   <summary><strong>For Windows</strong></summary>
 
-  ### EN
+  #### EN
 
   * **Step 1**: Download and install Python: Go to the official website [python.org](https://www.python.org/) and download the latest version of Python for your operating system. Make sure to check the 'Add Python to PATH' option during the installation.
 
@@ -378,7 +378,7 @@ A(QRLogic) --> G(manage.py)
 
   ---
 
-  ### UA
+  #### UA
 
   * **Крок 1**: Завантажте та встановіть Python: Перейдіть на офіційний сайт [python.org](https://www.python.org/) і завантажте останню версію Python для вашої операційної системи. Під час встановлення обов’язково відзначте опцію "Add Python to PATH".
 
@@ -410,7 +410,7 @@ A(QRLogic) --> G(manage.py)
 
 ## __Conclusion__ | __Висновок__
 
-### UA
+#### UA
 
 #### Цей проєкт був для нас дуже корисним, оскільки ми покращили свої навички роботи з Django та qrcode, а також отримали досвід у вирішенні проблем стосовно створення QR кодів й інтегрування їх до нашого веб додатку. Робота над ним допомогла нам покращити навички командної роботи / самостійної роботи.
 
@@ -427,7 +427,7 @@ A(QRLogic) --> G(manage.py)
 
 ---
 
-### EN
+#### EN
 
 #### This project was very useful for us since we improved our skills in working with Django and qrcode, as well as gained experience in solving issues related to generating QR codes and integrating them into our web application. Working on it helped us enhance our teamwork and self-learning skills.
 
