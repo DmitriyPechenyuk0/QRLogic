@@ -262,14 +262,14 @@ A(QRLogic) --> G(manage.py)
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
 
 > [!WARNING]
-> This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
+> The installation guide for Linux is intended for Ubuntu. The installation process may differ for other Linux distributions.
+
+> Інструкція з установлення для Linux призначена для Ubuntu. Процес встановлення може відрізнятися в інших дистрибутивах Linux.
 <details>
   <summary><strong>For Linux</strong></summary>
   
   #### EN
   
-
-
   * **Step 1**: Open terminal
 
   * **Step 2**: Update the packages 
@@ -314,9 +314,6 @@ A(QRLogic) --> G(manage.py)
 ---
 
   #### UA
-
-> [!WARNING]
-> Цей посібник призначений для Ubuntu. Для інших дистрибутивів Linux встановлення може відрізнятися.
 
   * **Крок 1**: Відкрити термінал
   * **Крок 2**: Оновити пакети
