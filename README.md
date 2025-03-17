@@ -410,7 +410,7 @@ A(QRLogic) --> G(manage.py)
 
 ## __Conclusion__ | __Висновок__
 
-#### UA
+### UA
 
 #### Цей проєкт був для нас дуже корисним, оскільки ми покращили свої навички роботи з Django та qrcode, а також отримали досвід у вирішенні проблем стосовно створення QR кодів й інтегрування їх до нашого веб додатку. Робота над ним допомогла нам покращити навички командної роботи / самостійної роботи.
 
@@ -427,7 +427,7 @@ A(QRLogic) --> G(manage.py)
 
 ---
 
-#### EN
+### EN
 
 #### This project was very useful for us since we improved our skills in working with Django and qrcode, as well as gained experience in solving issues related to generating QR codes and integrating them into our web application. Working on it helped us enhance our teamwork and self-learning skills.
 
