@@ -260,13 +260,15 @@ A(QRLogic) --> G(manage.py)
 </details>
 
 ## __Project installation guide__ | __Інструкція до встановлення проєкту__
+
+> [!WARNING]
+> This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
 <details>
   <summary><strong>For Linux</strong></summary>
   
   #### EN
   
-  > [!WARNING]
-  > #### This guide is intended for Ubuntu. For other Linux distributions, the installation may differ
+
 
   * **Step 1**: Open terminal
 
