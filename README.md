@@ -433,7 +433,7 @@ A(QRLogic) --> G(manage.py)
   * Переробити усі post форми у проєкті на Django Forms за для більшої безпеки
   * Додати підтримку двофакторної автентифікації.
 
-  Ці підходи не були реалізовані в проєкті, оскільки він не передбачає безперервної роботи на хості 24/7.
+  Ці підходи не були реалізовані в проєкті, оскільки спочатку його не планували розгортати на хості для безперервної роботи 24/7.
 
 ---
 
@@ -458,4 +458,4 @@ During the project, we encountered certain issues. One of the main challenges wa
   * Convert all post forms in the project to Django Forms for better security.
   * Implement support for two-factor authentication.
 
-  These approaches were not implemented in the project because it is not intended to run continuously on a host 24/7.
+  These approaches were not implemented in the project because initially, it was not planned to be deployed on a host for continuous 24/7 operation.
