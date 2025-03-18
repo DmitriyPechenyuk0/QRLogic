@@ -413,6 +413,14 @@ A(QRLogic) --> G(manage.py)
 
 ### UA
 
+Цей проект став для нас важливим етапом у вивченні Django та веб-розробки загалом. У процесі роботи ми освоїли основи роботи з медіафайлами в Django, навчились створювати та налаштовувати зв'язки між моделями у базі даних, а також інтегрувати сторонні модулі, зокрема qrcode для генерації кодів.
+
+Окрему увагу було приділено розробці інтерфейсу користувача. Для цього ми використовували Figma, що дозволило нам спроєктувати зручний та інтуїтивно зрозумілий UX/UI дизайн. Ми навчилися правильно структурувати проєкт, розділяти його на логічні частини, а також використовувати сучасні підходи до розробки.
+
+Окрім цього, ми значно покращили свої навички роботи з Git, навчились ефективно використовувати систему контролю версій для спільної розробки, створення гілок та управління змінами в коді.
+
+Цей досвід став для нас цінним, оскільки дав змогу застосувати отримані знання на практиці та зрозуміти, як працювати з Django у реальних проєктах. Ми отримали навички командної роботи, покращили свої знання у створенні веб-застосунків та підготовці їх до реального використання.
+
 
 #### Труднощі розробки:
 
@@ -429,7 +437,13 @@ A(QRLogic) --> G(manage.py)
 
 ### EN
 
-#### This project was very useful for us since we improved our skills in working with Django and qrcode, as well as gained experience in solving issues related to generating QR codes and integrating them into our web application. Working on it helped us enhance our teamwork and self-learning skills.
+This project has been an important milestone in our study of Django and web development in general. During the development process, we learned the basics of working with media files in Django, how to create and configure relationships between database models, and how to integrate third-party modules, including qrcode for code generation.
+
+Special attention was given to user interface development. We used Figma for this purpose, which allowed us to design a convenient and intuitive UX/UI. We learned how to properly structure a project, break it down into logical parts, and apply modern development approaches.
+
+Additionally, we significantly improved our Git skills, learning how to effectively use version control for collaborative development, branch creation, and code management.
+
+This experience has been valuable, as it allowed us to apply our knowledge in practice and understand how to work with Django in real-world projects. We gained teamwork skills, improved our knowledge of web application development, and learned how to prepare them for real-world use.
 
 #### Development Challenges:
 
