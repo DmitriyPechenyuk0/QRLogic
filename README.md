@@ -433,6 +433,8 @@ A(QRLogic) --> G(manage.py)
   * Переробити усі post форми у проєкті на Django Forms за для більшої безпеки
   * Додати підтримку двофакторної автентифікації.
 
+  Ці підходи не були реалізовані в проєкті, оскільки він не передбачає безперервної роботи на хості 24/7.
+
 ---
 
 ### EN
@@ -450,8 +452,10 @@ This experience has been valuable, as it allowed us to apply our knowledge in pr
 During the project, we encountered certain issues. One of the main challenges was the incorrect generation of QR codes with modified shapes and colors. This caused display problems on pages, making the development process more difficult. A significant amount of time was spent overcoming this issue, which considerably slowed down the project's progress. Additionally, we had to dive deeper into the qrcode module, which turned out to be beneficial for further development.
 
 #### Future prospects of the project:
-- Optimize the createqr_app application for better efficiency.
-- Improve the design and UX for a more user-friendly experience.
-- Add subscription payments via banking services.
-- Convert all post forms in the project to Django Forms for better security.
-- Implement support for two-factor authentication.
+  * Optimize the createqr_app application for better efficiency.
+  * Improve the design and UX for a more user-friendly experience.
+  * Add subscription payments via banking services.
+  * Convert all post forms in the project to Django Forms for better security.
+  * Implement support for two-factor authentication.
+
+  These approaches were not implemented in the project because it is not intended to run continuously on a host 24/7.
